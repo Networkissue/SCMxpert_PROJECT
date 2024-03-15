@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/CSS/css/devicedata.css">
+        <link rel="stylesheet" href="/CSS/css/dashboard.css">
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'
+            rel='stylesheet'>
+        <title>Device Data</title>
+    </head>
+    <body>
+        <div class="DB">
+            <div class="menu">
+                <i class='bx bx-menu'></i>
+            </div>
+
+            <h1><b>SCMxpert</b></h1>
+            <form>
+
+                <div class="sidebar">
+                    <div class="A">
+                        <i class='bx bx-home'></i>
+                        <a
+                            href="/Html/dashboard.html">DASHBOARD</a><br><br><br>
+                    </div>
+                    <div class="B">
+                        <i class='bx bxs-user-circle'></i>
+                        <a href="#">MY ACCOUNT</a><br><br><br>
+                    </div>
+                    <div class="C">
+                        <i class='bx bxs-ship'></i>
+                        <a href="/Html/newshipment.html">NEW
+                            SHIPMENT</a><br><br><br>
+                    </div>
+                    <div class="D">
+                        <i class='bx bxs-package'></i>
+                        <a href="#">MY SHIPMENTS</a><br><br><br>
+                    </div>
+                    <div class="E">
+                        <i class='bx bxs-devices'></i>
+                        <a href="#">DEVICE DATA</a><br><br><br>
+                    </div>
+                    <!-- <div class="F">
+                    <i class='bx bx-log-out-circle'></i>
+                    <a href="#">LOGOUT</a>
+                </div> -->
+
+                </div>
+            </form>
+        </div>
+        <div class="devicedata">
+            <form>
+                <div class="data-conainer" id="data-container">
+                    <div class="top-data" id="top-data">
+                        <h1>Please Select a Device Id To See The Data
+                            Stream</h1>
+                        Device Id*<br><select name="dropdown">
+                            <option value="Select Here"><b>Select Here</b></option>
+                            <option value="64797984558">64797984558</option>
+                            <option value="4829797969">4829797969</option>
+
+                        </select>
+                        <button>GET DATA</button>
+                    </div>
+                    <div class="table-data" id="table-id">
+                        <table border="1" style="border: 2px solid white;">
+
+                            <thead>
+                                <th> Device Id </th>
+                                <th> Battery Level </th>
+                                <th> First_Sensor_Temperature </th>
+                                <th> Route From </th>
+                                <th> Route TO </th>
+                                <th> TimeStamp </th>
+                            </thead>
+                            <tbody id ="tablebody">
+                                <tr>
+                                    <td>1</td>
+                                    <td>2</td>
+                                    <td>3</td>
+                                    <td>4</td>
+                                    <td>5</td>
+                                    <td>6</td>
+                                </tr>
+                            </tbody>
+                           
+
+                        </table>
+
+                    </div>
+                </div>
+            </form>
+        </div>
+
+    </body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/CSS/css/myshipment.css">
+        <link rel="stylesheet" href="/CSS/css/dashboard.css">
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'
+            rel='stylesheet'>
+        <title>My Shipment</title>
+    </head>
+    <body>
+        <label style="background-color: orange;">MY SHIPMENTS</label>
+
+        <div class="input">
+            <input type="text" placeholder="Enter Username">
+            <button>search</button>
+        </div>
+
+        <div class="DB">
+            <div class="menu">
+                <i class='bx bx-menu'></i>
+            </div>
+
+            <h1><b>SCMxpert</b></h1>
+            <form>
+
+                <div class="sidebar">
+                    <div class="A">
+                        <i class='bx bx-home'></i>
+                        <a href>DASHBOARD</a><br><br><br>
+                    </div>
+                    <div class="B">
+                        <i class='bx bxs-user-circle'></i>
+                        <a href="#">MY ACCOUNT</a><br><br><br>
+                    </div>
+                    <div class="C">
+                        <i class='bx bxs-ship'></i>
+                        <a href="/Newshipment">NEW SHIPMENT</a><br><br><br>
+                    </div>
+                    <div class="D">
+                        <i class='bx bxs-package'></i>
+                        <a href="/shipment_table">MY SHIPMENTS</a><br><br><br>
+                    </div>
+                    <div class="E">
+                        <i class='bx bxs-devices'></i>
+                        <a href="#">DEVICE DATA</a><br><br><br>
+                    </div>
+                    <!-- <div class="F">
+                    <i class='bx bx-log-out-circle'></i>
+                    <a href="#">LOGOUT</a>
+                </div> -->
+
+                </div>
+            </form>
+        </div>
+
+        <div class="container">
+
+            {% if message %}
+            <p>{{"message"}}</p>
+            {% endif %}
+
+            <div class="table-container">
+
+                <table border="1">
+                    <thead>
+                        <td> User Name</td>
+                        <td> Shipment Number</td>
+                        <td> Container Number</td>
+                        <td> Route Details</td>
+                        <td> Goods Type</td>
+                        <td> Device Id</td>
+                        <td> Expected Delivery Date </td>
+                        <td> PO Number</td>
+                        <td> Delivery Number</td>
+                        <td> NDC Number</td>
+                        <td> Batch Id</td>
+                        <td> Serial Number</td>
+                        <td> Shipment Description</td>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>1</td>
+                        </tr>
+                    </tbody>
+
+                </table>
+               
+            </div>
+        </div>
+
+    </body>
+</html>

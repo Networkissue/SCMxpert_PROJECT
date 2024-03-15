@@ -1,0 +1,116 @@
+
+
+.display {
+    position: absolute;
+    left: 25%;
+    top: 10%;
+  background: rgba(2, 0, 36, 0.815);
+  background: linear-gradient(90deg, rgba(59, 58, 88, 0.795) 0%, rgba(9, 121, 110, 0.801) 39%, rgba(0, 213, 255, 0.548) 100%);
+  /* background:white, #1634874f; */
+  padding: 40px;
+  width:1600px;
+  height:1000px;
+  margin: 20px auto;
+  border-radius: 3px;
+  box-shadow:0 4px 10px 4px black;
+  border-top-right-radius: 3%;
+  border-bottom-left-radius: 3%;
+
+}
+
+.display p {
+
+    position: absolute;
+    top: 5%;
+}
+
+.display form{
+    display: flex;
+    flex-direction: column;
+    /* position: absolute;
+    top: 0;
+    left: 0; */
+}
+
+.display form .detail-1 {
+    height: 100%;
+    width: 45%;
+    position: absolute;
+    top: 10%;
+    font-size: 30px;
+    /* padding-left: 4%; */
+    margin-left: 10%;
+}    
+
+.display form .detail-2 {
+   height: 100%;
+   width: 45%;
+   position: absolute;
+   top: 10%;
+   left: 50%;
+   font-size: 30px;
+   margin-left: 3%;
+}
+
+.display .detail-1 input, .detail-2 input{
+    width: 60%;
+    font-size: 22px;
+    border: 2px solid grey;
+    /* background-color: rgb(128, 128, 128); */
+    color: black;
+    padding: 5px 0 5px 10px;
+    border-radius: 5px;
+}
+
+input::placeholder{
+    color:black;
+}
+
+.detail-1 select,.detail-2 select{
+    width: 60%;
+    font-size: 22px;
+    padding: 5px 0 5px 10px;
+    border-radius: 5px;
+
+}
+
+textarea{
+    font-size: 22px;
+    padding:5px 0 5px 10px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
+}
+
+#button1{
+    position: absolute;
+    top: 86%;
+    left: 25%;
+    width: 600.px;
+    /* height: 6%; */
+    background-color: aqua;
+    
+}
+
+#button2{
+    position: absolute;
+    top: 86%;
+    left: 50%;
+    width: 600.px;
+    height: 6%;
+    
+}
+
+button{
+    width: 250px;
+    height: 50px;
+    
+}
+#button1 button:hover{
+    color: white;
+    background-color: blue;
+}
+
+#button2 button:hover{
+    color: white;
+    background-color: red;
+}

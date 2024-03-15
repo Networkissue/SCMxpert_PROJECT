@@ -1,0 +1,116 @@
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    /* background-image: url("/CSS/bgm-pics/p.png"); */
+    align-items: center;
+    background-size: cover;
+    height: 100vh;
+    box-shadow: red solid;
+}
+.update_container {
+
+    background:rgba(255, 255, 255, 0.288);
+    padding: 40px;
+    width:500px;
+    height:400px;
+    margin:60px auto;
+    border-radius: 3px;
+    box-shadow:0 4px 10px 4px grey;
+    position: absolute;
+    top: 20%;
+    left: 40%;
+
+}
+
+.update_container h1 {
+ 
+   position: absolute;
+   top: 15%;
+   left : 27%;
+}    
+
+.update_container label {
+
+    position: absolute;
+    top: 35%;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.update_container input {
+
+    width: 60%;
+    height: 30px;
+    position: absolute;
+    top: 40%;
+    font-size: 20px;
+    padding-left: 10px;
+}
+
+.update_container #Save {
+    position: absolute;
+    top: 40.5%;
+    left: 70%;
+    width: 80px;
+    height: 30px;
+    font-size: 15px;
+    display: inline-block;
+    padding: 5px 10px;
+    background-color: #00ff22; /* Button color */
+    color: #fff; /* Text color */
+    text-decoration: none; /* Remove underline */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s ease; /* Smooth transition */
+
+}
+
+#Save:hover {
+    background-color: #00b30f; /* Darker button color on hover */
+  }
+  
+  /* Change button color on click */
+#Save:active {
+    background-color: #00b30f; /* Even darker color when clicked */
+}
+.update_container p { 
+
+    position: absolute;
+    top: 65%;
+    left: 35%;
+    font-size: xx-large;
+    text-decoration-line: none;
+    background-color: red;
+    width: 150px;
+    color: white;
+    padding-left: 10px;
+    border-radius: 2px ;
+}
+
+/* Style the link to look like a button */
+.button-link {
+    position: absolute;
+    top: 60%;
+    left: 35%;
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff; /* Button color */
+    color: #fff; /* Text color */
+    text-decoration: none; /* Remove underline */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s ease; /* Smooth transition */
+  }
+  
+  /* Change button color on hover */
+  .button-link:hover {
+    background-color: #0056b3; /* Darker button color on hover */
+  }
+  
+  /* Change button color on click */
+  .button-link:active {
+    background-color: #004280; /* Even darker color when clicked */
+  }
+

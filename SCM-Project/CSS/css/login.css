@@ -1,0 +1,127 @@
+*{
+  text-decoration: none;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    /* background-image: url("/CSS/bgm-pics/p.png"); */
+    align-items: center;
+    background-size: cover;
+    height: 100vh;
+    
+}
+
+.tab-content {
+    background:rgba(255, 255, 255, 0.288);
+    padding: 40px;
+    width:600px;
+    height:700px;
+    margin:40px auto;
+    border-radius: 3px;
+    box-shadow:0 4px 10px 4px grey;
+  }
+  .tab-content #login{
+    height: 100%;
+    width: 100%;
+  }
+  
+  .tab-content #login h1{
+    text-align: center;
+  }
+
+  .tab-content .top-row {
+    margin: 20px;
+    padding: 5px;
+  }
+  
+  form {
+    height: 100%;
+  }
+
+  .tab-content label{
+    font-size: 25px;
+    margin-bottom: 80px;
+    font-weight: 500;
+  }
+   
+  .tab-content input{
+    border-radius:10px;
+    width:99%;
+    height:35px;
+    border-color: rgba(0, 255, 64, 0.308);
+    font-size: 20px;
+    padding-left: 10px;
+    
+  }
+
+  button {
+    margin-top: 50px;
+    margin-left: 32%;
+    width: 200px; 
+    height: 50px;
+    font-size: 20px;
+  }
+
+  button:hover{
+    color: white;
+    background-color: rgba(0, 0, 255, 0.61);
+  }
+
+  .tab-content .data6 button{
+    margin-top: 50px;
+    margin-left: 32%;
+    width: 200px; 
+    height: 50px;
+    font-size: 20px;
+ }
+
+ 
+ .tab-content .data4 button{
+    color:red;
+    background-color:beige;
+ }
+
+ 
+
+ .tab-content .data4 input{
+    position: relative;
+    width: 60%;
+    height: 80px;
+    left: 90px;
+ }
+
+ .tab-content #login .data2 i{
+    font-size: 30px;
+    position: absolute;
+    top:482px;
+    left: 1700px;
+  }
+
+  .tab-content #login .data3 i{
+    font-size: 30px;
+    position: absolute;
+    top:584px;
+    left: 1700px;
+  }
+
+  .tab-content #login .data4 {
+    position: absolute;
+    top: 640px;
+    left:1600px;
+    font-size: 20px;
+  }
+
+  .tab-content #login .data4 a{
+    color: white;
+    text-decoration-line: none;
+  }
+
+  .tab-content #login .data4 a:hover{
+    text-decoration-line: underline;
+    color: red;
+
+  }

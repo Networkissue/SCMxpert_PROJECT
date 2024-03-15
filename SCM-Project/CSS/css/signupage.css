@@ -1,0 +1,154 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    /* background-image: url("/CSS/bgm-pics/global-business-logistics-import-export-white-background-container-cargo-freight-ship-transport-concept-193223299.jpg"); */
+    align-items: center;
+    background-size: cover;
+    height: 100vh;
+}
+
+.tab-content {
+  background:#1634874f;
+  padding: 40px;
+  width:600px;
+  height:750px;
+  margin:40px auto;
+  border-radius: 3px;
+  box-shadow:0 4px 10px 4px grey;
+}
+.tab-content #signup{
+  height: 100%;
+  width: 100%;
+}
+
+.tab-content #signup h1{
+  text-align: center;
+}
+
+.tab-content .top-row {
+  margin: 20px;
+  padding: 5px;
+}
+
+form {
+  height: 100%;
+}
+
+form input{
+  font-size: 20px;
+  padding-left: 10px;
+}
+
+.tab-content label{
+  font-size: 25px;
+  margin-bottom: 80px;
+  font-weight:800px;
+}
+ 
+.tab-content input{
+  border-radius:10px;
+  width:99%;
+  height:35px;
+  border-color: rgba(0, 255, 64, 0.308);
+  
+}
+
+button {
+  margin-top: 50px;
+  margin-left: 3%;
+  width: 200px; 
+  height: 50px;
+  font-size: 20px;
+}
+
+button:hover{
+  color: white;
+  background-color: rgba(0, 0, 255, 0.61);
+}
+
+
+.tab-content #signup .data i{
+  font-size: 30px;
+  position: absolute;
+  top:455px;
+  left: 1700px;
+}
+
+.tab-content #signup .data1 i{
+  font-size: 30px;
+  position: absolute;
+  top:560px;
+  left: 1700px;
+}
+
+.tab-content #signup .data2 i{
+  font-size: 30px;
+  position: absolute;
+  top:665px;
+  left: 1700px;
+}
+
+.tab-content #signup .data3 .pwd i{
+  font-size: 30px;
+  position: absolute;
+  top:770px;
+  left: 1700px;
+}
+
+.tab-content #signup .data3 .pwd2 i{
+  font-size: 30px;
+  position: absolute;
+  top:880px;
+  left: 1700px;
+}
+
+.tab-content #signup .data4 {
+  position: absolute;
+  top: 990px;
+  left: 1380px;
+  
+}
+
+.tab-content #signup .data4 label{
+  color: orangered;
+ 
+}
+
+.tab-content #signup .data4 a{
+  
+  margin-left: 15px;
+  font-size: 20px;
+  color: white;
+  text-decoration-line: none;
+}
+
+.tab-content #signup .data4 a:hover{
+  text-decoration-line: underline;
+  color: blue;
+}
+
+.tab-content #signup .error_message{
+  position: absolute;
+  top:320px;
+  left:1300px;
+  font-size: 16px;
+  color: red;
+  animation:ease-out 0.2s;
+}
+
+
+
+.tab-content #signup .success_message{
+  position: absolute;
+  top:320px;
+  left:1360px;
+  font-size: 28px;
+  color: green;
+}
+
+
+
+

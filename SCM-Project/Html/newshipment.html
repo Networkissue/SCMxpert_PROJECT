@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/CSS/css/newshipment.css">
+        <link rel="stylesheet" href="/CSS/css/dashboard.css">
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'
+            rel='stylesheet'>
+        <title>New Shipment</title>
+    </head>
+    <body>
+
+        <div class="DB">
+            <div class="menu">
+                <i class='bx bx-menu'></i>
+            </div>
+
+            <h1><b>SCMxpert</b></h1>
+            <form>
+
+                <div class="sidebar">
+                    <div class="A">
+                        <i class='bx bx-home'></i>
+                        <a href="/Dashboard">DASHBOARD</a><br><br><br>
+                    </div>
+                    <div class="B">
+                        <i class='bx bxs-user-circle'></i>
+                        <a href="#">MY ACCOUNT</a><br><br><br>
+                    </div>
+                    <div class="C">
+                        <i class='bx bxs-ship'></i>
+                        <a href="/Newshipment">NEW
+                            SHIPMENT</a><br><br><br>
+                    </div>
+                    <div class="D">
+                        <i class='bx bxs-package'></i>
+                        <a href="/shipment_table">MY SHIPMENTS</a><br><br><br>
+                    </div>
+                    <div class="E">
+                        <i class='bx bxs-devices'></i>
+                        <a href="#">DEVICE DATA</a><br><br><br>
+                    </div>
+                    <!-- <div class="F">
+                    <i class='bx bx-log-out-circle'></i>
+                    <a href="#">LOGOUT</a>
+                </div> -->
+
+                </div>
+            </form>
+        </div>
+        <div class="display">
+            {% if message %}
+            <p>{{ message }}</p>
+            {% endif %}
+            <h1></h1>
+            <form action="/Newshipment" method="post">
+                <div class="detail-1">
+
+                    Shipment Number<i style="color: red;">*</i> <br><input
+                        type="number" id="Shipment_Number" id required><br><br>
+
+                    Route Details<i style="color: red;">*</i> <br><select
+                        name="dropdown" id="Rotue_Details" required>
+                        <b><option value="select Route">Select
+                                Route</option></b>
+                        <option value="Warangal">Warangal</option>
+                        <option value="Hyderabad">Hyderabad</option>
+                        <opiton value="Tirupati">Tirupati</opiton>
+                        <option value="Vizag">Vizag</option>
+                        <option value="Chitoor">Chitoor</option>
+                    </select><br><br>
+
+                    Device<i style="color: red;">*</i> <br><select name="Device"
+                        id="Device" required>
+                        <b><option value="Select Device">Select
+                                Device</option></b>
+                        <option value="64q79798">64797984558</option>
+                        <option value="482q979q79">4829797969</option>
+                    </select><br><br>
+
+                    PO Number<i style="color: red;">*</i> <br><input
+                        type="number" id="PO_Number" required><br><br>
+
+                    NDC Number<i style="color: red;">*</i> <br><input
+                        type="number" id="NDC_Number" required><br><br>
+
+                    Serial Number Of Goods<i style="color: red;">*</i>
+                    <br><input type="number" id="Serial_no_Goods"
+                        required><br><br>
+
+                </div>
+
+                <div class="detail-2">
+                    Container Number<i style="color: red;">*</i> <br><input
+                        type="number" id="Container_Number" required><br><br>
+
+                    Goods Type<i style="color: red;">*</i> <br><select
+                        name="dropdown" id="Goods_Type" required>
+                        <b><option value="Select Goods">Select
+                                Goods</option></b>
+                        <option value="Medical">Medical</option>
+                        <option value="Electrical">Electrical</option>
+                    </select><br><br>
+
+                    Expected Deivery Date<i style="color: red;">*</i> <br><input
+                        type="date" placeholder="DD-MM-YYYY"
+                        id="Expected_Delivery_Date" required><br><br>
+
+                    Delivery Number<i style="color: red;">*</i> <br><input
+                        type="number" id="Delivery_Number" required><br><br>
+
+                    Batch Id<i style="color: red;">*</i> <br><input
+                        type="number" id="Batch_id" required><br><br>
+
+                    Shipment Description<br><textarea name="Comment"
+                        id="Comment" cols="46" rows="6"></textarea>
+
+                </div>
+
+                <div class="button1" id="button1">
+                    <button>CREATE SHIPMENT</button>
+                </div>
+
+                <div class="button2" id="button2">
+                    <button type="reset">CLEAR DETAILS</button>
+                </div>
+
+            </form>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,80 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    display: flex;
+    justify-content: flex-start;
+    /* background-image: url("/CSS/bgm-pics/global-business-logistics-import-export-white-background-container-cargo-freight-ship-transport-concept-193223299.jpg"); */
+    align-items: baseline;
+    background-size: cover;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.DB .menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding-left: 3%;
+    padding-top: 0.6%;
+    font-size: 60px;
+    /* background: #c20f0f; */
+    background-color: white;
+    width: 100%;
+    height: 60px;
+    
+}
+
+.DB {
+    background:rgba(255, 255, 255, 0.288);
+    padding: 20px;
+    width:300px;
+    height:1500px;
+    /* margin:60px auto; */
+    margin-top: 2.5%;
+    margin-left: 0;
+    border-radius: 3px;
+    box-shadow:0 4px 10px 4px grey;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.DB h1{
+    text-align: center;
+}
+
+/* /* .DB form .display{
+    font-size: larger;
+}  */
+
+.DB .sidebar a{
+    font-size: 25px;
+    text-decoration-line: none;
+    position: relative;
+    top: 0;
+}
+
+.DB .sidebar i{
+    font-size: 1000px;
+    margin-right: 20px;
+}
+
+.DB form i{
+
+    font-size: 30px;
+    margin-left: 15px;
+    margin-top: 3%;
+    position: relative;
+    top: 30%;
+}
+
+.DB form a {
+
+    font-size: 25px;
+    text-decoration-line: none;
+    position: relative;
+    top: 0;
+    left: 6px;
+    font-weight: bolder;
+}

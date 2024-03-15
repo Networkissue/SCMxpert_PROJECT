@@ -1,0 +1,90 @@
+
+
+.devicedata {
+    position: absolute;
+    left: 25%;
+    top: 10%;
+    /* background: rgba(2, 0, 36, 0.815); */
+    /* background: linear-gradient(90deg, rgba(59, 58, 88, 0.795) 0%, rgba(9, 121, 110, 0.801) 39%, rgba(0, 213, 255, 0.548) 100%); */
+    /* background:white, #1634874f; */
+    padding: 40px;
+    width: 1600px;
+    height: 1000px;
+    margin: 20px auto;
+    border-radius: 3px;
+    /* box-shadow: 0 4px 10px 4px black;
+    border-top-right-radius: 3%;
+    border-bottom-left-radius: 3%; */
+}
+
+.devicedata form #data-container #top-data{
+    position: absolute;
+    top: 3%;
+    left: 5%;
+    font-size: x-large;
+    width: 82%;
+    height: 250px;
+    background-color: rgba(255, 166, 0, 0.336);
+    padding-left: 10%;
+     box-shadow: 0 4px 10px 4px grey;
+    border-top-right-radius: 1%;
+    border-bottom-left-radius: 1%;
+
+}
+
+.devicedata form #data-container #top-data select {
+    width: 60%;
+    font-size: 22px;
+    padding: 5px 0 5px 10px;
+    border-radius: 5px;
+}
+.devicedata form #data-container #top-data button{
+    width : 200px;
+    height: 50px;
+    font-size: x-large;
+    font-style:inherit;
+}
+
+.devicedata form #data-container #top-data button:hover{
+
+    color: white;
+    background-color: blue;
+}
+
+.devicedata form #data-container #table-id {
+
+    position: absolute;
+    top: 30%;
+    left: 5%;
+    font-size: x-large;
+    width: 82%;
+    height: 850px;
+    background-color: rgba(128, 128, 128, 0.13);
+    padding-left: 10%;
+    box-shadow: 0 4px 10px 4px gainsboro;
+    border-top-right-radius: 1%;
+    border-bottom-left-radius: 1%;
+    
+    
+}
+
+.devicedata form #data-container #table-id table {
+    width: 95%;
+    height: 60px;
+    position: absolute;
+    top: 10%;
+    left: 25px;
+    color: white;
+    background-color: rgba(255, 68, 0, 0.945);
+    border: 2px solid white;
+}
+.devicedata form #data-container #table-id table thead,tbody {
+    border: 2px solid white;
+}
+
+#tablebody{
+    color:white;
+    background-color: blueviolet;
+    text-align: center;
+    border: 2px solid white;
+}
