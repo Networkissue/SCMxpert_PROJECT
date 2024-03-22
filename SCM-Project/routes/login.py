@@ -4,8 +4,9 @@ from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from database.database import user_data
 from passlib.context import CryptContext
-from routes.jwt_token import*
+from routes.jwt_token import user_data
 from fastapi.responses import JSONResponse
+from routes.jwt_token import create_access_token
 
 
 
@@ -32,7 +33,7 @@ def login(request: Request, email:str=Form(), password:str=Form()):
             else:
                 raise HTTPException(status_code=401, detail="Password Incorrect")
         else:
-            raise HTTPException(status_code=401, detail="Username Invlaid")
+            raise HTTPException(status_code=401, detail="Email Invlaid")
     
     except HTTPException as error_1:
         return JSONResponse(content={"detail" : error_1.detail}, status_code=error_1.status_code)

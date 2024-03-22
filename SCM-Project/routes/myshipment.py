@@ -2,6 +2,7 @@ from fastapi import APIRouter, HTTPException, Form, Request, Depends
 from fastapi.templating import Jinja2Templates
 from fastapi.responses import JSONResponse
 from fastapi.staticfiles import StaticFiles
+from jose import JWTError,jwt
 from routes.jwt_token import get_user_by, oauth2_scheme
 from routes.newshipment import new_data
 from database.database import shipment_data
@@ -16,7 +17,7 @@ def shipment(request : Request):
     return html.TemplateResponse("myshipment.html", {"request" : request})
 
 @route.post("/shipment_table")
-def shipment(request : Request, token:str=Depends(oauth2_scheme)):
+def shipment(request : Request, token:dict=Depends(get_user_by)):
     try :
         if token:
             if token["role"] == "admin":

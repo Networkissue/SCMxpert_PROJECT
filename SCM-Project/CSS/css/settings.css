@@ -78,3 +78,8 @@ body {
     left: 6px;
     font-weight: bolder;
 }
+
+span {
+    position: relative;
+    
+}

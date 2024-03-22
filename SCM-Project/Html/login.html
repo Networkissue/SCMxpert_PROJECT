@@ -1,54 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>login</title>
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="/CSS/css/login.css">
-</head>
-<body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Login</title>
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'
+            rel='stylesheet'>
+        <script src="https://code.jquery.com/jquery-3.7.1.slim.js"
+            integrity="sha256-UgvvN8vBkgO0luPSUl2s8TIlOSYRoGFAX4jlCIm9Adc="
+            crossorigin="anonymous"></script>
+        <script src="/CSS/javascript/login.js"></script>
+        <link rel="stylesheet" href="/CSS/css/login.css">
+    </head>
+    <body>
+        <div class="content">
+            <div class="top_content">
+                <div class="page">
+                    <a href="/">Home</a>
+                </div>
+                <div class="Login">
+                    <a href="/login">Login</a>
+                </div>
+                <div class="signup">
+                    <a href="/signup">Register</a>
+                </div>
+
+            </div>
         <div class="tab-content">
-
             <div id="login">
-              <h1>Welcome Back</h1>
-
+                {% if message %}
+                <span id="msg">
+                    {{message}}
+                </span>
+                {% endif %}
+                <h1>Welcome Back</h1>
+                <div id="error"></div>
                 <form action="/login" method="post">
+                    <div class="data2">
+                        <label>Email address</label>
+                        <input type="email" name="email" id="email"><i
+                            class='bx bx-envelope'></i><br><br>
+                    </div>
+                    <div class="data3">
+                        <label>Enter your Password</label>
+                        <input type="password" name="password" id="password"
+                            required autocomplete="password"><i
+                            class='bx bx-lock-alt'></i><br><br>
+                    </div>
+                    <div class="data4">
+                        <span id="captcha"></span>
+                        <button type="button" id="generateCaptchaBtn">Generate
+                            Captcha</button>
+                    </div>
+                    <div id="Fp">
+                        <a href="/Password_Update">Forgot password?</a>
+                    </div>
+                    <input type="text" id="userCaptcha"
+                        placeholder="Enter Captcha"><br><br><br>
+                    <button id="submit" type="button">Login</button>
 
-                  <div class="data2">
-                        <label> Email address</label>
-                        <input type="email" required><i class='bx bx-envelope' ></i><br><br>
-                  </div>
-
-                  <div class="data3">
-                       <label>Enter your Password</label>
-                      <input type="password" required><i class='bx bx-lock-alt' ></i><br><br>
-                  </div>
-
-                  <div class="data4">
-                    <a href="/Password_Update">Forgot Password?</a>
-                   
-               </div>
-               
-
-                  <!-- <div class="data4">
-                      <input type="text" >
-                      <button>Generate captcha</button>
-                  </div> -->
-
-                  <div class="data5">
-                    <button type="submit">login</button>
-                  </div>
-
-                  <div class="data6">
-                    <button><a href="/signup">signup</a></button>
-                  </div>
-
-                 
+                    <div class="data6">
+                        <p>Not a member yet?</p>
+                        <a href="/signup">Sign Up</a>
+                    </div>
                 </form>
             </div>
         </div>
-
-    </div>
-</body>
+    </body>
 </html>

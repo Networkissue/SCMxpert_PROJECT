@@ -4,56 +4,95 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="/CSS/css/myshipment.css">
-        <link rel="stylesheet" href="/CSS/css/dashboard.css">
+        <!-- <link rel="stylesheet" href="/CSS/css/homepage.css"> -->
+        <script src="/CSS/javascript/homepage.js"></script>
+        <script src="https://code.jquery.com/jquery-3.7.1.slim.js"
+            integrity="sha256-UgvvN8vBkgO0luPSUl2s8TIlOSYRoGFAX4jlCIm9Adc="
+            crossorigin="anonymous"></script>
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'
             rel='stylesheet'>
         <title>My Shipment</title>
     </head>
     <body>
-        <label style="background-color: orange;">MY SHIPMENTS</label>
+        <label style="background-color: rgb(255, 166, 0);">MY SHIPMENTS</label>
 
         <div class="input">
             <input type="text" placeholder="Enter Username">
             <button>search</button>
         </div>
 
-        <div class="DB">
+        <div class="DB" id="DB">
             <div class="menu">
-                <i class='bx bx-menu'></i>
+                <i class='bx bx-menu' id="menu_icon"></i>
             </div>
 
-            <h1><b>SCMxpert</b></h1>
-            <form>
+            <h1 id="logo"><b>SCMxpert</b></h1>
 
-                <div class="sidebar">
-                    <div class="A">
-                        <i class='bx bx-home'></i>
-                        <a href>DASHBOARD</a><br><br><br>
-                    </div>
-                    <div class="B">
-                        <i class='bx bxs-user-circle'></i>
-                        <a href="#">MY ACCOUNT</a><br><br><br>
-                    </div>
-                    <div class="C">
-                        <i class='bx bxs-ship'></i>
-                        <a href="/Newshipment">NEW SHIPMENT</a><br><br><br>
-                    </div>
-                    <div class="D">
-                        <i class='bx bxs-package'></i>
-                        <a href="/shipment_table">MY SHIPMENTS</a><br><br><br>
-                    </div>
-                    <div class="E">
-                        <i class='bx bxs-devices'></i>
-                        <a href="#">DEVICE DATA</a><br><br><br>
-                    </div>
-                    <!-- <div class="F">
-                    <i class='bx bx-log-out-circle'></i>
-                    <a href="#">LOGOUT</a>
-                </div> -->
+            <div class="sidebar" id="sidebar">
+                <div class="A">
+                    <a href="/home" class="heading">
+                        <i class='bx bx-home icon'></i>
+                        <h1>DASHBOARD</h1>
+                    </a><hr>
+                    <div class="option" id="option" style="display: block;"><br>
 
+                        <a href="/Newshipment" class="top_sub_link"  >
+                            <i class='bx bxs-ship' ></i>
+                            <p>NEW SHIPMENT</p>
+                            <span>></span>
+                        </a>
+                        <a href="/shipment_table" id="shipmentid">
+                            <i class='bx bxs-package' ></i>
+                            <p>MY SHIPMENTS</p>
+                            <!-- <span>></span> -->
+                        </a>
+                        <a href="#" class="top_sub_link">
+                            <i class='bx bxs-devices' ></i>
+                            <p>DEVICE DATA</p>
+                            <span>></span>
+                        </a>
+                        
+                    </div>
                 </div>
-            </form>
-        </div>
+                
+                <div class="B">
+                    
+                    <a href="#" class="b_heading">
+                        <i class='bx bx-cog icon1'></i>
+                        <h1>SETTINGS</h1>
+                    </a><hr>
+                    <div class="setting" id="setting"  style="display: none;"><br>
+
+                        <a href="/profilepage" class="sub_link">
+                            <i class='bx bxs-user-circle'></i>
+                            <p>PROFILE</p>
+                            <span>></span>
+                        </a>
+                        <a href="#" class="sub_link">
+                            <i class='bx bx-detail' ></i>
+                            <p>ABOUT</p>
+                            <span>></span>
+                        </a>
+                        <a href="#" class="sub_link">
+                            <i class='bx bx-help-circle' ></i>
+                            <p>HELP & SUPPORT</p>
+                            <span>></span>
+                        </a>
+                        <a href="#" class="sub_link">
+                            <i class='bx bx-meh-blank' ></i>
+                            <p>EDIT THEME</p>
+                            <span>></span>
+                        </a>
+                        <a href="#" class="sub_link">
+                            <i class='bx bx-log-out-circle'></i>
+                            <p>LOGOUT</p>
+                            <span>></span>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+         </div>   
 
         <div class="container">
 
@@ -98,7 +137,7 @@
                     </tbody>
 
                 </table>
-               
+
             </div>
         </div>
 

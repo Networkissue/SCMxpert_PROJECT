@@ -11,8 +11,8 @@ class Signup(BaseModel):
 #for shipment data
 class Shipment_input(BaseModel):
     Shipment_Number:int
-    Rotue_Details:str
-    Device:int
+    Route_Details:str
+    Device:str
     PO_Number:int
     NDC_Number:int
     Serial_no_Goods:int

@@ -1,9 +1,8 @@
-from fastapi import APIRouter, HTTPException, Depends, Request
+from fastapi import APIRouter, HTTPException, Depends, Request, Form
 from fastapi.templating import Jinja2Templates
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import JSONResponse
 from routes.jwt_token import get_user_by
-from models.models import *
 from database.database import user_data
 
 route = APIRouter()
@@ -15,18 +14,20 @@ def update(request : Request):
     return html.TemplateResponse("updaterole.html", {"request" : request})
                                                                                                                                 
 @route.post("/Update_Role")
-def update(request : Request, user: dict, token:str = Depends(get_user_by)):
+def update(request : Request, user: str=Form(None), token:str = Depends(get_user_by)):
+
            try:
+              
                  # Ensure authentication token is present
                 if not token:
                        raise HTTPException(status_code=401, detail="Unaothorized")  
 
                  # Ensure user data is provided and valid  
-                if not user or not user.get("user_FirstName"):
+                if not user :
                        raise HTTPException(status_code=401, detail="Please enter valid user")
                 
                  # Query user data from the database 
-                result = user_data.find({"user_FirstName" : user["user_FirstName"]})
+                result = user_data.find_one({"user_FirstName" : user})
                 if not result:
                        raise HTTPException(status_code=404, detail="User not found")
                 
@@ -39,7 +40,7 @@ def update(request : Request, user: dict, token:str = Depends(get_user_by)):
                        raise HTTPException(status_code=401, detail="User is already a admin")
 
                  # Update user role to admin
-                result1 = user_data.update_one({"user_FirstName" : user["user_FirstName"]}, {"$set": {"role" : "admin"}})
+                result1 = user_data.update_one({"user_FirstName" : user}, {"$set": {"role" : "admin"}})
                 if result1.modified_count > 0:
                        raise HTTPException(status_code=200, detail=" Admin role Updated Successfully ")
                 else:

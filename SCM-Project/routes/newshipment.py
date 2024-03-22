@@ -1,9 +1,9 @@
 from fastapi import APIRouter, HTTPException, Request, Form
-from routes.jwt_token import oauth2_scheme, Depends, decode_access_token, datetime
+from routes.jwt_token import oauth2_scheme, Depends, decode_access_token, get_user_by, datetime
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import JSONResponse
 from jose import jwt, JWTError
-from models.models import Shipment_input
+from models.models import *
 from database.database import shipment_data
 from fastapi.templating import Jinja2Templates 
 
@@ -18,7 +18,9 @@ def shipment(request : Request):
     return html.TemplateResponse("newshipment.html", {"request" : request})
 
 @route.post("/Newshipment")
-def new_data(request : Request, shipment : Shipment_input =Form(), token:str = Depends(oauth2_scheme)):
+def new_data(request : Request, shipment : Shipment_input, decoded_token:str = Depends(oauth2_scheme)):
+    # print(shipment)
+    print(shipment,decoded_token)
     try :
         #checking if the length of shipment number is equal to 7
         if not len(str(shipment.Shipment_Number)) == 7 :
@@ -29,6 +31,7 @@ def new_data(request : Request, shipment : Shipment_input =Form(), token:str = D
             raise HTTPException(status_code=400, detail="Please fill all values")
         
         existing_data = shipment_data.find_one({"Shipment_Number" : shipment.Shipment_Number })
+        print(existing_data)
         if existing_data:
             raise HTTPException(status_code=401, detail="Shipment_Number already used")
         
@@ -37,19 +40,20 @@ def new_data(request : Request, shipment : Shipment_input =Form(), token:str = D
         if not Expected_delivery_date_str:
             raise HTTPException(status_code=400, detail="Expected delivery date is required")
         
-        if  [Expected_delivery_date_str] < datetime.utcnow().timestamp() :
+        if Expected_delivery_date_str < str(datetime.utcnow().timestamp()) :
             raise HTTPException(status_code=400, detail="Date should be greater than or equal to current UTC time")
         
-        #getting User and email by decoding token
-        decoded_token = decode_access_token(token[7:len(token)])
-
-
+        # getting User and email by decoding token
+        # decoded_token = decode_access_token(token[7:len(token)]
+        decoded_token1 = decode_access_token(decoded_token[7:len(decoded_token)])
+        print(decoded_token1)
         Updated_DB = {
 
-            "User_Firstname" : decoded_token["Username"],
-            "email" : decoded_token["email"],
+            
+            "User_Firstname":decoded_token1["Username"],
+            "email": decoded_token1["email"],
             "Shipment_Number": shipment.Shipment_Number,
-            "Rotue_Details":shipment.Rotue_Details,
+            "Route_Details":shipment.Route_Details,
             "Device":shipment.Device,
             "PO_Number":shipment.PO_Number,
             "NDC_Number":shipment.NDC_Number,
@@ -62,6 +66,7 @@ def new_data(request : Request, shipment : Shipment_input =Form(), token:str = D
             "Comment":shipment.Comment
         }
 
+        print(Updated_DB)
         shipment_data.insert_one(Updated_DB)
         return JSONResponse(content={"message" : "Shipment Created Successfully"}, status_code=200)
     except HTTPException as error:

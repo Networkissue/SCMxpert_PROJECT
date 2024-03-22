@@ -10,7 +10,7 @@ SECRET_KEY = "Your_secret_credentials"
 ALGORITHM = "HS256"
 
 #token expiration in minutes
-Access_token_expire_in = 25
+Access_token_expire_in = 60
 
 # Creating an OAuth2 password-bearer authentication scheme using FastAPI.
 # This scheme will be used to authenticate users via the OAuth2 password.

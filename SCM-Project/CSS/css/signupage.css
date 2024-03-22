@@ -4,14 +4,15 @@ body {
     margin: 0;
     display: flex;
     justify-content: center;
-    /* background-image: url("/CSS/bgm-pics/global-business-logistics-import-export-white-background-container-cargo-freight-ship-transport-concept-193223299.jpg"); */
+    /* background-image: url("/CSS/bgm-pics/pwd.avif"); */
+    backdrop-filter: blur(8px);
     align-items: center;
     background-size: cover;
     height: 100vh;
 }
 
 .tab-content {
-  background:#1634874f;
+  background:rgba(0, 0, 0, 0.267);
   padding: 40px;
   width:600px;
   height:750px;

@@ -15,6 +15,55 @@ body {
     
 }
 
+.content .top_content{
+  position: absolute;
+  background-color:rgb(9, 106, 145);
+  /* background-color:rgb(97, 94, 94); */
+  width: 100%;
+  height: 10% ;
+  left: 0;
+  top: 0;
+  /* background-color: red; */
+  text-align: center;
+  
+}
+
+.content .top_content .page {
+
+  position: absolute;
+  top: 50%;
+  left: 70%;
+  font-size: 30px;
+  font-weight: bolder;
+  /* text-decoration-line: none; */
+}
+
+.content .top_content .Login {
+
+  
+  position: absolute;
+  top: 50%;
+  left: 80%;
+  font-size: 30px;
+  font-weight: bolder;
+  /* text-decoration-line: none; */
+}
+
+.content .top_content .signup {
+
+  position: absolute;
+  top: 46%;
+  left: 90%;
+  font-size: 30px;
+  font-weight: bolder;
+  /* text-decoration-line: none; */
+  width: 130px;
+  height: 40px;
+  background-color: white;
+  padding-top: 10px;
+  border-radius: 3%;
+}
+
 .tab-content {
     background:rgba(255, 255, 255, 0.288);
     padding: 40px;
@@ -57,42 +106,29 @@ body {
     padding-left: 10px;
     
   }
-
+/* 
   button {
     margin-top: 50px;
     margin-left: 32%;
     width: 200px; 
     height: 50px;
     font-size: 20px;
-  }
+  } */
 
-  button:hover{
-    color: white;
-    background-color: rgba(0, 0, 255, 0.61);
-  }
+ 
 
-  .tab-content .data6 button{
-    margin-top: 50px;
+  /* .tab-content .data6 button{
+    margin-top: 20px;
+    position:absolute;
+    top:800px;
+    left: 410px;
     margin-left: 32%;
     width: 200px; 
     height: 50px;
     font-size: 20px;
- }
+ } */
 
- 
- .tab-content .data4 button{
-    color:red;
-    background-color:beige;
- }
 
- 
-
- .tab-content .data4 input{
-    position: relative;
-    width: 60%;
-    height: 80px;
-    left: 90px;
- }
 
  .tab-content #login .data2 i{
     font-size: 30px;
@@ -108,20 +144,156 @@ body {
     left: 1700px;
   }
 
-  .tab-content #login .data4 {
+  .tab-content #login .data4_F {
+   
     position: absolute;
-    top: 640px;
-    left:1600px;
-    font-size: 20px;
+    top: 800px;
+    left: 53%;
+    font-size: 25px;
+
   }
 
-  .tab-content #login .data4 a{
-    color: white;
-    text-decoration-line: none;
-  }
+  
+  .tab-content #login .data4_F a:hover {
 
-  .tab-content #login .data4 a:hover{
-    text-decoration-line: underline;
     color: red;
-
   }
+
+
+ .tab-content #login .data4 button {
+   margin-top: 50px;
+    margin-left: 32%;
+    width: 200px; 
+    height: 50px;
+    font-size: 20px;
+    border-radius: 6px;
+ }
+
+ .tab-content #login .data4 button:hover{
+  color: white;
+  background-color: rgb(255, 0, 0);
+}
+
+ .tab-content #login .data4 input {
+     position: absolute;
+     top: 260%; 
+     left: 25%;
+     width: 50%;
+     height: 80%;
+     border-radius: 0;
+     font-size: 30px;
+
+ }
+
+
+ 
+ 
+ .tab-content #login .data6 {
+
+  position: absolute;
+  top: 950px;
+  left: 44%;
+  height: 100px;
+  width: 100%;
+ }
+
+ .tab-content #login .data6 span {
+
+  color: orange;
+  font-size: 30px;
+ }
+
+ .tab-content #login .data6  a {
+  position: absolute;
+  padding: 8px 30px;
+  top: 26%;
+  left: 10%;
+  font-size: 25px;
+  border-radius: 6px;
+  background-color: rgb(201, 194, 194);
+
+
+ }
+ .tab-content #login .data6 a:hover {
+  color: #f4f4f4;
+  background-color: red;
+ }
+
+ #error{
+  position: absolute;
+  top: 24%;
+  left: 45.5%;
+  font-size: 25px;
+  color:red;
+}
+
+
+#captcha {
+
+  position: absolute;
+  top: 48.5%;
+  left: 47%;
+  font-size: 30px;
+  
+}
+
+#generateCaptchaBtn {
+
+  position: absolute;
+  top: 44%;
+  left: 20%;
+  width: 280px;
+  height: 60px;
+}
+
+#userCaptcha {
+
+  position: absolute;
+  top: 53%;
+  left: 45%;
+  width: 280px;
+  height: 60px;
+  font-size: 25px;
+  text-align: center;
+}
+
+#submit {
+
+  position: absolute;
+  top: 64%;
+  left: 47%;
+  width: 180px;
+  height: 40px;
+}
+
+#submit:hover {
+
+  color: white;
+  background-color: blue;
+}
+
+.data6 p {
+
+  position: absolute;
+  top: 6%;
+  left: 0;
+  font-size: 30px;
+
+}
+
+#Fp {
+
+  position: absolute;
+  top: 65%;
+  left: 55%;
+ 
+}
+
+#Fp a {
+  color:red;
+  font-size: 20px;
+}
+
+#Fp a:hover {
+  color: red;
+}

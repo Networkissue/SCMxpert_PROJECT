@@ -114,3 +114,13 @@ body {
     background-color: #004280; /* Even darker color when clicked */
   }
 
+  /* //error */
+  #error{
+    position: absolute;
+    top:4%;
+    left: 35%;
+    font-size: 23px;
+    color: red;
+    background-color: none;
+}
+

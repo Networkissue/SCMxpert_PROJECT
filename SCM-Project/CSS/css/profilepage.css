@@ -1,0 +1,102 @@
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(#04619F, #000000);
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  .container {
+    text-align: center;
+    background: linear-gradient(#2C3E50, #000000);
+    padding: 40px;
+    width: 650px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    animation: fadein 1.5s ease-out forwards;
+  }
+
+  @keyframes fadein {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  h1 {
+    font-size: 40px;
+
+    color:  #f4f4f4;
+  }
+
+  .top_sub_link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    margin-bottom: 10px;
+    margin-top: 10px; 
+    
+  }
+
+  .top_sub_link p, .top_sub_link h2, .top_sub_link span {
+    margin: 0;
+    font-size: 24px; 
+    margin-right: 10px/* Increased font size */
+  }
+
+  .top_sub_link i {
+    font-size: 30px;
+    margin-right: 10px;
+  }
+
+  #button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-right: 60px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+
+  #button:hover {
+    background-color: #0056b3;
+  }
+
+  #button:active {
+    background-color: #004280;
+  }
+
+  #button1 {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-right: -40px;
+    background-color: red;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+
+  #button1:hover {
+    background-color: #960606;
+  }
+
+  #button1:active {
+    background-color: #360101;
+  }
+
+  /* ////// if no data ///////// */
+  .top_sub_link.close {
+    display: none;
+    
+  }

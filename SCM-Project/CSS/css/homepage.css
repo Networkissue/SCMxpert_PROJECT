@@ -4,7 +4,7 @@ body {
     margin: 0;
     display: flex;
     justify-content: flex-start;
-    /* background-image: url("/CSS/bgm-pics/global-business-logistics-import-export-white-background-container-cargo-freight-ship-transport-concept-193223299.jpg"); */
+    background-image: url("/CSS/bgm-pics/bgm1.webp");
     align-items: baseline;
     background-size: cover;
     height: 100vh;
@@ -15,22 +15,25 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    padding-left: 3%;
+    padding-left: 20px;
     padding-top: 0.6%;
     font-size: 60px;
-    /* background: #c20f0f; */
-    background-color: white;
+    background: #c20f0f;
+    background-color: #f4f4f4;
     width: 100%;
     height: 60px;
     
+} 
+.DB .menu i:hover{
+    cursor: pointer;
 }
 
-.DB {
-    background:rgba(255, 255, 255, 0.288);
+ .DB { 
+    background:#f4f4f4;
     padding: 20px;
     width:300px;
     height:1500px;
-    /* margin:60px auto; */
+    margin:60px auto; 
     margin-top: 2.5%;
     margin-left: 0;
     border-radius: 3px;
@@ -44,44 +47,242 @@ body {
     text-align: center;
 }
 
-/* /* .DB form .display{
-    font-size: larger;
-}  */
 
-.DB .sidebar .A a{
+.heading {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: darkblue;
+    margin: 3px 0;
+    font-size: 15px;
+    color: black;
+    
+    
+
+}
+
+.heading p {
+
+    width: 100%;
+}
+
+.heading i{
+    font-size: 35px;
+    width: 40px;
+    color: black;
+    padding: 8px;
+    margin-right: 15px;
+}
+
+.b_heading {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: darkblue;
+    margin: 3px 0;
+    font-size: 15px;
+    color: black;
+}
+
+.b_heading p {
+
+    width: 100%;
+}
+
+.b_heading i{
+    font-size: 35px;
+    width: 40px;
+    color: black;
+    padding: 8px;
+    margin-right: 15px;
+} 
+
+/* .DB .sidebar .A a {
     font-size: 25px;
     text-decoration-line: none;
     position: relative;
     top: 0;
-    left: 45px;
+    left: 40px;
     font-weight: bolder;
+    color: black;
 }
+
 
 .DB .sidebar .A i{
 
     position: absolute;
-    top:11.5%;
+    top:11.8%;
+    left:0;
     font-size: xx-large;
-    margin-right: 20px;
+    margin-left: 15px;
     padding-right: 8px;
+   
     
-}
+} */
 
-.DB .sidebar .B a{
-    font-size: 25px;
+/* .DB .sidebar .option{
+    margin-left: 0px;
+    /* color: black; */
+    
+ 
+/* .DB .sidebar .option a {
+    font-size: 23px;
     text-decoration-line: none;
     position: relative;
     top: 0;
-    left: 45px;
+    left: 0;
+    color: darkblue;
     font-weight: bolder;
-}
+} */
 
-.DB .sidebar .B i {
-
-    
-    position: absolute;
-    top: 16.5%;
-    font-size: xx-large;
+/* .DB .sidebar .option i{
+    position: relative;
+    top:11.5%;
+    font-size: 25px;
     margin-right: 20px;
-    padding-right: 8px
+    padding-right: 8px;
+} */
+
+
+.option {
+    display: flex;
+    align-items: center;
+    margin: 3px 0;
+    transition: max-height 0.5s ;
+
 }
+
+.option.active{
+      max-height: 400px;
+      display: block;
+      color: red;
+}
+.option.active a{
+    color: red;
+}
+
+.setting.active {
+    max-height: 400px;
+    display: block;
+}
+
+.top_sub_link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: darkblue;
+    margin-left: 12px  ;
+}
+
+.top_sub_link p {
+    font-size: 20px;
+    width: 100%;
+    font-weight: 600;
+}
+
+.top_sub_link i{
+    font-size: 30px;
+    width: 40px;
+    color: black;
+    padding: 8px;
+    margin-right: 15px;
+}
+.sub_link {
+
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: darkblue;
+    margin: 12px 0;
+    
+}
+
+.sub_link p{
+    font-size: 20px;
+    width: 100%;
+    font-weight: 600;
+}
+
+.sub_link i{
+    
+    font-size: 30px;
+    width: 40px;
+    color: black;
+    border-radius: 50%;
+    padding: 8px;
+    margin-right: 15px;
+}
+
+.top_sub_link span {
+    position: fixed;
+    left: 10%;
+    font-size: 22px;
+    transition: transform 0.5s;
+
+} 
+
+.sub_link span{
+    position: fixed;
+    left: 9.8%;
+    font-size: 22px;
+    transition: transform 0.5s;
+
+} 
+
+.top_sub_link:hover span, .sub_link:hover span {
+
+    transform: translateX(10px);
+
+}
+
+.top_sub_link:hover, .sub_link:hover {
+
+    background-color: rgba(128, 128, 128, 0.089);
+    width: 95%;
+    border-radius: 6px;
+}
+
+.top_sub_link:hover p, .sub_link:hover p {
+   
+    font-weight: 900;
+}
+
+.top_sub_link:hover i, .sub_link:hover i {
+
+    font-size: 40px ;
+}
+
+
+/* nav bar closing styles */
+/* Default styles for the sidebar, .DB, and .heading */
+/* Default width for sidebar */
+.DB {
+    width: 300px;
+    transition: width 0.3s ease; /* Smooth transition for width change */
+  }
+  
+  /* Reduced width when .menuclose is added */
+  .DB.menuclose {
+    width: 100px;
+    padding: 87px 0 0 20px;
+    margin-top: 70px;
+  }
+  .DB.menuclose p,.DB.menuclose h1{
+    display: none;
+  }
+  .DB.menuclose .option a,
+  .DB.menuclose .setting a{
+    display: none;
+  }
+  
+.DB.menuclose #logo {
+    position: absolute;
+    display: block;
+    transition: transform 0.5s ease; /* Adding transition for smoother animation */
+    transform: translate(3%, 0.7%); /* Center the logo */
+    left: 3%; /* Position the logo at the horizontal center */
+    top: 0.7%; /* Position the logo at the vertical center */
+  
+  }
+  
+ 
