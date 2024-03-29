@@ -5,7 +5,7 @@ body {
     margin: 0;
     display: flex;
     justify-content: flex-start;
-    background-image: url("/CSS/bgm-pics/bgm1.webp");
+    background-image: url("/CSS/bgm-pics/login8.png");
     align-items: baseline;
     background-size: cover;
     height: 100vh;
@@ -55,7 +55,6 @@ body {
     display: flex;
     align-items: center;
     text-decoration: none;
-    color: darkblue;
     margin: 3px 0;
     font-size: 15px;
     color: black;
@@ -81,10 +80,10 @@ body {
     display: flex;
     align-items: center;
     text-decoration: none;
-    color: darkblue;
     margin: 3px 0;
     font-size: 15px;
     color: black;
+    cursor: pointer;
 }
 
 .b_heading p {
@@ -173,7 +172,7 @@ body {
     display: flex;
     align-items: center;
     text-decoration: none;
-    color: darkblue;
+    color: black;
     margin-left: 12px  ;
 }
 
@@ -181,6 +180,7 @@ body {
     font-size: 20px;
     width: 100%;
     font-weight: 600;
+    color: black;
 }
 
 .top_sub_link i{
@@ -196,13 +196,14 @@ body {
     display: flex;
     align-items: center;
     text-decoration: none;
-    color: white;
     margin-left: 12px  ;
     /* background-color: rgba(255, 0, 0, 0.658); */
-    background: rgba(2, 0, 36, 0.815);
-    background: linear-gradient(90deg, rgba(59, 58, 88, 0.795) 0%, rgba(9, 121, 110, 0.801) 39%, rgba(0, 213, 255, 0.548) 100%);
+    background-color: white;
+    color: black;
     width: 100%;
-    border-radius: 6px;
+    /* border-radius: 6px; */
+    border: 2px solid;
+    border-radius: 20px;
 }
 
 #shipmentid p {
@@ -221,73 +222,13 @@ body {
     font-size: 40px ;
 }
 
-/* //////devicedata//// */
-
-#Devicedata{
-
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    color: darkblue;
-    margin: 12px 0;
-    margin-left: 10px;
-}
-
-#Devicedata p {
-    font-size: 20px;
-    width: 100%;
-    font-weight: 600; 
-}
-
-#Devicedata i{
-    font-size: 30px;
-    width: 40px;
-    color: black;
-    border-radius: 50%;
-    padding: 8px;
-    margin-right: 15px;
-}
-
-#Devicedata span{
-    position: fixed;
-    left: 10%;
-    font-size: 22px;
-    transition: transform 0.5s;
-
-} 
-
-#Devicedata:hover span {
-
-    transform: translateX(10px);
-
-}
-
-#sub_link:hover {
-
-    background-color: rgba(128, 128, 128, 0.089);
-    width: 95%;
-    border-radius: 6px;
-}
-
-#Devicedata:hover p {
-   
-    font-weight: 900;
-}
-
-#Devicedata:hover i {
-
-    font-size: 40px ;
-}
-
-
-/* /////////////////////// */
 
 .sub_link {
 
     display: flex;
     align-items: center;
     text-decoration: none;
-    color: darkblue;
+    color: black;
     margin: 12px 0;
     
 }
@@ -296,6 +237,7 @@ body {
     font-size: 20px;
     width: 100%;
     font-weight: 600;
+    color: black;
 }
 
 .sub_link i{
@@ -312,6 +254,7 @@ body {
     position: fixed;
     left: 10%;
     font-size: 22px;
+    color: black;
     transition: transform 0.5s;
 
 } 
@@ -327,6 +270,10 @@ body {
     background-color: rgba(128, 128, 128, 0.089);
     width: 95%;
     border-radius: 6px;
+}
+
+#logout p{
+    color: white;
 }
 
 .top_sub_link:hover p, .sub_link:hover p {
@@ -353,13 +300,20 @@ body {
     padding: 87px 0 0 20px;
     margin-top: 70px;
   }
-  .DB.menuclose p,.DB.menuclose h1{
+  .DB.menuclose p,.DB.menuclose h1, .DB.menuclose span{
     display: none;
   }
   .DB.menuclose .option a,
   .DB.menuclose .setting a{
     display: none;
   }
+  
+  /* .DB.menuclose i{
+    display: flex;
+    flex-direction: column;
+
+  }
+   */
   
 .DB.menuclose #logo {
     position: absolute;
@@ -370,10 +324,14 @@ body {
     top: 0.7%; /* Position the logo at the vertical center */
   
   }
-
+ 
   .DB.menuclose #shipmentid {
-    background: rgba(2, 0, 36, 0.815);
-    background: linear-gradient(90deg, rgba(59, 58, 88, 0.795) 0%, rgba(9, 121, 110, 0.801) 39%, rgba(0, 213, 255, 0.548) 100%);
+
+    background-color: white;
+    color: black;
+   
+    /* background: rgb(252,181,26);
+    background: linear-gradient(90deg, rgba(252,181,26,1) 0%, rgba(241,146,2,1) 39%, rgba(129,110,14,1) 100%); */
     width: 80%;
     border-radius: 6px;
   }
@@ -420,6 +378,8 @@ body {
     font-size: 30px;
     /* padding-left: 4%; */
     margin-left: 10%;
+    font-weight: 600;
+    font-family: 'Times New Roman', Times, serif;
 }    
 
 .display form .detail-2 {
@@ -430,6 +390,8 @@ body {
    left: 50%;
    font-size: 30px;
    margin-left: 3%;
+   font-weight: 600;
+   font-family: 'Times New Roman', Times, serif;
 }
 
 .display .detail-1 input, .detail-2 input{
@@ -485,20 +447,67 @@ button{
     height: 50px;
     
 }
-#button1 button:hover{
+#button1 button{
     color: white;
     background-color: blue;
 }
+#button1 button:hover{
+    color: white;
+    background-color: rgb(3, 3, 131);
+}
 
-#button2 button:hover{
+#button2 button{
     color: white;
     background-color: red;
 }
 
+#button2 button:hover{
+    color: white;
+    background-color: rgb(168, 3, 3);
+}
 /* ///////////error message///////// */
 #message {
 
     position: absolute;
-    top:20%;
-    
+    top:93%;
+    left: 43%;
+    font-size: 30px;
+    color: #c20f0f;
+    text-align: center;
+
 }
+
+
+
+label {
+
+    position: absolute;
+    top: 12.5%;
+    z-index: 1;
+    left: 45%;
+    font-size: 50px;
+    width: 15%;
+    padding-left: 50px;
+    border-radius: 10px;
+    color: white;
+}
+
+ 
+#mainlogo{
+    
+    position: absolute;
+    top: 0.5%;
+    left: 90%;
+    font-weight: bolder;
+  }
+  
+  #mainlogo1 {
+  
+    width: 70px;
+  }
+
+ #mainlogo2 {
+    
+     font-size: 20px;
+     filter: grayscale(100%) brightness(0%);
+  }

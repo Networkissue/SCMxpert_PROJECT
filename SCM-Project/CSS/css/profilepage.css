@@ -1,11 +1,15 @@
 body {
     font-family: Arial, sans-serif;
     background: linear-gradient(#04619F, #000000);
+    /* background-image: url("/CSS/bgm-pics/wp9448982.jpg"); */
+    background-repeat: no-repeat;
     margin: 0;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-size: cover;
     height: 100vh;
+    backdrop-filter: blur(5px);
   }
 
   .container {

@@ -1,0 +1,679 @@
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    display: flex;
+    justify-content: flex-start;
+    /* background-image: url("/CSS/bgm-pics/login8.png"); */
+    align-items: baseline;
+    background-size: cover;
+    height: 100vh;
+    overflow-x: hidden;
+}
+
+
+.c1 {
+
+    /* background-image: url("/CSS/bgm-pics/chat.jpg"); */
+    position: absolute;
+    top: 40%;
+    left: 15%;
+    width: 600px;
+    height: 400px;
+    border: 2px solid;
+    border-radius: 50px;
+    border-bottom-right-radius: 10px;
+    animation: fadein 1.5s ease-out forwards;
+   
+}
+.c2 {
+    position: absolute;
+    top: 40%;
+    left: 40%;
+    width: 600px;
+    height: 400px;
+    border: 2px solid;
+    border-radius: 50px;
+    border-bottom-right-radius: 10px;
+    animation: fadein 1.5s ease-out forwards;
+   
+}
+.c3 {
+    position: absolute;
+    top: 40%;
+    left: 65%;
+    width: 600px;
+    height: 400px;
+    border: 2px solid;
+    border-radius: 50px;
+    border-bottom-right-radius: 10px;
+    animation: fadein 1.5s ease-out forwards;
+   
+}
+
+  @keyframes fadein {
+    from {
+      opacity: 0;
+      transform: translateY(-30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+/* //////////////////// label ////////////// */
+
+label{
+
+    font-size: 30px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    position: relative;
+    top: 42%;
+    left: -30px;
+}
+
+/* /////////////////////////// p ////////////////////// */
+
+p {
+
+    font-size: 25px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;
+    position: relative;
+    top: 42%;
+    left: 30px;
+}
+
+/* //////////////////////////// a //////////////////////// */
+
+a {
+
+    font-size: xx-large;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    position: relative;
+    top: 42%;
+    left: 30px;
+    text-decoration: underline;
+}
+
+a:hover{
+
+    color: red;
+    font-size: 40px;
+}
+
+a:active{
+
+    color: green;
+}
+
+/* .mb {
+
+    display: flex;
+    padding: 20px;
+    
+}
+
+#mb3 {
+
+    
+    font-size: xx-large;
+    border-radius: none;
+    border: none;
+    background-color: none;
+    
+ }
+ 
+ #mb4 {
+ 
+    border-radius: 0;
+    border: none;
+ 
+ }
+ 
+ #mb5 {
+ 
+    border-radius: 0;
+    border: none;
+ 
+ }
+ 
+ #mb6 {
+ 
+    border-radius: 0;
+    border: none;
+    
+ 
+ } */
+
+/* ///////////////////////// i /////////////////////// */
+
+i {
+    
+    position: relative;
+    top: 4%;
+    left: 30px;
+    padding: 10px 0 0 8px;
+    font-size: 30px;
+    width: 50px;
+    height: 40px;
+    border: 2px solid;
+    border-color: rgb(0, 0, 0);
+    border-radius: 20px;
+    border-bottom-right-radius: 5px;
+    background-color: white;
+}
+
+/* ////////////////////// h //////////////////// */
+
+h1 {
+
+    position: absolute;
+    top: 15%;
+    left: 33%;
+    font-size: 80px;
+}
+
+h2 {
+
+    position: relative;
+    top: 25%;
+    left: 43%;
+    font-size: 25px;
+
+}
+
+h3 {
+
+    position: absolute;
+    top: -2%;
+    left: 0%;
+    padding-left: 46%;
+    padding-top: 25px;
+    font-size: 30px;
+    width: 100%;
+    height: 5%;
+    background-color: black;
+    color:white;
+}
+
+/* ////////////////// buttton ////////////////// */
+
+#button {
+
+    position: absolute;
+    top: 1.5%;
+    left: 1%;
+    padding: 10px;
+    font-size: 30px;
+    border-radius: 10px;
+    background-color: black;
+    color: white;
+}
+
+#button:hover {
+
+    background-color: rgb(0, 0, 0);
+    font-size: 33px;
+}
+
+#button:active {
+
+    background-color: red;
+    
+}
+
+
+  /* /////////////text/////////// */
+
+  #T {
+
+    position: absolute;
+    top: 85%;
+    left: 8%;
+    width: 700px;
+    height: 600px;
+    background-color: rgba(128, 128, 128, 0.158);
+    border: 2px solid;
+    border-radius: 70px;
+    border-bottom-right-radius: 10px;
+    animation: fadein 1.5s ease-out forwards;
+   
+}
+
+  @keyframes fadein {
+    from {
+      opacity: 0;
+      transform: translateY(-30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+
+#T h5 {
+
+   position: absolute;
+   left: 30px;
+   font-size: 30px;
+   top: 0;
+
+}
+
+#T span {
+   position: relative;
+   top: 14%;
+   left: 14%;
+   font-size: 28px;
+}
+
+
+
+/* ////////////////////////////// T1 ////////////////// */
+
+#T1 {
+
+    position: absolute;
+    top: 105%;
+    left: 33%;
+    width: 400px;
+    height: 500px;
+    background-color: rgba(128, 128, 128, 0);
+    border: 2px solid;
+    border-radius: 70px;
+    border-bottom-right-radius: 10px;
+    animation: fadein 2s ease-out forwards;
+   
+}
+
+@keyframes fadein {
+    from {
+      opacity: 0;
+      transform: translateY(-30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+#T1 .iclass{
+
+    position: relative;
+    top: 10%;
+    left: 9%;
+    width: 80%;
+    
+
+}
+
+#T1 h4 {
+
+    
+    position: relative;
+    top: 13%;
+    left: 23%;
+    font-size: 30px;
+}
+#T1 label {
+
+    
+    position: relative;
+    top: 14%;
+    left: 3%;
+    font-size: 23px;
+}
+
+
+#T2 {
+
+    position: absolute;
+    top: 125%;
+    left: 47.5%;
+    width: 425px;
+    height: 500px;
+    background-color: rgba(128, 128, 128, 0);
+    border: 2px solid;
+    border-radius: 70px;
+    border-bottom-right-radius: 10px;
+    animation: fadeout 3s ease-out forwards;
+   
+}
+
+@keyframes fadeout {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+#T2 .iclass{
+
+    position: relative;
+    top: 10%;
+    left: 9%;
+    width: 80%;
+    
+
+}
+
+#T2 h4 {
+
+    
+    position: relative;
+    top: 13%;
+    left: 18%;
+    font-size: 30px;
+}
+#T2 label {
+
+    
+    position: relative;
+    top: 14%;
+    left: 3%;
+    font-size: 23px;
+}
+
+
+#T3 {
+
+    position: absolute;
+    top: 105%;
+    left: 62.8%;
+    width: 400px;
+    height: 500px;
+    background-color: rgba(128, 128, 128, 0);
+    border: 2px solid;
+    border-radius: 70px;
+    border-bottom-right-radius: 10px;
+    animation: fadein 2s ease-out forwards;
+   
+}
+
+#T3 .iclass{
+
+    position: relative;
+    top: 10%;
+    left: 9%;
+    width: 80%;
+    
+
+}
+
+#T3 h4 {
+
+    
+    position: relative;
+    top: 13%;
+    left: 18%;
+    font-size: 30px;
+}
+#T3 label {
+
+    
+    position: relative;
+    top: 14%;
+    left: 3%;
+    font-size: 23px;
+}
+
+
+#T4 {
+
+    position: absolute;
+    top: 125%;
+    left: 77.3%;
+    width: 400px;
+    height: 500px;
+    background-color: rgba(128, 128, 128, 0);
+    border: 2px solid;
+    border-radius: 70px;
+    border-bottom-right-radius: 10px;
+    animation: fadeout 3s ease-out forwards;
+   
+}
+
+#T4 .iclass{
+
+    position: relative;
+    top: 10%;
+    left: 9%;
+    width: 80%;
+    
+
+}
+
+#T4 h4 {
+
+    
+    position: relative;
+    top: 13%;
+    left: 30%;
+    font-size: 30px;
+}
+#T4 label {
+
+    
+    position: relative;
+    top: 14%;
+    left: 3%;
+    font-size: 23px;
+}
+
+/* // */
+
+
+#T5 {
+
+    position: absolute;
+    top: 153%;
+    left: 7.8%;
+    width: 23%;
+    height: 40px;
+    background-color: rgba(128, 128, 128, 0);
+    border: 2px solid;
+    border-radius: 20px;
+    padding: 10px;
+    opacity: 0; /* Initially make the element transparent */
+    animation: fadeRightAnimation 1s ease forwards; /* Apply the animation */
+   
+}
+
+#T5 label {
+
+    
+    position: relative;
+    top: 14%;
+    left: 3%;
+    font-size: 23px;
+}
+
+#T6 {
+
+    position: absolute;
+    top: 158%;
+    left: 7.8%;
+    width: 35%;
+    height: 60px;
+    background-color: rgba(128, 128, 128, 0);
+    border: 2px solid;
+    border-radius: 20px;
+    padding: 10px;
+    opacity: 0; /* Initially make the element transparent */
+    animation: fadeRightAnimation 1s ease forwards; /* Apply the animation */
+   
+}
+
+#T6 label {
+
+    
+    position: relative;
+    top: 14%;
+    left: 3%;
+    font-size: 23px;
+}
+
+#T7 {
+
+    position: absolute;
+    top: 164.5%;
+    left: 7.8%;
+    width: 41%;
+    height: 60px;
+    background-color: rgba(128, 128, 128, 0);
+    border: 2px solid;
+    border-radius: 20px;
+    padding: 10px;
+    opacity: 0; /* Initially make the element transparent */
+    animation: fadeRightAnimation 1s ease forwards; /* Apply the animation */
+   
+}
+
+#T7 label {
+
+    
+    position: relative;
+    top: 14%;
+    left: 3%;
+    font-size: 23px;
+}
+#T8 {
+
+    position: absolute;
+    top: 171.2%;
+    left: 7.8%;
+    width: 19%;
+    height: 30px;
+    background-color: rgba(128, 128, 128, 0);
+    border: 2px solid;
+    border-radius: 20px;
+    padding: 10px;
+    opacity: 0; /* Initially make the element transparent */
+    animation: fadeRightAnimation 1s ease forwards; /* Apply the animation */
+   
+}
+
+#T8 label {
+
+    
+    position: relative;
+    top: 14%;
+    left: 3%;
+    font-size: 25px;
+}
+#T9 {
+
+    position: absolute;
+    top: 171.2%;
+    left: 28.0%;
+    width: 21%;
+    height: 30px;
+    background-color: rgba(128, 128, 128, 0);
+    border: 2px solid;
+    border-radius: 20px;
+    padding: 10px;
+    opacity: 0; /* Initially make the element transparent */
+    animation: fadeRightAnimatio 1s ease forwards; /* Apply the animation */
+   
+}
+
+#T9 label {
+
+    
+    position: relative;
+    top: 14%;
+    left: 3%;
+    font-size: 25px;
+}
+#T10 {
+
+    position: absolute;
+    top: 175.8%;
+    left: 7.8%;
+    width: 19%;
+    height: 30px;
+    background-color: rgba(128, 128, 128, 0);
+    border: 2px solid;
+    border-radius: 20px;
+    padding: 10px;
+    opacity: 0; /* Initially make the element transparent */
+    animation: fadeRightAnimation 1s ease forwards; /* Apply the animation */
+   
+}
+
+#T10 label {
+
+    
+    position: relative;
+    top: 14%;
+    left: 3%;
+    font-size: 25px;
+}
+
+#T11 {
+
+    position: absolute;
+    top: 175.8%;
+    left: 28%;
+    width: 21%;
+    height: 30px;
+    background-color: rgba(128, 128, 128, 0);
+    border: 2px solid;
+    border-radius: 20px;
+    padding: 10px;
+    opacity: 0; /* Initially make the element transparent */
+    animation: fadeRightAnimatio 1s ease forwards; /* Apply the animation */
+   
+}
+
+#T11 label {
+
+    
+    position: relative;
+    top: 14%;
+    left: 3%;
+    font-size: 25px;
+}
+
+/* ////////////////  */
+
+.fade-right {
+    opacity: 0; /* Initially make the element transparent */
+    animation: fadeRightAnimation 1s ease forwards; /* Apply the animation */
+}
+
+@keyframes fadeRightAnimation {
+    0% {
+        opacity: 0;
+        transform: translateX(-20px); /* Move the element left by 20px */
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0); /* Move the element to its original position */
+    }
+}
+@keyframes fadeRightAnimatio {
+    0% {
+        opacity: 0;
+        transform: translateX(-8px); /* Move the element left by 20px */
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0); /* Move the element to its original position */
+    }
+}
+
+#bottom {
+    position: absolute;
+    top: 190%;
+    width: 100%;
+    height: 50px;
+    background-color: rgba(0, 0, 0, 0.342);
+}

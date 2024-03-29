@@ -4,22 +4,35 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="/CSS/css/homepage.css">
-        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-        <script src="/CSS/javascript/homepage.js"></script>
+        <link rel="stylesheet" href="/CSS/css/b&w_mode.css">
         <script src="https://code.jquery.com/jquery-3.7.1.slim.js"
             integrity="sha256-UgvvN8vBkgO0luPSUl2s8TIlOSYRoGFAX4jlCIm9Adc="
             crossorigin="anonymous"></script>
+        
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+        <script src="/CSS/javascript/homepage.js"></script>
+        <script src="/CSS/javascript/b&w_mode.js"></script>
+
         
         <title>homepage</title>
     </head>
     <body>
 
+        <header >
+            <p class="dark_change" id="dark_change"></p>
+          </header>
+        
         <div class="DB" id="DB">
+
             <div class="menu" >
                 <i class='bx bx-menu' id="menu_icon"></i>
             </div>
 
-            <h1 id="logo"><b>SCMxpert</b></h1>
+            <h1 id="logo" style="display: none;"><b>SCMxpert</b></h1>
+            <div class="mainlogo" id="mainlogo">
+                <img src="/CSS/bgm-pics/scm-logoCopy.png" alt="" id="mainlogo1">
+                <img src="/CSS/bgm-pics/scmCopy.png" alt="" id="mainlogo2">
+            </div>
 
             <div class="sidebar" id="sidebar">
                 <div class="A">
@@ -61,30 +74,41 @@
                             <p>PROFILE</p>
                             <span>></span>
                         </a>
-                        <a href="#" class="sub_link">
+                        <a href="/help" class="sub_link">
                             <i class='bx bx-detail' ></i>
                             <p>ABOUT</p>
                             <span>></span>
                         </a>
-                        <a href="#" class="sub_link">
+                        <!-- <a href="" class="sub_link">
                             <i class='bx bx-help-circle' ></i>
                             <p>HELP & SUPPORT</p>
                             <span>></span>
+                        </a> -->
+                        <a href="/" onclick="logout()" class="sub_link"  style="background-color: rgb(241, 9, 9);color: aliceblue;border-radius: 7px;">
+                            <i class='bx bx-log-out-circle' style="background-color: rgb(241, 9, 9);color:aliceblue;"></i>
+                            <p  style="background-color: rgb(241, 9, 9);color: aliceblue;border-radius: 7px;">LOGOUT</p>
+                            <!-- <span>></span> -->
                         </a>
-                        <a href="#" class="sub_link">
-                            <i class='bx bx-meh-blank' ></i>
-                            <p>EDIT THEME</p>
-                            <span>></span>
-                        </a>
-                        <a onclick='logout()' href="/" class="sub_link">
-                            <i class='bx bx-log-out-circle'></i>
-                            <p>LOGOUT</p>
-                            <span>></span>
                         </a>
                     </div>
                 </div>
 
             </div>
+
+            <div id="centre1">
+                <h2 id="ha">Create a New Shipment</h2>
+                <label id="l1">CREATE SHIPMENT</label>
+            </div>
+            <div id="centre2">
+                <h2 id="hb">To see Device Data Stream</h2>
+                
+                <label id="l2">DEVICE DATA STREAM</label>
+            </div>
+            <div class="name">
+                <p id="username"></p>
+            </div>
+            
+          
          </div>   
         </body>
     </html>

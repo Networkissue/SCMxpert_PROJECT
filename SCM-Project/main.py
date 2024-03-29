@@ -15,6 +15,7 @@ from routes.homepage import route as homepage
 from routes.settings import route as settings
 from routes.mainpage import route as aboutpage
 from routes.profilepage import route as myprofile
+from routes.help import route as helppage
 
 
 
@@ -32,3 +33,4 @@ app.include_router(homepage)
 app.include_router(settings)
 app.include_router(aboutpage)
 app.include_router(myprofile)
+app.include_router(helppage)

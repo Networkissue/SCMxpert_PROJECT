@@ -4,11 +4,15 @@ body {
     margin: 0;
     display: flex;
     justify-content: flex-start;
-    background-image: url("/CSS/bgm-pics/bgm1.webp");
+    background-image: url("/CSS/bgm-pics/home6.jpg");
+    z-index: 0;
+    /* backdrop-filter: blur(1px); */
+    background-position: center;
     align-items: baseline;
     background-size: cover;
     height: 100vh;
     overflow: hidden;
+
 }
 
 .DB .menu {
@@ -178,6 +182,7 @@ body {
     font-size: 20px;
     width: 100%;
     font-weight: 600;
+    color: black;
 }
 
 .top_sub_link i{
@@ -187,12 +192,13 @@ body {
     padding: 8px;
     margin-right: 15px;
 }
+
 .sub_link {
 
     display: flex;
     align-items: center;
     text-decoration: none;
-    color: darkblue;
+    color: black;
     margin: 12px 0;
     
 }
@@ -201,6 +207,7 @@ body {
     font-size: 20px;
     width: 100%;
     font-weight: 600;
+    color: black;
 }
 
 .sub_link i{
@@ -217,6 +224,7 @@ body {
     position: fixed;
     left: 10%;
     font-size: 22px;
+    color: black;
     transition: transform 0.5s;
 
 } 
@@ -225,6 +233,7 @@ body {
     position: fixed;
     left: 9.8%;
     font-size: 22px;
+    color: black;
     transition: transform 0.5s;
 
 } 
@@ -264,8 +273,8 @@ body {
   /* Reduced width when .menuclose is added */
   .DB.menuclose {
     width: 100px;
-    padding: 87px 0 0 20px;
-    margin-top: 70px;
+    padding: 44px 0 0 20px;
+    margin-top: 60px;
   }
   .DB.menuclose p,.DB.menuclose h1{
     display: none;
@@ -278,11 +287,100 @@ body {
 .DB.menuclose #logo {
     position: absolute;
     display: block;
-    transition: transform 0.5s ease; /* Adding transition for smoother animation */
-    transform: translate(3%, 0.7%); /* Center the logo */
+    transition: transform 0.5s ease; 
+    transform: translate(3%, 0.7%); 
     left: 3%; /* Position the logo at the horizontal center */
     top: 0.7%; /* Position the logo at the vertical center */
   
   }
   
  
+#mainlogo{
+    
+    position: absolute;
+    top: 0.5%;
+    left: 90%;
+    font-weight: bolder;
+  }
+  
+  #mainlogo1 {
+  
+    width: 70px;
+  }
+
+ #mainlogo2 {
+    
+     font-size: 20px;
+     filter: grayscale(100%) brightness(0%);
+  }
+
+
+
+#l1 {
+    
+    /* display: flex;
+    flex-direction: row; */
+    position: absolute;
+    top: 50%;
+    left: 30%;
+    font-size: 40px;
+    width: 15%;
+    height: 50px;
+    background-color: black;
+    color: white;
+    padding: 10px 0 0 30px;
+    border: 2px solid;
+    border-radius: 50px;
+    
+}
+
+#l2 {
+    
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    top: 50%;
+    left: 70%;
+    font-size: 40px;
+    width: 17%;
+    height: 50px;
+    background-color: black;
+    color: white;
+    padding: 10px 0 0 43px;
+    border: 2px solid;
+    border-radius: 50px;
+    
+    
+}
+
+#ha {
+    text-shadow: 0px 5px 10px rgb(255, 255, 255);
+    position: absolute;
+    top: 30%;
+    left:25%;
+    font-size: 60px;
+    width: 35%;
+    height: 50px;
+}
+#hb {
+    text-shadow: 0px 5px 10px rgb(255, 255, 255);
+    position: absolute;
+    top: 30%;
+    left:65%;
+    font-size: 60px;
+    width: 35%;
+    height: 50px;
+}
+
+.name{
+    position: absolute;
+    top: -1.5%;
+    left: 4%;
+    width: 40%;
+    font-size: 40px;
+    z-index: 1;
+}
+.name p{
+    font-size: 40px;
+    font-weight: 600;
+}

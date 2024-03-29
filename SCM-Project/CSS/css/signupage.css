@@ -4,20 +4,77 @@ body {
     margin: 0;
     display: flex;
     justify-content: center;
-    /* background-image: url("/CSS/bgm-pics/pwd.avif"); */
+    background-image: url("/CSS/bgm-pics/login13.jpg");
     backdrop-filter: blur(8px);
     align-items: center;
     background-size: cover;
     height: 100vh;
 }
 
+.content .top_content{
+  position: absolute;
+  background-color:rgb(9, 106, 145);
+  /* background-color:rgb(97, 94, 94); */
+  width: 100%;
+  height: 10% ;
+  left: 0;
+  top: 0;
+  /* background-color: red; */
+  text-align: center;
+  
+}
+
+#HOME{
+
+  position: absolute;
+  top: 50%;
+  left: 85%;
+  font-size: 25px;
+  font-weight: bolder;
+  color: black;
+  background-color: white;
+  width: 4%;
+  height:20%;
+  padding: 10px;
+  border-radius: 6px;
+  text-decoration: none;
+}
+
+#HOME:hover {
+
+  color: black;
+  background-color: #f4f4f4;
+}
+
+#LOGIN {
+
+  position: absolute;
+  top: 50%;
+  left: 93%;
+  font-size: 25px;
+  font-weight: bolder;
+  color: white;
+  background-color: blue;
+  width: 4%;
+  height:20%;
+  padding: 10px;
+  border-radius: 6px;
+  text-decoration: none;
+}
+
+#LOGIN:hover {
+
+  color: white;
+  background-color: rgb(0, 0, 214);
+}
+
 .tab-content {
-  background:rgba(0, 0, 0, 0.267);
+  background:rgba(255, 255, 255, 0.13);
   padding: 40px;
   width:600px;
   height:750px;
   margin:40px auto;
-  border-radius: 3px;
+  border-radius: 9px;
   box-shadow:0 4px 10px 4px grey;
 }
 .tab-content #signup{
@@ -46,7 +103,8 @@ form input{
 .tab-content label{
   font-size: 25px;
   margin-bottom: 80px;
-  font-weight:800px;
+  font-family:sans-serif;
+    font-weight:500;
 }
  
 .tab-content input{
@@ -57,17 +115,22 @@ form input{
   
 }
 
-button {
-  margin-top: 50px;
-  margin-left: 3%;
-  width: 200px; 
-  height: 50px;
+#REGISTER {
+
+  position: absolute;
+  top: 66%;
+  left: 46%;
+  padding: 15px 40px;
   font-size: 20px;
+  border-radius: 5px;
+  color: white;
+  background-color: red;
 }
 
-button:hover{
+#REGISTER:hover {
+
   color: white;
-  background-color: rgba(0, 0, 255, 0.61);
+  background-color:rgb(199, 7, 7);
 }
 
 
@@ -106,30 +169,36 @@ button:hover{
   left: 1700px;
 }
 
-.tab-content #signup .data4 {
-  position: absolute;
-  top: 990px;
-  left: 1380px;
-  
-}
 
-.tab-content #signup .data4 label{
+
+h2{
+  position: absolute;
+  top: 72%;
+  left: 43%;
   color: orangered;
  
 }
+ #log {
 
-.tab-content #signup .data4 a{
-  
-  margin-left: 15px;
+  position: absolute;
+  top: 72.5%;
+  left: 52%;
   font-size: 20px;
   color: white;
-  text-decoration-line: none;
-}
+  background-color: blue;
+  text-decoration: none;
+  padding: 13px 10px;
+  border-radius: 7px;
 
-.tab-content #signup .data4 a:hover{
-  text-decoration-line: underline;
-  color: blue;
-}
+ }
+
+ #log:hover {
+
+  color: white;
+  background-color: rgb(5, 5, 189);
+ }
+
+
 
 .tab-content #signup .error_message{
   position: absolute;
@@ -151,5 +220,16 @@ button:hover{
 }
 
 
+#mainlogo {
+    
+  position: absolute;
+  top: 25%;
+  left: 1%;
+  font-weight: bolder;
+}
 
+#mainlogo1 {
+
+  width: 280px;
+}
 

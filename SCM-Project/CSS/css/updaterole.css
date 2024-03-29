@@ -5,7 +5,7 @@ body {
     margin: 0;
     display: flex;
     justify-content: center;
-    /* background-image: url("/CSS/bgm-pics/p.png"); */
+    background-image: url("/CSS/bgm-pics/login13.jpg");
     align-items: center;
     background-size: cover;
     height: 100vh;
@@ -16,51 +16,53 @@ body {
     background:rgba(255, 255, 255, 0.288);
     padding: 40px;
     width:500px;
-    height:400px;
-    margin:60px auto;
+    height:300px;
+    margin:40px auto;
     border-radius: 3px;
     box-shadow:0 4px 10px 4px grey;
     position: absolute;
     top: 20%;
     left: 40%;
-
+    border-top-right-radius: 15px;
+    border-bottom-left-radius: 15px;
 }
 
 .update_container h1 {
  
    position: absolute;
-   top: 15%;
+   top: 14%;
    left : 27%;
 }    
 
 .update_container label {
 
     position: absolute;
-    top: 35%;
+    top: 33%;
     font-size: 20px;
     font-weight: 500;
 }
 
 .update_container input {
 
-    width: 60%;
-    height: 30px;
+    width: 80%;
+    height: 40px;
     position: absolute;
     top: 40%;
     font-size: 20px;
     padding-left: 10px;
+    border-radius: 8px;
 }
 
 .update_container #Save {
     position: absolute;
-    top: 40.5%;
-    left: 70%;
-    width: 80px;
-    height: 30px;
-    font-size: 15px;
+    top: 60%;
+    left: 60%;
+    width: 90px;
+    height: 37px;
+    font-size: 20px;
     display: inline-block;
     padding: 5px 10px;
-    background-color: #00ff22; /* Button color */
+    background-color: #32CD32; /* Button color */
     color: #fff; /* Text color */
     text-decoration: none; /* Remove underline */
     border-radius: 5px; /* Rounded corners */
@@ -69,7 +71,7 @@ body {
 }
 
 #Save:hover {
-    background-color: #00b30f; /* Darker button color on hover */
+    background-color: #1ea529; /* Darker button color on hover */
   }
   
   /* Change button color on click */
@@ -94,7 +96,7 @@ body {
 .button-link {
     position: absolute;
     top: 60%;
-    left: 35%;
+    left: 23%;
     display: inline-block;
     padding: 10px 20px;
     background-color: #007bff; /* Button color */

@@ -3,8 +3,6 @@
 }
 body {
     font-family: Arial, sans-serif;
-    background-color:skyblue;
-    /* background-color:lightgray; */
     margin: 0;
     display: flex;
     justify-content: center;
@@ -29,6 +27,132 @@ body {
     
 }
 
+.middlecontent {
+ 
+    position: absolute;
+    top: 50%;
+    left: 0;
+    background-color:rgb(9, 106, 145);
+    text-align: center;
+    width: 100%;
+    height: 10%;
+    padding-top: 3%;
+    display: flex;
+    color: white;
+    
+}
+
+#hr1 {
+    
+    position: absolute;
+    display: flex;
+    top: 1%;
+    left: 30%; /* Adjust as needed */
+    height: 97%; /* Adjust as needed */
+    margin: 0;
+}
+
+#hr2 {
+    
+    position: absolute;
+    display: flex;
+    top: 1%;
+    left: 50%; /* Adjust as needed */
+    height: 97%; /* Adjust as needed */
+    margin: 0;
+}
+
+#hr3 {
+    
+    position: absolute;
+    display: flex;
+    top: 1%;
+    left: 70%; /* Adjust as needed */
+    height: 97%; /* Adjust as needed */
+    margin: 0;
+}
+
+
+#mc1 {
+
+    position: absolute;
+    top: 20%;
+    left: 10%;
+    width: 3%
+
+}
+
+#mc2 {
+
+    position: absolute;
+    top: 20%;
+    left: 38%;
+    width: 3%
+}
+
+#mc3 {
+
+    position: absolute;
+    top: 20%;
+    left: 58%;
+    width: 3%
+
+}
+
+#mc4 {
+
+    position: absolute;
+    top: 20%;
+    left: 80%;
+    width: 3%
+
+}
+
+#s1{
+    font-size: 30px;
+    position: absolute;
+    top: 50%;
+    left: 6%;
+    
+}
+ #s2 {
+
+    font-size: 30px;
+    position: absolute;
+    top: 50%;
+    left: 34%;
+ }
+
+ #s3 {
+
+    font-size: 30px;
+    position: absolute;
+    top: 50%;
+    left: 55%;
+ }
+
+ #s4 {
+
+    font-size: 30px;
+    position: absolute;
+    top: 50%;
+    left: 77%;
+ }
+
+
+#mainlogo {
+    
+    position: absolute;
+    top: 25%;
+    left: 1%;
+    font-weight: bolder;
+}
+
+#mainlogo1 {
+
+    width: 280px;
+}
+
 .content .top_content .page {
 
     position: absolute;
@@ -39,30 +163,47 @@ body {
     /* text-decoration-line: none; */
 }
 
-.content .top_content .Login {
 
-    
+#LOGIN {
+
     position: absolute;
     top: 50%;
-    left: 80%;
-    font-size: 30px;
+    left: 85%;
+    font-size: 25px;
     font-weight: bolder;
-    /* text-decoration-line: none; */
+    color: white;
+    background-color: blue;
+    width: 4%;
+    height:20%;
+    padding: 10px;
+    border-radius: 6px;
 }
 
-.content .top_content .signup {
+#LOGIN:hover {
+
+    color: white;
+    background-color: rgb(0, 0, 214);
+}
+
+#SIGNUP {
 
     position: absolute;
-    top: 46%;
-    left: 90%;
-    font-size: 30px;
+    top: 50%;
+    left: 93%;
+    font-size: 25px;
     font-weight: bolder;
-    /* text-decoration-line: none; */
-    width: 130px;
-    height: 40px;
-    background-color: white;
-    padding-top: 10px;
-    border-radius: 3%;
+    color: white;
+    background-color: red;
+    width: 4%;
+    height:20%;
+    padding: 10px;
+    border-radius: 6px;
+}
+
+#SIGNUP:hover {
+
+    color: white;
+    background-color: rgb(209, 0, 0);
 }
 
 
@@ -76,10 +217,10 @@ body {
     width: 100%;
     height: 20%;
     /* background-color: white; */
-    background-image: url("/CSS/bgm-pics/bgm1.webp");
+    background-image: url("/CSS/bgm-pics/login7.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    opacity: 0.5;
+    opacity: 0.9;
     margin-left: 0;
     font-size: xx-large;
 }
@@ -96,13 +237,13 @@ body {
     /* background-color: white; */
     margin-left: 0;
     font-size: xx-large;
-    color: black;
+    color: #f4fff4;
 }
 
 .content .image_content {
 
     position: absolute;
-    top: 60%;
+    top: 70%;
     left: 20%;
     size: 40px;
     width: 150%;
@@ -115,7 +256,7 @@ body {
 .content .bottom_label {
 
     position: absolute;
-    top: 68%;
+    top: 78%;
     left: 50%;
     text-align: center;
     margin-left: 0;
@@ -139,7 +280,15 @@ body {
 
     text-align: center;
     font-size: 80px;
+    color: red;
 }
+
+.content .content2 label {
+
+    color: #f4fff4;
+    font-size : 25px; ;
+}
+
 
 .content .content2 .L_A {
 
@@ -183,5 +332,158 @@ body {
     border-radius: 100%;
 }
 
+#img2 {
+
+    position: absolute;
+    top:125%;
+    left: 40%;
+   z-index: -1;
+}
 
 
+.content4 {
+
+    position: absolute;
+    top: 180%;
+    left: 0;
+    width: 100%;
+    height: 20%;
+
+    background-color:rgb(9, 106, 145);
+}
+
+
+.content4 label {
+
+   position: absolute;
+   top: -18%;
+   left: 43%;
+   color: white;
+   background-color: red;
+   width: 10%;
+   padding-left: 25px;
+   font-size: 40px;
+   border-radius: 10px;
+}
+
+#mb1 {
+
+    position: absolute;
+   top: 30%;
+   left: 38.5%;
+   font-size: xx-large;
+   color: white;
+   cursor: pointer;
+}
+
+#mb2 {
+
+    position: absolute;
+   top: 30%;
+   left: 48.5%;
+   font-size: xx-large;
+   color: white;
+   cursor: pointer;
+
+}
+
+#mb3 {
+
+   position: absolute;
+   top: 10%;
+   left: 44.5%;
+   font-size: xx-large;
+   color: white;
+   cursor: pointer;
+}
+
+#mb4 {
+
+    position: absolute;
+   top: 10%;
+   left: 46.5%;
+   font-size: xx-large;
+   color: white;
+   cursor: pointer;
+
+}
+
+#mb5 {
+
+    position: absolute;
+   top: 11%;
+   left: 48.5%;
+   color: white;
+   width: 0.8%;
+   cursor: pointer;
+
+}
+
+#mb6 {
+
+    position: absolute;
+   top: 10%;
+   left: 50.5%;
+   font-size: xx-large;
+   color: white;
+   cursor: pointer;
+   
+
+}
+
+#hr6 {
+
+    
+    position: absolute;
+    top: 30%;
+    left: 48%; /* Adjust as needed */
+    height: 14%; /* Adjust as needed */
+    margin: 0;
+    z-index: 0;
+}
+
+#hr8 {
+
+    
+    position: absolute;
+    top: 82%;
+    left: 0%; /* Adjust as needed */
+    width: 100%; /* Adjust as needed */
+    margin: 0;
+    z-index: 0;
+}
+
+.content4 .p{
+    
+    display: flex;
+    flex-direction: row;
+    
+}
+
+.content4 .p p{
+
+    margin-top: 8.5%;
+    padding: 0 0 0 25%;
+    font-size: 26px;
+    color: white;
+    
+} 
+
+.content5 {
+    text-align: center;
+    position: absolute;
+    top: 160%;
+    left: 0;
+    width: 100%;
+}
+
+.content5 h1 {
+
+    text-align: center;
+}
+
+.content5 label {
+
+    text-align: center;
+    font-size: 22px;
+}

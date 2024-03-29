@@ -19,8 +19,7 @@ def shipment(request : Request):
 
 @route.post("/Newshipment")
 def new_data(request : Request, shipment : Shipment_input, decoded_token:str = Depends(oauth2_scheme)):
-    # print(shipment)
-    print(shipment,decoded_token)
+    
     try :
         #checking if the length of shipment number is equal to 7
         if not len(str(shipment.Shipment_Number)) == 7 :
@@ -31,9 +30,9 @@ def new_data(request : Request, shipment : Shipment_input, decoded_token:str = D
             raise HTTPException(status_code=400, detail="Please fill all values")
         
         existing_data = shipment_data.find_one({"Shipment_Number" : shipment.Shipment_Number })
-        print(existing_data)
+       
         if existing_data:
-            raise HTTPException(status_code=401, detail="Shipment_Number already used")
+            raise HTTPException(status_code=400, detail="Shipment_Number already used")
         
         # Validate expected_delivery date format and presence
         Expected_delivery_date_str = shipment.Expected_Delivery_Date
@@ -43,15 +42,17 @@ def new_data(request : Request, shipment : Shipment_input, decoded_token:str = D
         if Expected_delivery_date_str < str(datetime.utcnow().timestamp()) :
             raise HTTPException(status_code=400, detail="Date should be greater than or equal to current UTC time")
         
-        # getting User and email by decoding token
-        # decoded_token = decode_access_token(token[7:len(token)]
-        decoded_token1 = decode_access_token(decoded_token[7:len(decoded_token)])
-        print(decoded_token1)
+       
+        # Getting User and email by decoding token
+        # Assuming your token is prefixed with "Bearer"
+        token = decoded_token[7:]
+        
+        # Decode the access token
+        decoded_token_data = decode_access_token(token)
+      
         Updated_DB = {
-
-            
-            "User_Firstname":decoded_token1["Username"],
-            "email": decoded_token1["email"],
+            "User_Firstname":decoded_token_data["Username"],
+            "email": decoded_token_data["email"],
             "Shipment_Number": shipment.Shipment_Number,
             "Route_Details":shipment.Route_Details,
             "Device":shipment.Device,

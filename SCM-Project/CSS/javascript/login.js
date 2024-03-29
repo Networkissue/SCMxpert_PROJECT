@@ -1,5 +1,8 @@
 
+
+
 document.addEventListener("DOMContentLoaded", function () {
+
     // CAPTCHA generator function
     function generatingcaptcha() {
         const captchaElement = document.getElementById("captcha");

@@ -33,6 +33,7 @@ def create_access_token(data: dict, expires_timedelta: Optional[timedelta]= None
 
 # Function to decode an access token
 def decode_access_token(token:str):
+    
     try :
         PAYLOAD = jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])
         
@@ -60,11 +61,11 @@ def get_user_by(token:str = Depends(oauth2_scheme)):
          # Check if payload is valid and contains necessary keys
          if PAYLOAD and "email" in PAYLOAD:
              # Query the database to find a user with the extracted email
-             user = user_data.find_one({"email" : PAYLOAD["email"]})
+            #  user = user_data.find_one({"email" : PAYLOAD["email"]})
             
             # If user data is found, return it
-             if user:
-                 return user
+            #  if PAYLOAD:
+                 return PAYLOAD
     except JWTError:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="DETAIL NOT FOUND")
     

@@ -1,0 +1,112 @@
+#dark_change{
+  z-index: 1;
+  position: absolute;
+  width: 45px;
+  height: 22px;
+  right: 20px;
+  top:1.8%;
+  left: 87%;
+  border: 2px solid;
+  border-radius: 20px;
+}
+#dark_change:before{
+  position: absolute;
+  content: '';
+  width:20px;
+  height: 20px;
+  left: 1px;
+  top: 1px;
+  border-radius: 50%;
+  background: #000;
+  cursor: pointer;
+  transition: 0.4s;
+}
+#dark_change.activee{
+
+   border-color: white;
+   
+}
+
+#dark_change.activee:before {
+  left: 24px;
+  background: #fff;
+  
+  
+}
+
+.DB.night{
+  background: #000;
+  color: #fff;
+}
+
+
+.DB.night .menu{
+  background: #000;
+  color: #fff;
+}
+
+.DB.night a, .DB.night #Devicedata {
+  background: #000;
+  color: #fff;
+}
+
+.DB.night #Devicedata i {
+
+  color: #fff;
+}
+
+.DB.night i, .DB.night p {
+
+  color: #fff;
+}
+
+
+.DB.night #mainlogo2{
+  font-size: 20px;
+   filter: grayscale(0%) brightness(100%);
+}
+
+.DB.night span {
+
+  color: white;
+}
+
+.DB.night .menuclose span {
+  display: none;
+}
+
+.DB.night #shipmentid {
+
+  /* background-color: rgba(255, 255, 255, 0.808); */
+  border: 2px solid;
+  border-radius: 10px;
+}
+
+
+.DB.night #shipmentid p{
+
+  color: black;
+}
+/* ///forlogout// */
+
+.DB.night #logout p, #logout i{
+
+  background-color: red;
+  color: white;
+}
+
+.DB.night #T, .DB.night #T1, .DB.night #T2, .DB.night #T3, .DB.night #T4, .DB.night #T7, .DB.night #T6, .DB.night #T5, .DB.night #T8, .DB.night #T9, .DB.night #T10, .DB.night #T11{
+  color: white;
+  background-color: #000000f3;
+}
+
+.DB.night #l1, .DB.night #l2{
+  background-color: white;
+  color: #000000f3;
+}
+
+.DB.night #ha, .DB.night #hb {
+
+  color: black;
+}
+

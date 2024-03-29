@@ -18,16 +18,22 @@ def shipment(request : Request):
 
 @route.post("/shipment_table")
 def shipment(request : Request, token:dict=Depends(get_user_by)):
+    # print(token)
     try :
         if token:
-            if token["role"] == "admin":
-                shipment_list = list(shipment_data.find({}))
+         
+            if token["Role"] == "admin":
+                shipment_list = list(shipment_data.find({},{"_id":0}))
             else : 
-                shipment_list = list(shipment_data.find({"email" : token["email"]}))
-                
+                shipment_list = list(shipment_data.find({"email" : token["email"]},{"_id":0}))
+            
             if shipment_list:
                 return JSONResponse(content=shipment_list, status_code=200)
-        return HTTPException(status_code=400, detail="shipment_table not found")
+            else:
+                raise HTTPException(status_code=400, detail="Shipment table not found")
+           
+        else:
+            raise HTTPException(status_code=401, detail="Unauthorized")
     
     except HTTPException as error:
         return JSONResponse(content={"message" : error.detail}, status_code=error.status_code)

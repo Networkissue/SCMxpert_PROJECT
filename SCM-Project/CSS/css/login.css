@@ -8,11 +8,13 @@ body {
     margin: 0;
     display: flex;
     justify-content: center;
-    /* background-image: url("/CSS/bgm-pics/p.png"); */
+    background-image: url("/CSS/bgm-pics/login13.jpg");
     align-items: center;
     background-size: cover;
     height: 100vh;
-    
+    backdrop-filter: blur(8px);
+    background-repeat: no-repeat;
+    overflow-x: hidden;
 }
 
 .content .top_content{
@@ -28,49 +30,55 @@ body {
   
 }
 
-.content .top_content .page {
+#HOME{
 
   position: absolute;
   top: 50%;
-  left: 70%;
-  font-size: 30px;
+  left: 85%;
+  font-size: 25px;
   font-weight: bolder;
-  /* text-decoration-line: none; */
-}
-
-.content .top_content .Login {
-
-  
-  position: absolute;
-  top: 50%;
-  left: 80%;
-  font-size: 30px;
-  font-weight: bolder;
-  /* text-decoration-line: none; */
-}
-
-.content .top_content .signup {
-
-  position: absolute;
-  top: 46%;
-  left: 90%;
-  font-size: 30px;
-  font-weight: bolder;
-  /* text-decoration-line: none; */
-  width: 130px;
-  height: 40px;
+  color: black;
   background-color: white;
-  padding-top: 10px;
-  border-radius: 3%;
+  width: 4%;
+  height:20%;
+  padding: 10px;
+  border-radius: 6px;
+}
+
+#HOME:hover {
+
+  color: black;
+  background-color: #f4f4f4;
+}
+
+#SIGNUP {
+
+  position: absolute;
+  top: 50%;
+  left: 93%;
+  font-size: 25px;
+  font-weight: bolder;
+  color: white;
+  background-color: red;
+  width: 4%;
+  height:20%;
+  padding: 10px;
+  border-radius: 6px;
+}
+
+#SIGNUP:hover {
+
+  color: white;
+  background-color: rgb(221, 6, 6);
 }
 
 .tab-content {
-    background:rgba(255, 255, 255, 0.288);
+    background:rgba(255, 255, 255, 0.13);
     padding: 40px;
     width:600px;
     height:700px;
     margin:40px auto;
-    border-radius: 3px;
+    border-radius: 9px;
     box-shadow:0 4px 10px 4px grey;
   }
   .tab-content #login{
@@ -94,7 +102,8 @@ body {
   .tab-content label{
     font-size: 25px;
     margin-bottom: 80px;
-    font-weight: 500;
+    font-family:sans-serif;
+    font-weight:500;
   }
    
   .tab-content input{
@@ -106,29 +115,6 @@ body {
     padding-left: 10px;
     
   }
-/* 
-  button {
-    margin-top: 50px;
-    margin-left: 32%;
-    width: 200px; 
-    height: 50px;
-    font-size: 20px;
-  } */
-
- 
-
-  /* .tab-content .data6 button{
-    margin-top: 20px;
-    position:absolute;
-    top:800px;
-    left: 410px;
-    margin-left: 32%;
-    width: 200px; 
-    height: 50px;
-    font-size: 20px;
- } */
-
-
 
  .tab-content #login .data2 i{
     font-size: 30px;
@@ -210,13 +196,14 @@ body {
   left: 10%;
   font-size: 25px;
   border-radius: 6px;
-  background-color: rgb(201, 194, 194);
+  color: white;
+  background-color: red;
 
 
  }
  .tab-content #login .data6 a:hover {
   color: #f4f4f4;
-  background-color: red;
+  background-color: rgb(219, 4, 4);
  }
 
  #error{
@@ -278,6 +265,7 @@ body {
   top: 6%;
   left: 0;
   font-size: 30px;
+ 
 
 }
 
@@ -296,4 +284,19 @@ body {
 
 #Fp a:hover {
   color: red;
+  text-decoration: underline;
 }
+
+#mainlogo {
+    
+  position: absolute;
+  top: 25%;
+  left: 1%;
+  font-weight: bolder;
+}
+
+#mainlogo1 {
+
+  width: 280px;
+}
+
