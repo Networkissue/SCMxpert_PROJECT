@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 })
 
                 .catch(error => {
-                    $("#error").text("");
+                    $("#error").text(error);
                 });
 
 

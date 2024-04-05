@@ -6,6 +6,9 @@
     <title>Document</title>
     <link rel="stylesheet" href="/CSS/css/signupage.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'> 
+    <script src="https://code.jquery.com/jquery-3.7.1.slim.js"
+    integrity="sha256-UgvvN8vBkgO0luPSUl2s8TIlOSYRoGFAX4jlCIm9Adc="
+    crossorigin="anonymous"></script>
 </head>
 <body>
 
@@ -33,23 +36,26 @@
 
             
             <div id="signup">
-                <span class="error_message">{{error_message}}</span>
-                <span class="success_message">{{success_message}}</span>
+                <!-- <span class="error_message">{{error_message}}</span>
+                <span class="success_message">{{success_message}}</span> -->
+                {% if success_message %}
+               
+                <span class="success_message" >{{success_message}}</span>
+                {% endif %}
+
+                {% if error_message %}
+               
+                <span class="error_message" >{{error_message}}</span>
+                {% endif %}
                 <h1>Signup Here</h1>
 
                 <form action="/signup" method="post">
                         <div class="data">
-                            <label>First  Name</label> <br>
-                            <input type="text" name="Fname" required> <i class='bx bx-user'></i> <br><br> 
+                            <label>Username                                                                                                                                             </label> <br>
+                            <input type="text" name="Uname" required> <i class='bx bx-user'></i> <br><br> 
                             
                         </div>
  
-                        <div class="data1">
-                            <label>Last Name</label> <br>
-                            <input type="text" name="Lname"  required><i class='bx bx-user'></i><br><br>
-                            
-                        </div>
-
                     <div class="data2">
                         <label>Email address</label> <br>
                         <input type="email" name="email" required> <i class='bx bx-envelope' ></i><br><br>
@@ -60,11 +66,10 @@
                         <div class="pwd">
                             <label>Set a password</label> <br>
                             <input type="password" name="password" required><i class='bx bx-lock-alt' ></i><br><br>
-                            
-
+                            <p style="color: red;">At least one capital letter, one special character, one digit & More than 7 characters</p>
                         </div>
 
-                        <div class="pwd2">
+                        <div class="pwd2" id="pwd2">
                             <label>Confirm password</label> <br>
                             <input type="password" name="confirmpaassword" required> <i class='bx bx-lock-alt' ></i><br>
                            
@@ -82,6 +87,19 @@
 
            
         </div>
-   
+   <script>
+    if($(".success_message").length || $(".error_message").length){
+        setTimeout(() => {
+                $(".success_message").css("visibility","hidden")
+                $(".error_message").css("visibility","hidden")
+            }, 1000);
+    }
+
+    if($(".success_message").length) {
+        setTimeout(() => {
+               window.location.href = "/login"
+            }, 2000);
+    }
+   </script>
 </body>
 </html>

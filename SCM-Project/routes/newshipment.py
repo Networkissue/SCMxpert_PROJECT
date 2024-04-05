@@ -1,5 +1,5 @@
-from fastapi import APIRouter, HTTPException, Request, Form
-from routes.jwt_token import oauth2_scheme, Depends, decode_access_token, get_user_by, datetime
+from fastapi import APIRouter, HTTPException, Request
+from routes.jwt_token import  Depends, get_user_by, datetime
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import JSONResponse
 from jose import jwt, JWTError
@@ -18,8 +18,8 @@ def shipment(request : Request):
     return html.TemplateResponse("newshipment.html", {"request" : request})
 
 @route.post("/Newshipment")
-def new_data(request : Request, shipment : Shipment_input, decoded_token:str = Depends(oauth2_scheme)):
-    
+def new_data(request : Request, shipment : Shipment_input, current_user:str = Depends(get_user_by)):
+   
     try :
         #checking if the length of shipment number is equal to 7
         if not len(str(shipment.Shipment_Number)) == 7 :
@@ -42,33 +42,25 @@ def new_data(request : Request, shipment : Shipment_input, decoded_token:str = D
         if Expected_delivery_date_str < str(datetime.utcnow().timestamp()) :
             raise HTTPException(status_code=400, detail="Date should be greater than or equal to current UTC time")
         
-       
-        # Getting User and email by decoding token
-        # Assuming your token is prefixed with "Bearer"
-        token = decoded_token[7:]
-        
-        # Decode the access token
-        decoded_token_data = decode_access_token(token)
-      
-        Updated_DB = {
-            "User_Firstname":decoded_token_data["Username"],
-            "email": decoded_token_data["email"],
-            "Shipment_Number": shipment.Shipment_Number,
-            "Route_Details":shipment.Route_Details,
-            "Device":shipment.Device,
-            "PO_Number":shipment.PO_Number,
-            "NDC_Number":shipment.NDC_Number,
-            "Serial_no_Goods":shipment.Container_Number,
-            "Container_Number":shipment.Container_Number,
-            "Goods_Type":shipment.Goods_Type,
-            "Expected_Delivery_Date":shipment.Expected_Delivery_Date,
-            "Delivery_Number":shipment.Delivery_Number,
-            "Batch_id":shipment.Batch_id,
-            "Comment":shipment.Comment
-        }
+        if current_user :
+            Shipment = {
+                "User_Firstname":current_user["user_FirstName"],
+                "Shipment_Number": shipment.Shipment_Number,
+                "Route_Details":shipment.Route_Details,
+                "Device":shipment.Device,
+                "PO_Number":shipment.PO_Number,
+                "NDC_Number":shipment.NDC_Number,
+                "Serial_no_Goods":shipment.Container_Number,
+                "Container_Number":shipment.Container_Number,
+                "Goods_Type":shipment.Goods_Type,
+                "Expected_Delivery_Date":shipment.Expected_Delivery_Date,
+                "Delivery_Number":shipment.Delivery_Number,
+                "Batch_id":shipment.Batch_id,
+                "Comment":shipment.Comment
+            }
 
-        print(Updated_DB)
-        shipment_data.insert_one(Updated_DB)
+           
+        shipment_data.insert_one(Shipment)
         return JSONResponse(content={"message" : "Shipment Created Successfully"}, status_code=200)
     except HTTPException as error:
         return JSONResponse(content={"message" : error.detail}, status_code=error.status_code)

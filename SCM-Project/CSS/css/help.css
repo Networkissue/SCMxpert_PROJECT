@@ -238,13 +238,13 @@ h3 {
     border: 2px solid;
     border-radius: 70px;
     border-bottom-right-radius: 10px;
-    animation: fadein 1.5s ease-out forwards;
+    animation: fadein 4.5s ease-out forwards;
    
 }
 
   @keyframes fadein {
     from {
-      opacity: 0;
+      opacity: 0.5;
       transform: translateY(-30px);
     }
     to {
@@ -285,13 +285,13 @@ h3 {
     border: 2px solid;
     border-radius: 70px;
     border-bottom-right-radius: 10px;
-    animation: fadein 2s ease-out forwards;
+    animation: fadein 5.5s ease-out forwards;
    
 }
 
 @keyframes fadein {
     from {
-      opacity: 0;
+      opacity: 0.5;
       transform: translateY(-30px);
     }
     to {
@@ -339,13 +339,13 @@ h3 {
     border: 2px solid;
     border-radius: 70px;
     border-bottom-right-radius: 10px;
-    animation: fadeout 3s ease-out forwards;
+    animation: fadeout 6s ease-out forwards;
    
 }
 
 @keyframes fadeout {
     from {
-      opacity: 0;
+      opacity: 0.5;
       transform: translateY(30px);
     }
     to {
@@ -393,7 +393,7 @@ h3 {
     border: 2px solid;
     border-radius: 70px;
     border-bottom-right-radius: 10px;
-    animation: fadein 2s ease-out forwards;
+    animation: fadein 5.5s ease-out forwards;
    
 }
 
@@ -436,7 +436,7 @@ h3 {
     border: 2px solid;
     border-radius: 70px;
     border-bottom-right-radius: 10px;
-    animation: fadeout 3s ease-out forwards;
+    animation: fadeout 6s ease-out forwards;
    
 }
 
@@ -482,7 +482,7 @@ h3 {
     border-radius: 20px;
     padding: 10px;
     opacity: 0; /* Initially make the element transparent */
-    animation: fadeRightAnimation 1s ease forwards; /* Apply the animation */
+    animation: fadeRightAnimation 7s ease forwards; /* Apply the animation */
    
 }
 
@@ -507,7 +507,7 @@ h3 {
     border-radius: 20px;
     padding: 10px;
     opacity: 0; /* Initially make the element transparent */
-    animation: fadeRightAnimation 1s ease forwards; /* Apply the animation */
+    animation: fadeRightAnimation 7s ease forwards; /* Apply the animation */
    
 }
 
@@ -532,7 +532,7 @@ h3 {
     border-radius: 20px;
     padding: 10px;
     opacity: 0; /* Initially make the element transparent */
-    animation: fadeRightAnimation 1s ease forwards; /* Apply the animation */
+    animation: fadeRightAnimation 7s ease forwards; /* Apply the animation */
    
 }
 
@@ -556,7 +556,7 @@ h3 {
     border-radius: 20px;
     padding: 10px;
     opacity: 0; /* Initially make the element transparent */
-    animation: fadeRightAnimation 1s ease forwards; /* Apply the animation */
+    animation: fadeRightAnimation 7s ease forwards; /* Apply the animation */
    
 }
 
@@ -580,7 +580,7 @@ h3 {
     border-radius: 20px;
     padding: 10px;
     opacity: 0; /* Initially make the element transparent */
-    animation: fadeRightAnimatio 1s ease forwards; /* Apply the animation */
+    animation: fadeRightAnimatio 7s ease forwards; /* Apply the animation */
    
 }
 
@@ -604,7 +604,7 @@ h3 {
     border-radius: 20px;
     padding: 10px;
     opacity: 0; /* Initially make the element transparent */
-    animation: fadeRightAnimation 1s ease forwards; /* Apply the animation */
+    animation: fadeRightAnimation 7s ease forwards; /* Apply the animation */
    
 }
 
@@ -629,7 +629,7 @@ h3 {
     border-radius: 20px;
     padding: 10px;
     opacity: 0; /* Initially make the element transparent */
-    animation: fadeRightAnimatio 1s ease forwards; /* Apply the animation */
+    animation: fadeRightAnimatio 7s ease forwards; /* Apply the animation */
    
 }
 

@@ -1,6 +1,4 @@
-from fastapi import APIRouter, Request, Form
-from jose import JWTError, jwt
-from routes.jwt_token import get_user_by
+from fastapi import APIRouter, Request
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 

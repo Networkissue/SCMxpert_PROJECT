@@ -99,52 +99,6 @@ body {
     margin-right: 15px;
 } 
 
-/* .DB .sidebar .A a {
-    font-size: 25px;
-    text-decoration-line: none;
-    position: relative;
-    top: 0;
-    left: 40px;
-    font-weight: bolder;
-    color: black;
-}
-
-
-.DB .sidebar .A i{
-
-    position: absolute;
-    top:11.8%;
-    left:0;
-    font-size: xx-large;
-    margin-left: 15px;
-    padding-right: 8px;
-   
-    
-} */
-
-/* .DB .sidebar .option{
-    margin-left: 0px;
-    /* color: black; */
-    
- 
-/* .DB .sidebar .option a {
-    font-size: 23px;
-    text-decoration-line: none;
-    position: relative;
-    top: 0;
-    left: 0;
-    color: darkblue;
-    font-weight: bolder;
-} */
-
-/* .DB .sidebar .option i{
-    position: relative;
-    top:11.5%;
-    font-size: 25px;
-    margin-right: 20px;
-    padding-right: 8px;
-} */
-
 
 .option {
     display: flex;
@@ -329,9 +283,6 @@ body {
 
     background-color: white;
     color: black;
-   
-    /* background: rgb(252,181,26);
-    background: linear-gradient(90deg, rgba(252,181,26,1) 0%, rgba(241,146,2,1) 39%, rgba(129,110,14,1) 100%); */
     width: 80%;
     border-radius: 6px;
   }
@@ -389,7 +340,6 @@ label {
     font-size: x-large;
     width: 80%;
     text-align:center;
-    
     background-color: rgba(128, 128, 128, 0);
     padding-left: 10%;
     /* box-shadow: 0 4px 10px 4px rgb(185, 176, 176, 0.5); */
@@ -411,6 +361,9 @@ label {
 }
 
 .container .table-container table thead {
+    /* width: 300px; */
+    height: 60px;
+    padding: 20px ;
     color: white;
     background-color: red;
 
@@ -419,6 +372,7 @@ label {
 .container .table-container table tbody {
     color: white;
     background-color: rgba(128, 128, 128, 0.842);
+   
 }
 
 
@@ -454,13 +408,22 @@ label {
   }
 
   .container .table-container table {
-    width: 137%; /* Ensure the table takes full width */
+    width: 147%; /* Ensure the table takes full width */
     table-layout: fixed; /* Fix the table layout to prevent cell content from affecting column width */
 }
 
 .container .table-container table tbody tr td {
     width: auto; /* Adjust width of each cell as needed */
+    padding: 20px;
     white-space: nowrap; /* Prevent wrapping of cell contents */
     overflow: hidden; /* Hide overflow content */
     text-overflow: ellipsis; /* Display ellipsis (...) for overflow content */
+}
+
+#error {
+    position: absolute;
+    top: 10%;
+    left: 47%;
+    font-size: 30px;
+    color: #c20f0f;
 }

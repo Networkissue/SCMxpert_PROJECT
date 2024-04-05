@@ -2,10 +2,9 @@ from pydantic import BaseModel
 
 #for userdata
 class Signup(BaseModel):
-    user_FirstName:str
-    user_LastName:str
+    Username:str
     email:str
-    role: str
+    Role: str
     password:str
 
 #for shipment data

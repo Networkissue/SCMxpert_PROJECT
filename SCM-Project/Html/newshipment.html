@@ -6,12 +6,12 @@
         <link rel="stylesheet" href="../CSS/css/newshipment.css">
         <link rel="stylesheet" href="/CSS/css/homepage.css">
         <link rel="stylesheet" href="/CSS/css/b&w_mode.css">
-        <script src="../CSS/javascript/newshipment.js"></script>
-        <script src="../CSS/javascript/b&w_mode.js"></script>
         <script src="https://code.jquery.com/jquery-3.7.1.slim.js"
         integrity="sha256-UgvvN8vBkgO0luPSUl2s8TIlOSYRoGFAX4jlCIm9Adc="
         crossorigin="anonymous"></script>
-        <script src="../CSS/javascript/newshipment.js"></script>
+       
+        <script src="../CSS/javascript/b&w_mode.js"></script>
+     
         
         
        
@@ -61,7 +61,7 @@
                             <p>MY SHIPMENTS</p>
                             <span>></span>
                         </a>
-                        <a href="#" class="top_sub_link" id="Devicedata" style="display: flex; padding-left: 10px;">
+                        <a href="/devicedata" class="top_sub_link" id="Devicedata" style="display: flex; padding-left: 10px;">
                             <i class='bx bxs-devices' ></i>
                             <p>DEVICE DATA</p>
                             <span>></span>
@@ -83,7 +83,7 @@
                             <p>PROFILE</p>
                             <span>></span>
                         </a>
-                        <a href="/hel" class="sub_link" style="display: flex; padding-left: 15px;">
+                        <a href="/help" class="sub_link" style="display: flex; padding-left: 15px;">
                             <i class='bx bx-detail' ></i>
                             <p>ABOUT</p>
                             <span>></span>
@@ -98,7 +98,7 @@
                             <p>EDIT THEME</p>
                             <span>></span> -->
                         </a>
-                        <a href="" onclick="logout()" class="sub_link" id="logout"  style="background-color: rgb(241, 9, 9);color: aliceblue;border-radius: 7px; display: flex; padding-left: 15px;">
+                        <a href="/" onclick="logout()" class="sub_link" id="logout"  style="background-color: rgb(241, 9, 9);color: aliceblue;border-radius: 7px; display: flex; padding-left: 15px;">
                             <i class='bx bx-log-out-circle' STYLE="color:aliceblue;"></i>
                             <p>LOGOUT</p>
                             <!-- <span>></span> -->
@@ -119,25 +119,27 @@
                 <div class="detail-1">
 
                     Shipment Number<i style="color: red;">*</i> <br><input
-                        type="number" id="Shipment_Number" required><br><br>
+                        type="number" id="Shipment_Number" required maxlength="7"><br><br>
 
                     Route Details<i style="color: red;">*</i> <br><select
                         name="dropdown" id="Route_Details" required>
                         <b><option value="" disabled selected>Select
                                 Route</option></b>
-                        <option value="Warangal">Warangal</option>
-                        <option value="Hyderabad">Hyderabad</option>
-                        <opiton value="Tirupati">Tirupati</opiton>
-                        <option value="Vizag">Vizag</option>
-                        <option value="Chitoor">Chitoor</option>
+                        <option value="Sydney, Australia">Sydney, Australia</option>
+                        <option value="Abu Dhabi, Dubai">Abu Dhabi, Dubai</option>
+                        <opiton value="London, Uk">London, Uk</opiton>
+                        <option value="Canada">Canada</option>
+                        <option value="Vizag, India">Vizag, India</option>
+                        <option value="Bengalore, India">Bengalore, India</option>
                     </select><br><br>
 
-                    Device<i style="color: red;">*</i> <br><select name="Device"
+                    Device_Id<i style="color: red;">*</i> <br><select name="Device"
                         id="Device" required>
                         <b><option value="" disabled selected>Select
                                 Device</option></b>
-                        <option value="64q79798">64797984558</option>
-                        <option value="482q979q79">4829797969</option>
+                                <option value="2365478910" id="opt1">2365478910</option>
+                                <option value="2365478911" id="opt1">2365478911</option>
+                                <option value="2365478912" id="opt2">2365478912</option>
                     </select><br><br>
 
                     PO Number<i style="color: red;">*</i> <br><input
@@ -164,7 +166,7 @@
                         <option value="Electrical">Electrical</option>
                     </select><br><br>
 
-                    Expected Deivery Date<i style="color: red;">*</i> <br><input
+                    Expected Delivery Date<i style="color: red;">*</i> <br><input
                         type="date" placeholder="DD/MM/YYYY"
                         id="Expected_Delivery_Date" required><br><br>
 
@@ -196,5 +198,6 @@
         <!-- <script>
             document.getElementById("option").style.display = "block";
         </script> -->
+        <script src="../CSS/javascript/newshipment.js"></script>
     </body>
 </html>

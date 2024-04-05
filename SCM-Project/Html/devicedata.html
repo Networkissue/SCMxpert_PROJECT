@@ -3,95 +3,143 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="/CSS/css/devicedata.css">
-        <link rel="stylesheet" href="/CSS/css/dashboard.css">
+        <link rel="stylesheet" href="/CSS/css/homepage.css">
+        <link rel="stylesheet" href="/CSS/css/b&w_mode.css">
+        <link rel="stylesheet" href="../CSS/css/devicedata.css">
+        <script src="https://code.jquery.com/jquery-3.7.1.slim.js"
+            integrity="sha256-UgvvN8vBkgO0luPSUl2s8TIlOSYRoGFAX4jlCIm9Adc="
+            crossorigin="anonymous"></script>
+        <!-- <script src="/CSS/javascript/homepage.js"></script> -->
+        <script src="/CSS/javascript/devicedata.js"></script>
+        <script src="/CSS/javascript/b&w_mode.js"></script>
+        
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'
             rel='stylesheet'>
         <title>Device Data</title>
     </head>
     <body>
-        <div class="DB">
+        <header >
+            <p class="dark_change" id="dark_change"></p>
+          </header>
+
+        <div class="DB" id="DB">
             <div class="menu">
-                <i class='bx bx-menu'></i>
+                <i class='bx bx-menu'  id="menu_icon"></i>
             </div>
 
-            <h1><b>SCMxpert</b></h1>
-            <form>
+            <div class="mainlogo" id="mainlogo">
+                <img src="/CSS/bgm-pics/scm-logoCopy.png" alt="" id="mainlogo1">
+                <img src="/CSS/bgm-pics/scmCopy.png" alt="" id="mainlogo2">
+            </div>
 
-                <div class="sidebar">
-                    <div class="A">
-                        <i class='bx bx-home'></i>
-                        <a
-                            href="/Html/dashboard.html">DASHBOARD</a><br><br><br>
-                    </div>
-                    <div class="B">
-                        <i class='bx bxs-user-circle'></i>
-                        <a href="#">MY ACCOUNT</a><br><br><br>
-                    </div>
-                    <div class="C">
-                        <i class='bx bxs-ship'></i>
-                        <a href="/Html/newshipment.html">NEW
-                            SHIPMENT</a><br><br><br>
-                    </div>
-                    <div class="D">
-                        <i class='bx bxs-package'></i>
-                        <a href="#">MY SHIPMENTS</a><br><br><br>
-                    </div>
-                    <div class="E">
-                        <i class='bx bxs-devices'></i>
-                        <a href="#">DEVICE DATA</a><br><br><br>
-                    </div>
-                    <!-- <div class="F">
-                    <i class='bx bx-log-out-circle'></i>
-                    <a href="#">LOGOUT</a>
-                </div> -->
+           
 
-                </div>
-            </form>
-        </div>
-        <div class="devicedata">
-            <form>
-                <div class="data-conainer" id="data-container">
-                    <div class="top-data" id="top-data">
-                        <h1>Please Select a Device Id To See The Data
-                            Stream</h1>
-                        Device Id*<br><select name="dropdown">
-                            <option value="Select Here"><b>Select Here</b></option>
-                            <option value="64797984558">64797984558</option>
-                            <option value="4829797969">4829797969</option>
+            <div class="sidebar" id="sidebar">
+                <div class="A">
+                    <a href="/home" class="heading">
+                        <i class='bx bx-home icon' id="dashboard_icon"></i>
+                        <h1>DASHBOARD</h1>
+                    </a><hr>
+                    <div class="option" id="option" style="display: block;"><br>
 
-                        </select>
-                        <button>GET DATA</button>
-                    </div>
-                    <div class="table-data" id="table-id">
-                        <table border="1" style="border: 2px solid white;">
-
-                            <thead>
-                                <th> Device Id </th>
-                                <th> Battery Level </th>
-                                <th> First_Sensor_Temperature </th>
-                                <th> Route From </th>
-                                <th> Route TO </th>
-                                <th> TimeStamp </th>
-                            </thead>
-                            <tbody id ="tablebody">
-                                <tr>
-                                    <td>1</td>
-                                    <td>2</td>
-                                    <td>3</td>
-                                    <td>4</td>
-                                    <td>5</td>
-                                    <td>6</td>
-                                </tr>
-                            </tbody>
-                           
-
-                        </table>
-
+                        <a href="/Newshipment"class="top_sub_link" style="display: flex; padding-left: 7px;">
+                            <i class='bx bxs-ship' ></i>
+                            <p>NEW SHIPMENT</p>
+                            <span>></span>
+                        </a>
+                        <a href="/shipment_table" class="top_sub_link" style="display: flex; padding-left: 7px;">
+                            <i class='bx bxs-package' ></i>
+                            <p>MY SHIPMENTS</p>
+                            <span>></span>
+                        </a>
+                        <a href="/devicedata" class="top_sub_link" id="Devicedata" style="display: flex; padding-left: 10px;">
+                            <i class='bx bxs-devices' ></i>
+                            <p>DEVICE DATA</p>
+                            <!-- <span>></span> -->
+                        </a>
+                        
                     </div>
                 </div>
-            </form>
-        </div>
+                
+                <div class="B" >
+                    
+                    <a class="b_heading"  id="b_heading">
+                        <i class='bx bx-cog icon1'></i>
+                        <h1>SETTINGS</h1>
+                    </a><hr>
+                    <div class="setting" id="setting" style="display: none;"><br>
 
-    </body>
-</html>
+                        <a href="/profilepage" class="sub_link" style="display: flex; padding-left: 15px;">
+                            <i class='bx bxs-user-circle'></i>
+                            <p>PROFILE</p>
+                            <span>></span>
+                        </a>
+                        <a href="/help" class="sub_link" style="display: flex; padding-left: 15px;">
+                            <i class='bx bx-detail' ></i>
+                            <p>ABOUT</p>
+                            <span>></span>
+                        </a>
+                        <!-- <a href="p" class="sub_link" style="display: flex; padding-left: 15px;">
+                            <i class='bx bx-help-circle' ></i>
+                            <p style="font-size: 18px;">HELP & SUPPORT</p>
+                            <span >></span>
+                        </a> -->
+                        <!-- <a href="#" class="sub_link" >
+                            <i class='bx bx-meh-blank' ></i>
+                            <p>EDIT THEME</p>
+                            <span>></span> -->
+                        </a>
+                        <a href="/" onclick="logout()" class="sub_link" id="logout"  style="background-color: rgb(241, 9, 9);color: aliceblue;border-radius: 7px; display: flex; padding-left: 15px;">
+                            <i class='bx bx-log-out-circle' STYLE="color:aliceblue;"></i>
+                            <p>LOGOUT</p>
+                            <!-- <span>></span> -->
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+         </div>   
+
+            <div class="devicedata">
+                <form>
+                   <div id="error">
+
+                   </div>
+                    <div class="data-conainer" id="data-container">
+                        <div class="top-data" id="top-data">
+                            <h1>Please Select a Device Id To See The Data
+                                Stream</h1>
+                            Device Id <i style="color: red;">*</i> </style><br><select name="dropdown" id="search">
+                                <option value="Select Here"  disabled selected id="selecthere"><b>Select
+                                        Here</b></option>
+                                <option value="2365478910" id="opt1">2365478910</option>
+                                <option value="2365478911" id="opt1">2365478911</option>
+                                <option value="2365478912" id="opt2">2365478912</option>
+
+                            </select>
+                            <button id="submit">GET DATA</button>
+                        </div>
+                        <div class="table-data" id="table-id">
+                            <table border="1" style="border: 2px solid white;">
+
+                                <thead>
+                                    <th> Device Id </th>
+                                    <th> Battery Level </th>
+                                    <th> First_Sensor_Temperature </th>
+                                    <th> Route From </th>
+                                    <th> Route TO </th>
+                                    <th> TimeStamp </th>
+                                </thead>
+                                <tbody id="get_data">
+                        
+                                </tbody>
+
+                            </table>
+
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+        </body>
+    </html>

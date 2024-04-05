@@ -1,4 +1,4 @@
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI
 from fastapi.templating import Jinja2Templates
 from fastapi.staticfiles import StaticFiles
 
@@ -16,7 +16,7 @@ from routes.settings import route as settings
 from routes.mainpage import route as aboutpage
 from routes.profilepage import route as myprofile
 from routes.help import route as helppage
-
+from routes.Devicedata import route as devicedata
 
 
 app = FastAPI()
@@ -34,3 +34,4 @@ app.include_router(settings)
 app.include_router(aboutpage)
 app.include_router(myprofile)
 app.include_router(helppage)
+app.include_router(devicedata)

@@ -469,9 +469,10 @@ button{
 #message {
 
     position: absolute;
-    top:93%;
-    left: 43%;
+    top:-4%;
+    left: 38%;
     font-size: 30px;
+    font-weight: 600;
     color: #c20f0f;
     text-align: center;
 

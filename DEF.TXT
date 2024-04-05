@@ -1,0 +1,162 @@
+JWT(JSON WEB TOKEN) 
+
+CLASSES = TO DEFINE STRUCTURE AND BEHAVIOIUR OF OBJECTS
+
+OBJECTS = IT IS AN INSTANCES OF CLASSES WITH UNIQUE DATA
+
+MODULES = IT CONTAINS CLASSES, FUNCTIONS, VARIABLES.IT 
+          IS USED FOR REALATED CODE TOGETHER TO REUSE
+         
+FUNCTIONS = EXCAPSULATE BLOCKS OF CODE FOR SPECIFIC TASKS
+
+VARIABLES = TO STORE DATA VALUES
+
+
+--------------------------------------------------------------------
+                          ROUTES
+-------------------------------------------------------------------
+
+APIROUTER = IS FOR CREATING ROUTES
+
+HTTPEXCEPTION = TO HANDLE HTTP EXCEPTION(ERRORS)
+
+REQUEST = TO HANDLE INCOMING REQUESTS
+
+FORM = TO PARSE FORMDATA
+
+JINJA2TEMPLATING = TO RENDER HTML TEMPLATES
+
+JSONRESPONSE = WHICH IS USED TO RETURN JSON RESPONSES FROM ENDPOINTS
+
+STATICFILES = TO SERVE STATIC FILES SUCH AS CSS, ADDITIONALLY...
+
+------------------------------------------------------------------
+
+PASSLIB.CONTEXT / CRYPTCONTEXT = TO HANDLE PASSWORD HASHING AND SOME 
+                                 DATABASE-RELATED IMPORTS.
+
+BCRYPT = IT IS AN ALGORITHM 
+
+-------------------------------------------------------------------
+
+DEPENDS = IT IS USED FOR DEPENDENCY INJECTION
+
+-------------------------------------------------------------------
+OAUTH2_SCHEMES = THIS IS AN AUTHENTICATION SCHEME
+
+OAUTH2 = IT IS AN AUTHORIZATION FRAMEWORK, OBTAIN USED TO USERS DATA
+         WITHOUT THE NEED FOR SHARING CRENENTIALS. 
+
+OAUTH2PASSWORDBEARER = IT IS A CLASS PROVIDED BY THE FASTAPI 
+                       FRAMEWORK FOR HANDLING OAUTH2-AUTHENTI-
+                       CATION WITH PASSWORD GRANT TYPE.
+                    -> THIS OBJECT CAN BE USED TO EXTRACT AND 
+                       VALIDATE OAUTH2 TOKENS PROVIDED THROUGH
+                       "AUTHORIZATION" HEADER OF HTTP REQUESTS
+                       
+                       
+CREATE_ACCESS_TOKEN = THIS FUNCTION IS LIKELY USED TO GENERATE JWT-
+                      TOKENS FOR AUNTHENTICATION PURPOSES
+
+DECODE_ACCESS_TOKEN =  IT IS A FUNTION USED TO DECODE JWT ACCESS 
+                       TOKENS
+
+GET_USER_BY = IT IS A FUNCTION TO RETRIVE USER INFORMATION
+
+DATETIME = THIS IS AN DATETIME MODULE
+
+----------------------------------------------------------------
+                     KAFKA-PYTHON
+-----------------------------------------------------------------
+SOCKET = PROVIDES ACCESS TO BSD(BERKELEY SOFTWARE DISTRIBUTION) 
+         SOCKET INTERFACE, ALLOWS COMMUNICATION OVER THE NETWORK
+
+
+ERRNO = PROVIDES ACCESS TO ERROR DEFINED BY THE C RUNTIME LIBRARY
+        (OR)  USED FOR ERROR HANDLING
+       
+JSON = PROVIDES FUNCTIONS FOR ENCODING & DECODING JSON DATA
+
+OS = PROVIDES ACCESS FOR INTERACTING WITH OPERATING SYSTEM, SUCH
+     AS ACCESSING ENVIRONMENT VARIABLES AND MANUPULATING FILES
+
+DOTENV = A PYTHON MODULE FOR PARSING ENVIRONMENT VARIABLES FROM
+         '.ENV' FILE INTO 'OS.ENVIRON'
+
+AF_INET = IPV4
+
+SOCK_STREAM = TCP
+
+CONFLUENT_KAFKA = IT IS A LIBRARY IN PYTHON CLIENT FOR APACHE KAFKA.
+                -> IT IS USED TO PRODUCE AND CONSUME MESSAGES FROM
+
+BOOTSTRAP.SERVERS = IT IS A CONFIGURATION PARAMTER USED TO SPECIFY
+                    THE INITIAL LIST OF KAFKA BORKER ENDPOINTS THAT
+                    A PRODUCER OR CONSUMER SHOULD CONNECT TO.
+
+JOSE = IT IS AN LIBRARY 
+
+JWT = IT IS USED FOR JSON WEB TOKEN OPERATIONS
+
+JWTERROR = IT IS AN EXCEPTION TYPE RAISED FOR JWT-RELATED ERRORS
+-------------------------------------------------------------------
+
+                       JAVASCRIPT
+-------------------------------------------------------------------
+
+ARRAY = IT IS A DATA STRUCTURE IN JS THAT IS USED TO STORE MULTIPLE 
+        VALUES IN A SINGLE VARIABLE
+        
+
+QUERYSELECTOR() = IT IS USED TO SELECT AN SINGLE ELEMENT FROM THE 
+                  DOM(DOCUMENT OBJECT MODEL) USING A CSS SELECTOR
+               -> IT RETURNS THE FIRST ELEMENT WITH IN THE DOCUMENT
+                  MATCHES
+
+FIND() = THIS METHOD IS AVAILABLE ON ARRAYS IN JS.THAT IS USED TO
+         FIND THE FIRST ELEMENT IN THE ARRAY & STATISFIES CONDITION
+
+FOREACH() = IT IS A METHOD IN JS.THAT IS USED TO EXECUTE A PROVIDED
+            FUNCTION ONCE FOR EACH ARRAY ELEMENT
+
+
+->> Intro SUPPLY CHAIN MANAGEMENT
+Our project is about tracking devicedata from source to destination.
+For our project [SCMXpert lite], I have used HTMl, CSS, JS for FN &
+For bckend i have used python fastapi, for storing users data & 
+shipment data & device data I used mongodb.
+
+->> Mainpage 
+This is the main homepage of our web application 
+here, we can see two buttons on the top of the page
+In the below of the page i have added an image WHICH
+represents the supply chain of shipment.
+At the bottom of this homepage i have added contact
+details, if anyone faces any issues regardng this 
+website they can contact us through this details.
+
+can i go through with existing user or i need to 
+register new user?
+
+->> Register Page
+this is the register page of our web application
+here, we can see five fields which need to be filled 
+to register new account.
+Here, we are validating, Username [Firstname, Lastname]
+& email must be unique. If they are not unique we will through an ERROR
+and Password & Confirm are must be equal. 
+If the validations are passed then we will store the user details in
+DATABASE(user_data collection) & im encrypting the password using BCRYPT
+algortihm and storing it on database. 
+IF all validations are pass then
+it directly navigate to login page
+
+->> login 
+These are the fields user need to provide to login to our web application.
+Here, we are validating the details which are enterd by the user are there
+in our user_data collection on database.
+If this details matched with the details on the database their will be 
+successfull login and navigate to the dashboard. If not we will throw an
+error message.
+
+->> dashboard

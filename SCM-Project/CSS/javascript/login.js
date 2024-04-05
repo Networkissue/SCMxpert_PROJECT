@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     document.getElementById("submit").addEventListener('click', function (e) {
         e.preventDefault();
-
+         
         const userCaptcha = document.getElementById("userCaptcha").value;
         const generatedCaptcha = document.getElementById("captcha").textContent;
 

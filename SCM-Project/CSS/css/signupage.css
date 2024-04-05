@@ -77,6 +77,7 @@ body {
   border-radius: 9px;
   box-shadow:0 4px 10px 4px grey;
 }
+
 .tab-content #signup{
   height: 100%;
   width: 100%;
@@ -118,7 +119,7 @@ form input{
 #REGISTER {
 
   position: absolute;
-  top: 66%;
+  top: 64.3%;
   left: 46%;
   padding: 15px 40px;
   font-size: 20px;
@@ -136,40 +137,31 @@ form input{
 
 .tab-content #signup .data i{
   font-size: 30px;
-  position: absolute;
-  top:455px;
-  left: 1700px;
+  position: relative;
+  top:-37px;
+  left: 93%;
 }
 
 .tab-content #signup .data1 i{
   font-size: 30px;
-  position: absolute;
-  top:560px;
-  left: 1700px;
+  position: relative;
+  top:-37px;
+  left: 93%;
 }
 
 .tab-content #signup .data2 i{
   font-size: 30px;
-  position: absolute;
-  top:665px;
-  left: 1700px;
+  position: relative;
+  top:-37px;
+  left: 93%;
 }
 
 .tab-content #signup .data3 .pwd i{
   font-size: 30px;
-  position: absolute;
-  top:770px;
-  left: 1700px;
+  position: relative;
+  top:-37px;
+  left: 93%;
 }
-
-.tab-content #signup .data3 .pwd2 i{
-  font-size: 30px;
-  position: absolute;
-  top:880px;
-  left: 1700px;
-}
-
-
 
 h2{
   position: absolute;
@@ -178,7 +170,8 @@ h2{
   color: orangered;
  
 }
- #log {
+
+#log {
 
   position: absolute;
   top: 72.5%;
@@ -204,7 +197,7 @@ h2{
   position: absolute;
   top:320px;
   left:1300px;
-  font-size: 16px;
+  font-size: 20px;
   color: red;
   animation:ease-out 0.2s;
 }
@@ -214,7 +207,7 @@ h2{
 .tab-content #signup .success_message{
   position: absolute;
   top:320px;
-  left:1360px;
+  left:1250px;
   font-size: 28px;
   color: green;
 }
@@ -233,3 +226,37 @@ h2{
   width: 280px;
 }
 
+.tab-content #signup .data3 .pwd p{
+  display: none;
+  font-size: 20px;
+  position: absolute;
+  top:52%;
+  left: 39.7%;
+}
+
+.tab-content #signup .data3 .pwd:hover p{
+  display: block;
+  font-size: 16px;
+  position: absolute;
+  top:51.2%;
+  left: 40%;
+}
+.tab-content #signup .data3 .pwd:hover #pwd2 {
+  font-size: 20px;
+  transform: translateY(30%);
+}
+
+
+#pwd2{
+  font-size: 20px;
+  position: absolute;
+  top:54.7%;
+  left: 39.7%;
+  width: 20.7%;
+}
+#pwd2 i{
+  font-size: 30px;
+  position: relative;
+  top:-38px;
+  left: 93%;
+}

@@ -45,12 +45,12 @@
   color: #fff;
 }
 
-.DB.night a, .DB.night #Devicedata {
+.DB.night a, .DB.night #Devicedata, .DB.night #shipmentid {
   background: #000;
   color: #fff;
 }
 
-.DB.night #Devicedata i {
+.DB.night #Devicedata i, .DB.night #shipmentid i {
 
   color: #fff;
 }
@@ -74,19 +74,18 @@
 .DB.night .menuclose span {
   display: none;
 }
-
+/* 
 .DB.night #shipmentid {
 
-  /* background-color: rgba(255, 255, 255, 0.808); */
   border: 2px solid;
   border-radius: 10px;
 }
+ */
 
-
-.DB.night #shipmentid p{
+/* .DB.night #shipmentid p{
 
   color: black;
-}
+} */
 /* ///forlogout// */
 
 .DB.night #logout p, #logout i{

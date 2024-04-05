@@ -1,10 +1,8 @@
-from fastapi import APIRouter, HTTPException, Form, Request, Depends
+from fastapi import APIRouter, HTTPException, Request, Depends
 from fastapi.templating import Jinja2Templates
 from fastapi.responses import JSONResponse
 from fastapi.staticfiles import StaticFiles
-from jose import JWTError,jwt
-from routes.jwt_token import get_user_by, oauth2_scheme
-from routes.newshipment import new_data
+from routes.jwt_token import get_user_by
 from database.database import shipment_data
 
 
@@ -33,7 +31,7 @@ def shipment(request : Request, token:dict=Depends(get_user_by)):
                 raise HTTPException(status_code=400, detail="Shipment table not found")
            
         else:
-            raise HTTPException(status_code=401, detail="Unauthorized")
+            raise HTTPException(status_code=404, detail="Token Expired")
     
     except HTTPException as error:
         return JSONResponse(content={"message" : error.detail}, status_code=error.status_code)

@@ -20,31 +20,32 @@ def update(request : Request, user: str=Form(None), token:str = Depends(get_user
               
                  # Ensure authentication token is present
                 if not token:
-                       raise HTTPException(status_code=401, detail="Unaothorized")  
+                     raise HTTPException(status_code=401, detail="Unaothorized")  
+                
+                  # Check authorization
+                if token["Role"] == "user":
+                     raise HTTPException(status_code=404, detail="You have no access")
+                
 
                  # Ensure user data is provided and valid  
                 if not user :
-                       raise HTTPException(status_code=401, detail="Please enter valid user")
+                     raise HTTPException(status_code=401, detail="Please enter valid user")
                 
                  # Query user data from the database 
-                result = user_data.find_one({"user_FirstName" : user})
+                result = user_data.find_one({"Username" : user})
                 if not result:
-                       raise HTTPException(status_code=404, detail="User not found")
-                
-                 # Check authorization
-                if token["role"] == "user":
-                       raise HTTPException(status_code=404, detail="You have no access")
+                     raise HTTPException(status_code=404, detail="User not found")
                 
                  # Check if the user already has the admin role
-                if result["role"] == "admin":
-                       raise HTTPException(status_code=401, detail="User is already a admin")
+                if result["Role"] == "admin":
+                     raise HTTPException(status_code=401, detail="User is already a admin")
 
                  # Update user role to admin
-                result1 = user_data.update_one({"user_FirstName" : user}, {"$set": {"role" : "admin"}})
+                result1 = user_data.update_one({"Username" : user}, {"$set": {"Role" : "admin"}})
                 if result1.modified_count > 0:
-                       raise HTTPException(status_code=200, detail=" Admin role Updated Successfully ")
+                     raise HTTPException(status_code=200, detail=" Admin role Updated Successfully ")
                 else:
-                       raise HTTPException(status_code=400, detail= " Role Update Failed ")
+                     raise HTTPException(status_code=400, detail= " Role Update Failed ")
                 
            except HTTPException as error:
                   return JSONResponse(content={"message" : error.detail}, status_code=error.status_code)

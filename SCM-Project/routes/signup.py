@@ -18,32 +18,33 @@ def signup(request: Request):
     return html.TemplateResponse("signupage.html", {"request" : request})
 
 @route.post("/signup")
-def signup(request: Request, Fname:str=Form(), Lname:str=Form(), email:str=Form(), password:str=Form(), confirmpaassword:str=Form()):
-    existing_user = user_data.find_one({"user_FirstName" : Fname, "user_LastName": Lname})
+def signup(request: Request, Uname:str=Form(), email:str=Form(), password:str=Form(), confirmpaassword:str=Form()):
+    existing_user = user_data.find_one({"Username " : Uname})
     existing_email = user_data.find_one({"email" : email})
-
     try :
+        
         if existing_user:
-            raise HTTPException(status_code=400, detail="Try another username, already used")
+            raise HTTPException(status_code=400, detail="Try another Username , already used")
         if existing_email:
             raise HTTPException(status_code=400, detail="Email already used")
         if password != confirmpaassword:
             raise HTTPException(status_code=400, detail="Password doesn't match")
-        if not password[0].isupper():
-            raise HTTPException(status_code=400, detail="Password should start with a Capital letter")
-        if len(password) < 8:
-            raise HTTPException(status_code=400, detail="Password must contain 8 digits")
-        if sum(char.isdigit() for char in password) < 2:
-            raise HTTPException(status_code=400, detail="Password should contains atleast two digits")
+        if not any(char.isupper() for char in password):
+            raise HTTPException(status_code=400, detail="Password should contains atleast One Capital letter")
+        if len(password) < 7:
+            raise HTTPException(status_code=400, detail="Password should contains atleast 7 characters")
+        if sum(char.isdigit() for char in password) < 1:
+            raise HTTPException(status_code=400, detail="Password should contains atleast One digit")
         if not any(char in "!@#$%^&*()-_+=[]{}|;:,.<>?/~" for char in password):
             raise HTTPException(status_code=400, detail="Password must contain at least one special character")
-    except HTTPException as he_error:
-        return html.TemplateResponse("signupage.html", {"request" : request, "error_message" : he_error.detail})
+        
+    except HTTPException as y:
+        return html.TemplateResponse("signupage.html", {"request" : request, "error_message" : y.detail})
     except Exception as x:
         raise HTTPException(status_code=500, detail=f"internal server error: {str(x)}")
         
     pwd=pwd_hash.hash(password)
-    Reg=Signup(user_FirstName=Fname, user_LastName= Lname, email= email, role="user" ,password=pwd)
+    Registration =Signup(Username =Uname, email= email, Role="user" ,password=pwd)
     
-    user_data.insert_one(dict(Reg))
-    return html.TemplateResponse("login.html", {"request" : request, "success_message": "User Registered Successfully"})
+    user_data.insert_one(dict(Registration))
+    return html.TemplateResponse("signupage.html", {"request" : request, "success_message": "User Registered Successfully"})

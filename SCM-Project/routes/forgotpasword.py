@@ -1,5 +1,4 @@
 from fastapi import HTTPException, APIRouter, Request, Form, Depends
-from jose import jwt, JWTError
 from passlib.context import CryptContext
 from models.models import*
 from fastapi.staticfiles import StaticFiles
@@ -26,9 +25,8 @@ def email(request: Request):
 @route.post("/Password_Update")
 def update(request:Request, email:str=Form(), New_password:str=Form(), confirm_password:str=Form()):
     
-    # try :
+    try :
         updating = user_data.find_one({"email":email})
-        print(email,updating)
         if updating :
              # Check if password and confirm_password match?
             if New_password != confirm_password:
@@ -37,14 +35,14 @@ def update(request:Request, email:str=Form(), New_password:str=Form(), confirm_p
                 pwd_hash = pwd.hash(New_password)
                  # Update password for the given email
                 user_data.update_one({"email":email}, {"$set" : {"password":pwd_hash}})
-                # raise HTTPException(status_code=200, detail="password Updated Successfully")
+                 # raise HTTPException(status_code=200, detail="password Updated Successfully")
                 return JSONResponse(content={"message": "Password updated successfully"},status_code=200)
         # Redirect to the emailget page with an error message
         return JSONResponse(content={"error": "Email    invalid"},status_code=401)
-    # except HTTPException as error:
-    #     return JSONResponse(content={"error" : error}, status_code=error.status_code)
-    # except Exception as e:
-    #     return JSONResponse(content={"error" : e}, status_code=401)
+    except HTTPException as error:
+        return JSONResponse(content={"error" : error}, status_code=error.status_code)
+    except Exception as e:
+        return JSONResponse(content={"error" : e}, status_code=401)
 
 
 
@@ -55,12 +53,15 @@ def email(request: Request):
 
 @route.post("/Password_Update_inner")
 def update(request:Request, email:str=Form(...), New_password:str=Form(...), confirm_password:str=Form(...), token:str = Depends(get_user_by)):
-    print("token",token)
+
     try :
 
         updating = user_data.find_one({"email":email})
         if updating :
-                 # Check if password and confirm_password match?
+                #checking for token..!
+            if not token :
+                raise HTTPException(status_code=401, detail="Unauthorized")
+                # Check if password and confirm_password match?
             if New_password != confirm_password:
                 raise HTTPException(status_code=401, detail="password matching error")
             if New_password == confirm_password:

@@ -1,7 +1,10 @@
 document.addEventListener('DOMContentLoaded', function () {
+
+     // this will aplly on DB class for other pages
     var dbContainer = document.getElementById('DB');
+      // this is apply for this html page
     var darkModeToggle = document.getElementById('dark_change');
-    var themes = document.getElementById('theme');
+      
 
     // Check if dark mode preference is stored and apply it
     var darkModeEnabled = sessionStorage.getItem('darkModeEnabled');
@@ -11,11 +14,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Dark mode toggle event listener
     darkModeToggle.addEventListener('click', function(){
-        toggleDarkMode();
-    });
-
-    // Theme click event listener
-    themes.addEventListener('click', function() {
         toggleDarkMode();
     });
 
