@@ -44,7 +44,7 @@ def new_data(request : Request, shipment : Shipment_input, current_user:str = De
         
         if current_user :
             Shipment = {
-                "User_Firstname":current_user["user_FirstName"],
+                "Username":current_user["Username"],
                 "Shipment_Number": shipment.Shipment_Number,
                 "Route_Details":shipment.Route_Details,
                 "Device":shipment.Device,

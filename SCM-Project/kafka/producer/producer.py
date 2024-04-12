@@ -13,7 +13,7 @@ Server_host = os.getenv("SERVER_HOST")
 Server_port = os.getenv("SERVER_PORT")
 topic = os.getenv("topic")
 # Creating a new socket Server
-
+print(Bootstrap_Servers)
 client_socket  = socket.socket()
 
 # Create a Kafka producer & bootstrap.servers is a broker list of endpoints whether a producer or consumer should be connect to.
@@ -42,6 +42,3 @@ except Exception as x:
 
 finally:
   client_socket.close() 
-
-
-

@@ -35,3 +35,4 @@ app.include_router(aboutpage)
 app.include_router(myprofile)
 app.include_router(helppage)
 app.include_router(devicedata)
+

@@ -99,7 +99,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     }
                 })
                 .then(data => {
-                    alert("Shipment Created Successfully");
+                    $("#message").text("Shipment Created Successfully");
                     window.location.href = "/Newshipment";
                 })
                 .catch(error => {

@@ -25,12 +25,17 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
                 
                 else {
-                     alert(data.message)
+                    $("#error").text("Password Updated Successfully")
                     setTimeout(() => {
                         window.location.href = "/login"
                     }, 500)
                 }
             })
+        }else {
+            $("#error").text("Please Enter the Fields...")
+            setTimeout(() => {
+                $("#error").text("")
+            }, 1000)
         }
     })
 })

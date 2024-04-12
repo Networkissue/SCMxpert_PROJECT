@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     document.getElementById("submit").addEventListener('click', function (e) {
         e.preventDefault();
-         
+      
         const userCaptcha = document.getElementById("userCaptcha").value;
         const generatedCaptcha = document.getElementById("captcha").textContent;
 
@@ -37,6 +37,13 @@ document.addEventListener("DOMContentLoaded", function () {
         formdata.append("email", $("#email").val());
         formdata.append("password", $("#password").val());
         if (formdata.get("email") !== "" && formdata.get("password") !== "") {
+            if (userCaptcha === '') {
+
+                $("#error").text("Please Enter Captcha");
+                setTimeout(() => {
+                    $('#error').text("");
+                }, 2000);
+            }
             if (userCaptcha === generatedCaptcha) {
                 fetch("/login", {
                     method: "post",
@@ -67,13 +74,13 @@ document.addEventListener("DOMContentLoaded", function () {
                             $("#error").text("");
                         }, 2000);
                     });
-            } if (userCaptcha === '') {
+            } else {
 
-                $("#error").text("Please Enter Captcha");
+                $("#error").text("Captcha Incorrect");
                 setTimeout(() => {
                     $('#error').text("");
                 }, 2000);
-            } 
+            }
         } else {
             $("#error").text("Please enter the input fields");
             setTimeout(() => {

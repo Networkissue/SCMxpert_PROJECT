@@ -20,7 +20,7 @@ Consumer_kafka = {
 
 # connecting to MongoDB
 
-Client = MongoClient( os.getenv("MongoDB_string", ""))
+Client = MongoClient(os.getenv("MongoDB_string", ""))
 db = Client[os.getenv("MongoDB_Databse", "")]
 collection = db[os.getenv("MongoDB_Collection", "")]
 

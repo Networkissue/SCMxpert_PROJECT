@@ -27,8 +27,17 @@ def signup(request: Request, Uname:str=Form(), email:str=Form(), password:str=Fo
             raise HTTPException(status_code=400, detail="Try another Username , already used")
         if existing_email:
             raise HTTPException(status_code=400, detail="Email already used")
-        if password != confirmpaassword:
-            raise HTTPException(status_code=400, detail="Password doesn't match")
+       
+        
+        #email validations
+        if any(char.isupper() for char in email):
+           raise HTTPException(status_code=400, detail="Email Should be lower letters")
+        if not email[0].isalpha():
+            raise HTTPException(status_code=400, detail="Email Should start alphabatical")
+        if not "@" in email or email.count("@") != 1:
+            raise HTTPException(status_code=400, detail="Email Should start alphabatical")
+        
+        #password validation
         if not any(char.isupper() for char in password):
             raise HTTPException(status_code=400, detail="Password should contains atleast One Capital letter")
         if len(password) < 7:
@@ -37,7 +46,8 @@ def signup(request: Request, Uname:str=Form(), email:str=Form(), password:str=Fo
             raise HTTPException(status_code=400, detail="Password should contains atleast One digit")
         if not any(char in "!@#$%^&*()-_+=[]{}|;:,.<>?/~" for char in password):
             raise HTTPException(status_code=400, detail="Password must contain at least one special character")
-        
+        if password != confirmpaassword:
+            raise HTTPException(status_code=400, detail="Password doesn't match")
     except HTTPException as y:
         return html.TemplateResponse("signupage.html", {"request" : request, "error_message" : y.detail})
     except Exception as x:

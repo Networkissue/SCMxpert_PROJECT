@@ -10,20 +10,20 @@ from dotenv import load_dotenv
 load_dotenv()
 
 server_host = os.getenv("SERVER_HOST")
-server_port = os.getenv("SERVER_PORT")
-
+# server_port = os.getenv("SERVER_PORT")
+# print(server_port)
 # //creating a Instance from socket// # default argument [ socket.AF_INET, socket.SOCK_STREAM ]
 
 Instance = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 print("New Instance Created")
 
-server_port = int(server_port)
+# server_port = int(server_port)
 
 # Bind the socket to the host and port
-
-Instance.bind((server_host, server_port))
+# print(type(server_port),server_port)
+Instance.bind(("",  int(os.getenv("SERVER_PORT"))))
 Instance.listen(2)
-print(f"Server is listening on {server_host}:{server_port}")
+print(f"Server is listening on {server_host}:{int(os.getenv("SERVER_PORT"))}")
 
 # Accept incoming connections
 
