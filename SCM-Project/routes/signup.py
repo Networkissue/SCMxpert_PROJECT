@@ -27,15 +27,6 @@ def signup(request: Request, Uname:str=Form(), email:str=Form(), password:str=Fo
             raise HTTPException(status_code=400, detail="Try another Username , already used")
         if existing_email:
             raise HTTPException(status_code=400, detail="Email already used")
-       
-        
-        #email validations
-        if any(char.isupper() for char in email):
-           raise HTTPException(status_code=400, detail="Email Should be lower letters")
-        if not email[0].isalpha():
-            raise HTTPException(status_code=400, detail="Email Should start alphabatical")
-        if not "@" in email or email.count("@") != 1:
-            raise HTTPException(status_code=400, detail="Email Should start alphabatical")
         
         #password validation
         if not any(char.isupper() for char in password):

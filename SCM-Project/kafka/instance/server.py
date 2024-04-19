@@ -9,23 +9,20 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-server_host = os.getenv("SERVER_HOST")
-# server_port = os.getenv("SERVER_PORT")
-# print(server_port)
-# //creating a Instance from socket// # default argument [ socket.AF_INET, socket.SOCK_STREAM ]
+# Load environment variables
+server_host = os.getenv("SERVER_HOST", "localhost")
+server_port = int(os.getenv("SERVER_PORT", 8005))
 
+# //creating a Instance from socket// # default argument [ socket.AF_INET, socket.SOCK_STREAM ]
 Instance = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 print("New Instance Created")
 
-# server_port = int(server_port)
-
 # Bind the socket to the host and port
-# print(type(server_port),server_port)
-Instance.bind(("",  int(os.getenv("SERVER_PORT"))))
+Instance.bind(("", server_port))
 Instance.listen(2)
-print(f"Server is listening on {server_host}:{int(os.getenv("SERVER_PORT"))}")
+print(f"Server is listening on {server_host}:{server_port}")
 
-# Accept incoming connections
+# Establishing a connection & Accept incoming connections
 
 client_socket , client_addr = Instance.accept()
 print(f"Connection established with {client_addr}")
@@ -43,6 +40,7 @@ while True :
         }
         
         # Convert route data to JSON string and encode it(str -> bytes)
+        # encode; sockets will transmits in bytes, not strings
         Data = (json.dumps(route_data, indent = 1)).encode('utf-8')
 
         # Send data to the client
@@ -53,7 +51,7 @@ while True :
         time.sleep(8)
 
     except IOError as x:
-        #   //to catch and ignore the broken pipe error
+        #to catch and ignore the broken pipe error
         if x.errno == errno.EPIPE: 
             pass
 

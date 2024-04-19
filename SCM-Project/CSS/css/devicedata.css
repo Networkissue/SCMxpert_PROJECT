@@ -121,11 +121,11 @@
     overflow-y: auto;
     position: absolute;
     top: 30%;
-    left: 5%;
+    left: -12%;
     font-size: x-large;
-    width: 82%;
+    width: 120%;
     height: 850px;
-    padding-left: 10%;
+    padding-left: 7%;
     box-shadow: 0 4px 10px 4px gainsboro;
     border-top-right-radius: 1%;
     border-bottom-left-radius: 1%;
@@ -134,7 +134,7 @@
 }
 
 .devicedata form #data-container #table-id table {
-    width: 120%; /* Ensure the table takes full width */
+    width: 30%; /* Ensure the table takes full width */
     table-layout: fixed; /* Fix the table layout to prevent cell content from affecting column width */
     position: absolute;
     left: 0;
@@ -157,7 +157,7 @@
 
 
 .table-data tr th {
-    padding: 20px;
+    padding: 15px;
     width: 400px; /* Adjust width of each cell as needed */
     white-space: nowrap; /* Prevent wrapping of cell contents */
     overflow: hidden; /* Hide overflow content */

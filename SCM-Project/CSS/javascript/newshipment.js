@@ -99,8 +99,12 @@ document.addEventListener("DOMContentLoaded", function () {
                     }
                 })
                 .then(data => {
-                    $("#message").text("Shipment Created Successfully");
-                    window.location.href = "/Newshipment";
+                    $("#message").text("Shipment Created Successfully").css("color", "green");
+                    setTimeout(() => {
+                        $("#message").text("");
+                        window.location.href = "/Newshipment";
+                    }, 2000);
+                   
                 })
                 .catch(error => {
                     $("#message").text(error.message);

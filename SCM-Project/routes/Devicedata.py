@@ -16,7 +16,7 @@ def device(request : Request):
 @route.post("/devicedata")
 def device(request : Request, device_id:int=Form(), token:str = Depends(get_user_by)):
     try :
-         #CHECK THE ROLE
+         #CHECKING THE ROLE
         if token["Role"] != "user" :
             if device_id:
                Data =  list(Devicedata.find({"Device_Id" : device_id},{ "_id" : 0}))

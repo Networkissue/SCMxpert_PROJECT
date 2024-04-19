@@ -31,7 +31,7 @@
         <label style="background-color: rgb(255, 51, 0);">MY SHIPMENTS</label>
 
         <div class="input" >
-            <input type="text" placeholder="Enter Username" id="username_input" name="username_input">
+            <input type="text" placeholder="Search Here" id="user_input" name="user_input">
             <button id="search">search</button>
         </div>
 
@@ -92,15 +92,6 @@
                             <p>ABOUT</p>
                             <span>></span>
                         </a>
-                        <!-- <a href="" class="sub_link" style="display: flex; padding-left: 15px;">
-                            <i class='bx bx-help-circle' ></i>
-                            <p  style="font-size: 18px;">HELP & SUPPORT</p>
-                            <span>></span>
-                        </a> -->
-                        <!-- <a href="#" class="sub_link">
-                            <i class='bx bx-meh-blank' ></i>
-                            <p>EDIT THEME</p>
-                            <span>></span> -->
                         </a>
                         <a  onclick= "logout()" class="sub_link" id="logout" style="background-color: rgb(241, 9, 9);color: aliceblue;border-radius: 7px; display: flex; padding-left: 15px;">
                             <i class='bx bx-log-out-circle' STYLE="color:aliceblue;"></i>
@@ -124,7 +115,7 @@
 
                 <table border="1">
                     <thead>
-                        <td> Username</td>
+                        <td id="table_username"> Username</td>
                         <td> Shipment Number</td>
                         <td> Container Number</td>
                         <td> Route Details</td>

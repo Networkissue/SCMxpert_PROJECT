@@ -16,7 +16,7 @@ topic = os.getenv("topic")
 print(Bootstrap_Servers)
 client_socket  = socket.socket()
 
-# Create a Kafka producer & bootstrap.servers is a broker list of endpoints whether a producer or consumer should be connect to.
+# Create a Kafka producer & bootstrap.servers: Is a broker list of endpoints whether a producer or consumer should be connect to.
 
 producer_kafka = Producer({"bootstrap.servers" : Bootstrap_Servers})
 
@@ -31,8 +31,7 @@ try :
         print(Decoded_data)
 
         # produce the received data to kafka server
-        producer_kafka.produce("topic", value = Decoded_data)
-        producer_kafka.flush()
+        producer_kafka.produce("scmdata", value = Decoded_data)
 
 except ConnectionRefusedError :
     print("Unable to Connect to the server, Reconnect....")

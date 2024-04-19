@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     $('#error').text("");
                 }, 2000);
             }
-            if (userCaptcha === generatedCaptcha) {
+            else if (userCaptcha === generatedCaptcha) {
                 fetch("/login", {
                     method: "post",
                     body: formdata

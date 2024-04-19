@@ -2,7 +2,6 @@ from fastapi import APIRouter, HTTPException, Request
 from routes.jwt_token import  Depends, get_user_by, datetime
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import JSONResponse
-from jose import jwt, JWTError
 from models.models import *
 from database.database import shipment_data
 from fastapi.templating import Jinja2Templates 

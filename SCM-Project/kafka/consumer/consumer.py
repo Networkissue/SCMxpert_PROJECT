@@ -27,7 +27,7 @@ collection = db[os.getenv("MongoDB_Collection", "")]
 # kafka consumer
 
 consumer = Consumer(Consumer_kafka) 
-topic = "topic"
+topic = "scmdata"
 consumer.subscribe([topic])
 
 try :

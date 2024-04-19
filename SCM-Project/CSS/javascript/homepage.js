@@ -55,17 +55,18 @@ $(document).ready(() => {
         
        
         box.addEventListener('mouseover', () => {
-            box.style.transform = 'translateX(45%)';
-            hA.style.transform = 'translateX(38%)';
-            box.style.fontSize = '60px';
+            
+            // box.style.transform = 'translateX(45%)';
+            // hA.style.transform = 'translateX(38%)';
+            box.style.fontSize = '45px';
             hA.style.fontSize = '80px';
-            box.style.width = '23%';
-            box.style.height = '70px';
-            box.style.paddingLeft = '60px';
+            box.style.width = '17%';
+            box.style.height = '60px';
+            box.style.paddingLeft = '75px';
 
-            box1.style.transform = 'translateX(180%)';
+            // box1.style.transform = 'translateX(180%)';
             // box1.style.transition = 'transform 0.5s ease'
-            hB.style.transform = 'translateX(180%)';
+            // hB.style.transform = 'translateX(180%)';
             // hB.style.transition = 'transform 0.5s ease'
             // if(mouseover) {
             //     box1.style.transform = 'translateX(0)'
@@ -75,6 +76,7 @@ $(document).ready(() => {
             hA.style.transform = 'translateX(0)';
             box.style.fontSize = '40px';
             hA.style.fontSize = '60px';
+            box.style.paddingLeft = '40px';
             box.style.width = '15%';
             box.style.height = '50px';
             box1.style.transform = 'translateX(0)';
@@ -82,19 +84,19 @@ $(document).ready(() => {
         })
         box1.addEventListener('mouseover', () => {
 
-            box.style.transform = 'translateX(-480%)';
-            hA.style.transform = 'translateX(-480%)';
+            // box.style.transform = 'translateX(-480%)';
+            // hA.style.transform = 'translateX(-480%)';
 
-            box1.style.transform = 'translateX(-95%)';
+            box1.style.transform = 'translateX(-5%)';
 
-            hB.style.transform = 'translateX(-58%)';
+            // hB.style.transform = 'translateX(-58%)';
 
-            box1.style.fontSize = '60px';
-            hB.style.fontSize = '80px';
-            box1.style.width = '26%';
+            box1.style.fontSize = '55px';
+            hB.style.fontSize = '70px';
+            box1.style.width = '24%';
             hB.style.width = '46%';
             box1.style.height = '70px';
-            box1.style.paddingLeft = '90px';
+            box1.style.paddingLeft = '75px';
             // if(mouseover) {
             //     box1.style.transform = 'translateX(0)'
         })

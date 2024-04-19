@@ -11,7 +11,7 @@ SECRET_KEY = "Your_secret_credentials"
 ALGORITHM = "HS256"
 
 #token expiration in minutes
-Access_token_expire_in = 25
+Access_token_expire_in = 60
 
 # Creating an OAuth2 password-bearer authentication scheme using FastAPI.
 # This scheme will be used to authenticate users via the OAuth2 password.
@@ -27,7 +27,6 @@ def create_access_token(data: dict, expires_timedelta: Optional[timedelta]= None
     else :
         expire = datetime.utcnow() + timedelta(minutes=int(Access_token_expire_in))
     for_encoding.update({"exp":expire})
-    # print(for_encoding)
     encode_token = jwt.encode(for_encoding, SECRET_KEY, algorithm = ALGORITHM)
     return encode_token
 
@@ -49,6 +48,7 @@ def decode_access_token(token:str):
     
     except JWTError:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, headers={"WWW-Authenticate" : "Bearer"}, detail="NOT FOUND")
+
     
 
 
@@ -57,11 +57,11 @@ def get_user_by(token:str = Depends(oauth2_scheme)):
     try: 
      
         # Decode the JWT token to extract the payload
-         PAYLOAD = decode_access_token(token)   
+         payload = decode_access_token(token)   
          # Check if payload is valid and contains necessary keys
-         if PAYLOAD:
+         if payload:
              # Query the database to find a user with the extracted email
-            user = user_data.find_one({"email" : PAYLOAD["email"]})
+            user = user_data.find_one({"email" : payload["email"]})
             if user:
                 return user
     except JWTError:

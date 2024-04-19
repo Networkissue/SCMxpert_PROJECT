@@ -1,4 +1,4 @@
-$(document).ready(function () {
+$(document).ready(function() {
 
 
     if (localStorage.getItem("Access_token") === null) {
@@ -7,6 +7,10 @@ $(document).ready(function () {
 
     if (sessionStorage.getItem("Role") === "user") {
         $("#Devicedata").css("display", "none");
+        $("#user_input").css("display", "none");
+        $("#search").css("display", "none");
+        $("#table_username").css("display", "none");
+
     }
 
     //dashboard icon should be prevented
@@ -58,7 +62,7 @@ $(document).ready(() => {
     // Attach a click event handler to the element with ID "search"
     $("#search").on("click", () => {
         // Retrieve the value entered into the input field with ID "username_input"
-        const username = $("#username_input").val().trim();
+        const username = $("#user_input").val().trim();
         if (username !== "") {
 
 
@@ -80,9 +84,9 @@ $(document).ready(() => {
                         });
                     }
                 })
-                .then(shipmentList => {
+                .then(shipment_list => {
                     // Filter shipment list by username // Array.prototype.filter() and creates a new array with elements to the provided function
-                    const user_find = shipmentList.filter(item => item.User_Firstname === username);
+                    const user_find = shipment_list.filter(item => item.Username === username || item.Shipment_Number === parseInt(username));
                     if (user_find !== "") {
                         // Check if any users are found with the entered username
                         if (user_find.length > 0) {
@@ -91,7 +95,7 @@ $(document).ready(() => {
 
                             // it iterate over an elements and callback function for each element 
                             user_find.forEach(item => {
-                                userdata += "<tr><td>" + item.User_Firstname + "</td><td>" + item.Shipment_Number + "</td><td>" + item.Container_Number + "</td><td>" +
+                                userdata += "<tr><td>" + item.Username + "</td><td>" + item.Shipment_Number + "</td><td>" + item.Container_Number + "</td><td>" +
                                     item.Route_Details + "</td><td>" + item.Goods_Type + "</td><td>" + item.Device + "</td><td>" + item.Expected_Delivery_Date + "</td><td>" +
                                     item.PO_Number + "</td><td>" + item.Delivery_Number + "</td><td>" + item.NDC_Number + "</td><td>" + item.Batch_id + "</td><td>" +
                                     item.Serial_no_Goods + "</td><td>" + item.Comment + "</td></tr>";
@@ -112,6 +116,7 @@ $(document).ready(() => {
                 })
                 .catch(error => {
                     $("#error").text(error);
+                    
                     setTimeout(() => {
                         $("#error").text("");
                     }, 2000);
@@ -146,16 +151,28 @@ function fetchShipmentData() {
                 });
             }
         })
-        .then(shipmentList => {
-            // Construct HTML table rows for each shipment
+        .then(shipment_list => {
             let shipmentData = "";
-            shipmentList.forEach(item => {
-                shipmentData += "<tr><td>" + item.User_Firstname + "</td><td>" + item.Shipment_Number + "</td><td>" + item.Container_Number + "</td><td>" +
+            // Construct HTML table rows for each shipment
+            if (sessionStorage.getItem("Role") === "admin") {
+      
+             shipment_list.forEach(item => {
+                shipmentData += "<tr><td>" + item.Username + "</td><td>" + item.Shipment_Number + "</td><td>" + item.Container_Number + "</td><td>" +
                     item.Route_Details + "</td><td>" + item.Goods_Type + "</td><td>" + item.Device + "</td><td>" + item.Expected_Delivery_Date + "</td><td>" +
                     item.PO_Number + "</td><td>" + item.Delivery_Number + "</td><td>" + item.NDC_Number + "</td><td>" + item.Batch_id + "</td><td>" +
                     item.Serial_no_Goods + "</td><td>" + item.Comment + "</td></tr>";
             });
             // Update the HTML content of the element with ID "new_data" with the constructed shipment data
+            }
+            else{
+                
+                shipment_list.forEach(item => {
+                    shipmentData += "</td><td>" + item.Shipment_Number + "</td><td>" + item.Container_Number + "</td><td>" +
+                        item.Route_Details + "</td><td>" + item.Goods_Type + "</td><td>" + item.Device + "</td><td>" + item.Expected_Delivery_Date + "</td><td>" +
+                        item.PO_Number + "</td><td>" + item.Delivery_Number + "</td><td>" + item.NDC_Number + "</td><td>" + item.Batch_id + "</td><td>" +
+                        item.Serial_no_Goods + "</td><td>" + item.Comment + "</td></tr>";
+                });
+            } 
             $("#new_data").html(shipmentData);
 
         })

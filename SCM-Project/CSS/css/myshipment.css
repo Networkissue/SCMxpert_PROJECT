@@ -339,26 +339,36 @@ label {
     left: 8%;
     font-size: x-large;
     width: 80%;
-    text-align:center;
+    text-align: center;
     background-color: rgba(128, 128, 128, 0);
     padding-left: 10%;
-    /* box-shadow: 0 4px 10px 4px rgb(185, 176, 176, 0.5); */
     border-top-right-radius: 1%;
     border-bottom-left-radius: 1%;
     overflow-x: auto; /* Enable horizontal scrolling */
-    overflow-y: hidden; /* Disable vertical scrolling by default */
+    overflow-y: auto; /* Enable vertical scrolling */
     white-space: nowrap; /* Prevent wrapping of contents */
 }
 
 .container .table-container {
-    width: AUTO; /* Ensure the table container takes full width */
+    width: 100%; /* Ensure the table container takes full width */
+    height: 730px; /* Set a maximum height for vertical scrolling */
     overflow-x: auto; /* Enable horizontal scrolling for the table */
+    overflow-y: auto; /* Enable vertical scrolling for the table */
 }
+
 
 .container .table-container table {
     width: AUTO; /* Ensure the table takes full width */
     table-layout: fixed; /* Fix the table layout to prevent cell content from affecting column width */
 }
+
+.table-container tr th {
+    padding: 20px;
+    width: 400px; /* Adjust width of each cell as needed */
+    white-space: nowrap; /* Prevent wrapping of cell contents */
+    overflow: hidden; /* Hide overflow content */
+    text-overflow: ellipsis; /* Display ellipsis (...) for overflow content */
+ }
 
 .container .table-container table thead {
     /* width: 300px; */
