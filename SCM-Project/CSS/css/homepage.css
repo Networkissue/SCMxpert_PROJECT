@@ -4,9 +4,9 @@ body {
     margin: 0;
     display: flex;
     justify-content: flex-start;
-    background-image: url("/CSS/bgm-pics/home6.jpg");
+    /* background-image: url("/CSS/bgm-pics/home6.jpg"); */
+    background-image: url("/CSS/bgm-pics/login13.jpg");
     z-index: 0;
-    /* backdrop-filter: blur(1px); */
     background-position: center;
     align-items: baseline;
     background-size: cover;

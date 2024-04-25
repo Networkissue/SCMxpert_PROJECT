@@ -40,7 +40,7 @@ while True :
         }
         
         # Convert route data to JSON string and encode it(str -> bytes)
-        # encode; sockets will transmits in bytes, not strings
+        # encode; sockets will transmits in bytes, not strings && py -> json f
         Data = (json.dumps(route_data, indent = 1)).encode('utf-8')
 
         # Send data to the client

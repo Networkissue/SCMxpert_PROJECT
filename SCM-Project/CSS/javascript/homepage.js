@@ -56,20 +56,11 @@ $(document).ready(() => {
        
         box.addEventListener('mouseover', () => {
             
-            // box.style.transform = 'translateX(45%)';
-            // hA.style.transform = 'translateX(38%)';
             box.style.fontSize = '45px';
             hA.style.fontSize = '80px';
             box.style.width = '17%';
             box.style.height = '60px';
             box.style.paddingLeft = '75px';
-
-            // box1.style.transform = 'translateX(180%)';
-            // box1.style.transition = 'transform 0.5s ease'
-            // hB.style.transform = 'translateX(180%)';
-            // hB.style.transition = 'transform 0.5s ease'
-            // if(mouseover) {
-            //     box1.style.transform = 'translateX(0)'
         })
         box.addEventListener('mouseout', () => {
             box.style.transform = 'translateX(0)';
@@ -84,21 +75,14 @@ $(document).ready(() => {
         })
         box1.addEventListener('mouseover', () => {
 
-            // box.style.transform = 'translateX(-480%)';
-            // hA.style.transform = 'translateX(-480%)';
-
             box1.style.transform = 'translateX(-5%)';
-
-            // hB.style.transform = 'translateX(-58%)';
-
             box1.style.fontSize = '55px';
             hB.style.fontSize = '70px';
             box1.style.width = '24%';
             hB.style.width = '46%';
             box1.style.height = '70px';
             box1.style.paddingLeft = '75px';
-            // if(mouseover) {
-            //     box1.style.transform = 'translateX(0)'
+
         })
         box1.addEventListener('mouseout', () => {
             box.style.transform = 'translateX(0)';
@@ -109,7 +93,6 @@ $(document).ready(() => {
             box1.style.fontSize = '40px';
             hB.style.fontSize = '60px';
             box1.style.width = '17%';
-            // hB.style.width = '46%';
             box1.style.height = '50px';
         })
     }

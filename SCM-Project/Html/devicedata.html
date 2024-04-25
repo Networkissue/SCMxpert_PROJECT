@@ -6,6 +6,7 @@
         <link rel="stylesheet" href="/CSS/css/homepage.css">
         <link rel="stylesheet" href="/CSS/css/b&w_mode.css">
         <link rel="stylesheet" href="../CSS/css/devicedata.css">
+
         <script src="https://code.jquery.com/jquery-3.7.1.slim.js"
             integrity="sha256-UgvvN8vBkgO0luPSUl2s8TIlOSYRoGFAX4jlCIm9Adc="
             crossorigin="anonymous"></script>
@@ -113,14 +114,14 @@
                                 <option value="Select Here"  disabled selected id="selecthere"><b>Select
                                         Here</b></option>
                                 <option value="2365478910" id="opt1">2365478910</option>
-                                <option value="2365478911" id="opt1">2365478911</option>
-                                <option value="2365478912" id="opt2">2365478912</option>
+                                <option value="2365478911" id="opt2">2365478911</option>
+                                <option value="2365478912" id="opt3">2365478912</option>
 
                             </select>
                             <button id="submit">GET DATA</button>
                         </div>
                         <div class="table-data" id="table-id">
-                            <table border="1" style="border: 2px solid white;">
+                            <table style="border: 2px solid white;">
 
                                 <thead>
                                     <th> Device Id </th>
@@ -133,13 +134,38 @@
                                 <tbody id="get_data">
                         
                                 </tbody>
+                                <tbody id="new_data">
+                        
+                                </tbody>
 
                             </table>
 
                         </div>
+             
+
                     </div>
                 </form>
+                <!-- <div class="pagination-controls">
+                    <button id="prevPage">Previous</button>
+                    <ul id="pageNumbers" >
+                    <li value="1" id="1">1</li>
+                    <li value="2" id="2">2</li>
+                    <li value="3" id="3">3</li>
+                </ul>
+                    <button id="nextPage">Next</button>
+                </div>
+            </div> -->
+            <div class="pagination-controls">
+                <button id="prevPage">Previous</button>
+                <ul id="pageNumbers">
+                    <!-- Page numbers will be dynamically generated here -->
+                </ul>
+                <button id="nextPage">Next</button>
             </div>
+        </div>
+            
+                       
+            
 
         </body>
     </html>

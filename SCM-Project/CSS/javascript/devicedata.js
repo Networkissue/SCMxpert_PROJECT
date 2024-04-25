@@ -5,7 +5,7 @@ if (sessionStorage.getItem("Role") === "user") {
     $("#Devicedata").css("display", "none")
 }
 
-$(document).ready(function () {
+$(document).ready( () => {
     
     document.getElementById("dashboard_icon").addEventListener("click", (e) => {
         e.preventDefault();
@@ -37,76 +37,115 @@ $(document).ready(function () {
 });
 
 });
+ 
+//////////////////////////////////// table /////////////////////////////////
 
 
-$(document).ready(() => {
+document.addEventListener("DOMContentLoaded", () => {
+    let currentPage = 1;
+    const rowsPerPage = 12;
 
-    $("#submitButton").click(function(event) {
-        event.preventDefault(); // Prevent the default form submission
-        
-        // Get the value of the selected option
-        var selectedOption = $("#selectOption").val();
-    
-        // Check if the selected option is "#selecthere"
-        if (selectedOption === "#selecthere") {
-            // Display error message
-            $("#error").text("Please select an ID");
-    
-            // Clear the error message after 2 seconds
+    function updateActivePage() {
+        document.querySelectorAll("#pageNumbers li").forEach((li) => {
+            li.classList.remove("active");
+        });
+
+        const currentPageElement = document.querySelector(`#pageNumbers li[value='${currentPage}']`);
+        if (currentPageElement) {
+            currentPageElement.classList.add("active");
+        }
+    }
+
+    function updateTableDisplay() {
+        const startRow = (currentPage - 1) * rowsPerPage;
+        const endRow = startRow + rowsPerPage;
+
+        const selectedDevice = document.getElementById("search").value;
+
+        if (!selectedDevice || selectedDevice === "Select Here") {
+            document.getElementById("error").textContent = "Please select a device ID.";
             setTimeout(() => {
-                $("#error").text("");
-            }, 2000); }
-        
-    })
-    $("#submit").on("click", (e) => {
-        e.preventDefault();
-        const dev = $("#search").val();
-        const form = new FormData();
-        form.append("device_id", dev);
-        fetch("/devicedata", {
-            method: "POST",
+                document.getElementById("error").textContent = "";
+            }, 2000);
+            return;
+        }
+
+        const url = "/devicedata1?device_id=" + selectedDevice; // Using concatenation
+        fetch(url, {
+            method: "GET",
             headers: {
                 "Authorization": localStorage.getItem("Access_token"),
             },
-            body: form,
-        }).then(response => {
-            if (response.ok) {
-                return response.json()
-            } else {
-                return response.json().then(data => {
-                    throw new Error(data.message)
-                })
+        })
+        
+        .then((response) => {
+            if (!response.ok) {
+                return response.json().then((data) => {
+                    throw new Error(data.message);
+                });
             }
-        // }).then(response => {
-        //     if ($("#selecthere").is(":selected")){
-        //             $("#error").text("Please select an ID");
-        //             setTimeout(() => {
-        //                 $("#error").text("");
-        //             }, 2000)
-        //     }
-    }) .then(response => {
-            let device_data = "";
+            return response.json();
+        })
+        .then((data) => {
+            const pageRows = data.device.slice(startRow, endRow);
+            let deviceData = "";
 
-             // It iterates over an elements and call backs to the function for each elements
-            response.device.forEach(device_details => {
-                device_data += "<tr><td>" +
-                    device_details.Device_Id + "</td><td>" +
-                    device_details.Battery_level + "</td><td>" +
-                    device_details.First_Sensor_Temperature + "</td><td>" +
-                    device_details.Route_From + "</td><td>" +
-                    device_details.Route_To + "</td><td>" +
-                    device_details.Time_Stamp + "</td></tr>";
+            pageRows.forEach((device_details) => {
+                deviceData += `<tr>
+                    <td>${device_details.Device_Id}</td>
+                    <td>${device_details.Battery_level}</td>
+                    <td>${device_details.First_Sensor_Temperature}</td>
+                    <td>${device_details.Route_From}</td>
+                    <td>${device_details.Route_To}</td>
+                    <td>${device_details.Time_Stamp}</td>
+                </tr>`;
             });
-            $("#get_data").html(device_data);
-        }).catch(error => {
-            $("#error").text(error.message)
-            setTimeout(()=> {
-                $("#error").text(' ')
-            }, 2000)
-        });
 
+            document.getElementById("get_data").innerHTML = deviceData;
+        }).catch((error) => {
+            document.getElementById("error").textContent = error.message;
+            setTimeout(() => {
+                document.getElementById("error").textContent = "";
+            }, 2000);
+        })
+        updateActivePage();
+    }
+
+    document.getElementById("submit").addEventListener("click", (e) => {
+        e.preventDefault();
+        currentPage = 1;
+        updateTableDisplay();
+        updateActivePage();
     });
+
+    document.getElementById("prevPage").addEventListener("click", () => {
+        if (currentPage > 1) {
+            currentPage--;
+            updateTableDisplay();
+            updateActivePage();
+        }
+    });
+
+    document.getElementById("nextPage").addEventListener("click", () => {
+        currentPage++;
+        updateTableDisplay();
+        updateActivePage();
+    });
+
+    // document.getElementById("pageNumbers").addEventListener("click", (event) => {
+    //     if (event.target.tagName === "LI") {
+    //         currentPage = parseInt(event.target.getAttribute("value"));
+    //         updateTableDisplay();
+    //         updateActivePage();
+    //     }
+    // });
+
+    updateTableDisplay(); // Initialize the table display
+    updateActivePage(); // Initialize the pagination display
 });
+
+
+
 
 //logout 
 $(document).ready(()=>{

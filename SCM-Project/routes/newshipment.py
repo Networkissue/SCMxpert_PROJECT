@@ -22,7 +22,7 @@ def new_data(request : Request, shipment : Shipment_input, current_user:str = De
     try :
         #checking if the length of shipment number is equal to 7
         if not len(str(shipment.Shipment_Number)) == 7 :
-            raise HTTPException(status_code=401, detail="Shipment_Number must be 7 Characters")
+            raise HTTPException(status_code=405, detail="Shipment_Number must be 7 Characters")
         
         #checking all values are filled or not?
         if any(value == "" for value in shipment.dict().values()):
@@ -66,5 +66,4 @@ def new_data(request : Request, shipment : Shipment_input, current_user:str = De
     except Exception as x:
         return JSONResponse(content={"message" : x}, status_code=500)
 
-        
-        
+       

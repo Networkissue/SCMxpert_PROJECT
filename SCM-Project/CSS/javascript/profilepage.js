@@ -8,9 +8,19 @@ if (localStorage.getItem("Access_token") === null){
 
 $(document).ready(() => {
 
-    $("#Username").text(sessionStorage.getItem("Username"));
-    $("#Email").text(sessionStorage.getItem("Email"));
-    $("#Role").text(sessionStorage.getItem("Role"));
+    // $("#Username").text(sessionStorage.getItem("Name : " + "Username"));
+    // $("#Email").text(sessionStorage.getItem("Email : " + "Email"));
+    // $("#Role").text(sessionStorage.getItem("Role : " + "Role"));
+    // Get the stored data from session storage
+    const username = sessionStorage.getItem("Username");
+    const email = sessionStorage.getItem("Email");
+    const role = sessionStorage.getItem("Role");
+
+    // Display the formatted text in the respective HTML elements
+    $("#Username").text("Name: " + (username || "No username available"));
+    $("#Email").text("Email: " + (email || "No email available"));
+    $("#Role").text("Role: " + (role || "No role available"));
+
 
     const element = document.querySelector('.top_sub_link');
 
@@ -19,11 +29,6 @@ if (element.length > 0) {
   // If element exists and contains data, make it visible
   element.style.display = 'block';
 } 
-// else {
-//   // If element does not exist or does not contain data, hide it
-//   element.style.display = 'none';
-  
-// }
 else {
     // If element does not exist or does not contain data, show "No data available" message
     const messageDiv = document.createElement('div');

@@ -5,38 +5,56 @@ body {
     margin: 0;
     display: flex;
     justify-content: center;
-    background-image: url("/CSS/bgm-pics/login13.jpg");
+    background-image: url("/CSS/bgm-pics/d2.jpg");
+    backdrop-filter: blur(8px);
+
     align-items: center;
     background-size: cover;
     height: 100vh;
     box-shadow: red solid;
 }
 .update_container {
-
-    background:rgba(255, 255, 255, 0.288);
-    padding: 40px;
-    width:500px;
-    height:300px;
+    background: linear-gradient(#2C3E50, #000000);
+    padding: 190px;
+    width:650px;
+    /* height:700px; */
     margin:40px auto;
     border-radius: 3px;
-    box-shadow:0 4px 10px 4px grey;
     position: absolute;
-    top: 20%;
-    left: 40%;
-    border-top-right-radius: 15px;
-    border-bottom-left-radius: 15px;
-}
+    top: 25%;
+    left: 30%;
+    border-top-right-radius: 35px;
+    border-bottom-left-radius: 35px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    animation: fadein 1.5s ease-out forwards;
+  }
+
+  @keyframes fadein {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+
 
 .update_container h1 {
  
    position: absolute;
-   top: 14%;
-   left : 27%;
+   top: 22%;
+   left : 38%;
+   font-size: 40px;
+   color: white;
 }    
 
 .update_container label {
 
-    position: absolute;
+    position: relative;
     top: 33%;
     font-size: 20px;
     font-weight: 500;
@@ -44,24 +62,24 @@ body {
 
 .update_container input {
 
-    width: 80%;
+    width: 105%;
     height: 40px;
-    position: absolute;
+    position: relative;
     top: 40%;
-    font-size: 20px;
+    font-size: 25px;
     padding-left: 10px;
     border-radius: 8px;
 }
 
 .update_container #Save {
     position: absolute;
-    top: 60%;
+    top: 70%;
     left: 60%;
-    width: 90px;
-    height: 37px;
+    width: 120px;
+    height: 42px;
     font-size: 20px;
     display: inline-block;
-    padding: 5px 10px;
+    padding: 8px 14px;
     background-color: #32CD32; /* Button color */
     color: #fff; /* Text color */
     text-decoration: none; /* Remove underline */
@@ -81,24 +99,25 @@ body {
 .update_container p { 
 
     position: absolute;
-    top: 65%;
-    left: 35%;
+    top: 70%;
+    left: 70%;
     font-size: xx-large;
     text-decoration-line: none;
     background-color: red;
     width: 150px;
     color: white;
-    padding-left: 10px;
+    
+    padding: 12px 25px;
     border-radius: 2px ;
 }
 
 /* Style the link to look like a button */
 .button-link {
     position: absolute;
-    top: 60%;
-    left: 23%;
+    top: 69.8%;
+    left: 28%;
     display: inline-block;
-    padding: 10px 20px;
+    padding: 11px 25px;
     background-color: #007bff; /* Button color */
     color: #fff; /* Text color */
     text-decoration: none; /* Remove underline */
@@ -119,10 +138,11 @@ body {
   /* //error */
   #error{
     position: absolute;
-    top:4%;
+    top:10%;
     left: 35%;
-    font-size: 23px;
+    font-size: 30px;
     color: red;
     background-color: none;
+    text-decoration:dashed;
 }
 

@@ -88,20 +88,10 @@
                             <p>ABOUT</p>
                             <span>></span>
                         </a>
-                        <!-- <a href="p" class="sub_link" style="display: flex; padding-left: 15px;">
-                            <i class='bx bx-help-circle' ></i>
-                            <p style="font-size: 18px;">HELP & SUPPORT</p>
-                            <span >></span>
-                        </a> -->
-                        <!-- <a href="#" class="sub_link" >
-                            <i class='bx bx-meh-blank' ></i>
-                            <p>EDIT THEME</p>
-                            <span>></span> -->
                         </a>
                         <a href="/" onclick="logout()" class="sub_link" id="logout"  style="background-color: rgb(241, 9, 9);color: aliceblue;border-radius: 7px; display: flex; padding-left: 15px;">
                             <i class='bx bx-log-out-circle' STYLE="color:aliceblue;"></i>
                             <p>LOGOUT</p>
-                            <!-- <span>></span> -->
                         </a>
                     </div>
                 </div>
@@ -125,12 +115,12 @@
                         name="dropdown" id="Route_Details" required>
                         <b><option value="" disabled selected>Select
                                 Route</option></b>
-                        <option value="Sydney, Australia">Sydney, Australia</option>
-                        <option value="Abu Dhabi, Dubai">Abu Dhabi, Dubai</option>
-                        <opiton value="London, Uk">London, Uk</opiton>
-                        <option value="Canada">Canada</option>
-                        <option value="Vizag, India">Vizag, India</option>
-                        <option value="Bengalore, India">Bengalore, India</option>
+                        <option value="Sydney, Australia">Sydney to Australia</option>
+                        <option value="Abu Dhabi, Dubai">Abu Dhabi to Dubai</option>
+                        <opiton value="London, Uk">London to Uk</opiton>
+                        <option value="Canada">Canada to Chile</option>
+                        <option value="Vizag, India">Vizag to Delhi</option>
+                        <option value="Bengalore, India">Bengalore to India</option>
                     </select><br><br>
 
                     Device_Id<i style="color: red;">*</i> <br><select name="Device"
@@ -176,7 +166,7 @@
                     Batch Id<i style="color: red;">*</i> <br><input
                         type="number" id="Batch_id" required><br><br>
 
-                    Shipment Description<br><textarea name="Comment"
+                    Shipment Description<br><textarea type="text" name="Comment"
                         id="Comment" cols="46" rows="6"></textarea>
 
                 </div>
@@ -195,9 +185,6 @@
                 
             </div>
         </div>
-        <!-- <script>
-            document.getElementById("option").style.display = "block";
-        </script> -->
         <script src="../CSS/javascript/newshipment.js"></script>
     </body>
 </html>

@@ -46,7 +46,7 @@ try :
             Data = message.value().decode("utf-8")
             print("Received data:", Data)
 
-             # Insert the JSON-formatted data into MongoDB in dict format.
+             # Insert the JSON-formatted data into MongoDB in dict format. && json -> py f
             collection.insert_one(json.loads(Data))
 
 except Exception as X :

@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         for (let i = 0; i < 6; i++) {
             captcha += characters.charAt(Math.floor(Math.random() * characters.length));
+            
         }
 
         captchaElement.textContent = captcha;

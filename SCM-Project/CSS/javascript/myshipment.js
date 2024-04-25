@@ -54,73 +54,126 @@ $(document).ready(function() {
 
 //////////////////////////////////// table //////////////////////////////
 
-$(document).ready(() => {
 
-    // Fetch shipment data when the page is loaded
-    fetchShipmentData();
+let currentPage = 1;
+const rowsPerPage = 8;
 
-    // Attach a click event handler to the element with ID "search"
+// Event listener for pagination controls
+document.addEventListener("DOMContentLoaded", function () {
+    fetchShipmentData(); // Load data on page load
+    updateTableDisplay();
+    
+    if (currentPage === 1) {
+        updateActivePage();
+    }
+    document.getElementById("prevPage").addEventListener("click", () => {
+       
+        if (currentPage > 1) {
+            currentPage--;
+            fetchShipmentData();
+            updateActivePage();
+            updateTableDisplay();
+        }
+    });
+
+    document.getElementById("nextPage").addEventListener("click", () => {
+    
+            currentPage++;
+            fetchShipmentData();
+            updateTableDisplay();
+            updateActivePage();
+    });
+
+    // Add click events to each list item in pagination control
+    document.getElementById("pageNumbers").addEventListener("click", (event) => {
+        if (event.target.tagName === "LI") {
+            // Update the current page based on the clicked list item
+            currentPage = parseInt(event.target.getAttribute("value"));
+    
+            // Get all list items in the pagination
+            const allListItems = document.querySelectorAll(".pagination-controls li");
+    
+            // Remove the 'active' class from all list items
+            allListItems.forEach((item) => {
+                item.classList.remove("active");
+            });
+    
+            // Add the 'active' class to the clicked list item
+            event.target.classList.add("active");
+            fetchShipmentData();
+            updateActivePage();
+
+            // Update the table display based on the new current page
+            updateTableDisplay();
+        }
+        
+        // Example:error message after 2 seconds
+        setTimeout(() => {
+            document.getElementById("error").innerText = "";
+        }, 2000); // here we can change
+});
+
+function updateActivePage() {
+    // Remove active class from all <li> elements
+    document.querySelectorAll("#pageNumbers li").forEach((li) => {
+        li.classList.remove("active");
+    });
+
+    // Add active class to the current page
+    const currentPageElement = document.querySelector(`#pageNumbers li[value='${currentPage}']`);
+    if (currentPageElement) {
+        currentPageElement.classList.add("active");
+    }
+}
+});
+
+function updateTableDisplay() {
+    const startRow = (currentPage - 1) * rowsPerPage;
+    const endRow = startRow + rowsPerPage;
+// Attach a click event handler to the element with ID "search"
     $("#search").on("click", () => {
         // Retrieve the value entered into the input field with ID "username_input"
         const username = $("#user_input").val().trim();
         if (username !== "") {
+        fetch("/shipment_table", {
+            method: "POST",
+            headers: {
+                "Authorization": localStorage.getItem("Access_token"),
+            },
+        })
+            .then((response) => response.json())
+            .then((shipmentList) => {
+                const pageRows = shipmentList.slice(startRow, endRow);
+                    //  Filter shipment list by username // Array.prototype.filter() and creates a new array with elements to the provided function
+                        const user_find = pageRows.filter(item => item.Username === username || item.Shipment_Number === parseInt(username));
+                        if (user_find !== "") {
+                            // Check if any users are found with the entered username
+                            if (user_find.length > 0) {
+                                // Construct HTML table rows for each found user
+                                let userdata = "";
 
-
-            // Check if the username is not empty
-
-            // Fetch shipment data filtered by username
-            fetch("/shipment_table", {
-                method: "POST",
-                headers: {
-                    "Authorization": localStorage.getItem("Access_token"),
-                }
-            })
-                .then(response => {
-                    if (response.ok) {
-                        return response.json();
-                    } else {
-                        return response.json().then(data => {
-                            throw new Error(data.message);
-                        });
-                    }
-                })
-                .then(shipment_list => {
-                    // Filter shipment list by username // Array.prototype.filter() and creates a new array with elements to the provided function
-                    const user_find = shipment_list.filter(item => item.Username === username || item.Shipment_Number === parseInt(username));
-                    if (user_find !== "") {
-                        // Check if any users are found with the entered username
-                        if (user_find.length > 0) {
-                            // Construct HTML table rows for each found user
-                            let userdata = "";
-
-                            // it iterate over an elements and callback function for each element 
-                            user_find.forEach(item => {
-                                userdata += "<tr><td>" + item.Username + "</td><td>" + item.Shipment_Number + "</td><td>" + item.Container_Number + "</td><td>" +
-                                    item.Route_Details + "</td><td>" + item.Goods_Type + "</td><td>" + item.Device + "</td><td>" + item.Expected_Delivery_Date + "</td><td>" +
-                                    item.PO_Number + "</td><td>" + item.Delivery_Number + "</td><td>" + item.NDC_Number + "</td><td>" + item.Batch_id + "</td><td>" +
-                                    item.Serial_no_Goods + "</td><td>" + item.Comment + "</td></tr>";
-                            });
-                            // Update the HTML content of the element with ID "new_data" with the constructed user data
-                            $("#new_data").html(userdata);
+                                // it iterate over an elements and callback function for each element 
+                                user_find.forEach(item => {
+                                    userdata += "<tr><td>" + item.Username + "</td><td>" + item.Shipment_Number + "</td><td>" + item.Container_Number + "</td><td>" +
+                                        item.Route_Details + "</td><td>" + item.Goods_Type + "</td><td>" + item.Device + "</td><td>" + item.Expected_Delivery_Date + "</td><td>" +
+                                        item.PO_Number + "</td><td>" + item.Delivery_Number + "</td><td>" + item.NDC_Number + "</td><td>" + item.Batch_id + "</td><td>" +
+                                        item.Serial_no_Goods + "</td><td>" + item.Comment + "</td></tr>";
+                                });
+                                // Update the HTML content of the element with ID "new_data" with the constructed user data
+                                $("#new_data").html(userdata);
+                            } 
                         } else {
-                            // If no users are found, display a message or perform appropriate action
-                            $("#error").text("No users found with the entered username.");
-                            setTimeout(() => {
-                                $("#error").text("")
-                            }, 2000);
+                            $("#error").text("No users found with the entered username.")
                         }
-                    } else {
-                        $("#error").text("Token Expired, Relogin...")
-                    }
-                
-                })
-                .catch(error => {
-                    $("#error").text(error);
                     
-                    setTimeout(() => {
-                        $("#error").text("");
-                    }, 2000);
-                });
+            })  .catch(error => {
+                $("#error").text(error);
+                
+                setTimeout(() => {
+                    $("#error").text("");
+                }, 2000);
+            });
+           
 
         } else {
             // If the username is empty, display a message or perform appropriate action
@@ -130,60 +183,54 @@ $(document).ready(() => {
             }, 2000);
         };
     });
-});
+};
 
 
-// Function to fetch shipment data
 function fetchShipmentData() {
-
+    const startRow = (currentPage - 1) * rowsPerPage;
+    const endRow = startRow + rowsPerPage;
     fetch("/shipment_table", {
         method: "POST",
         headers: {
             "Authorization": localStorage.getItem("Access_token"),
-        }
+        },
     })
-        .then(response => {
-            if (response.ok) {
-                return response.json();
-            } else {
-                return response.json().then(data => {
-                    throw new Error(data.detail);
-                });
-            }
-        })
-        .then(shipment_list => {
+        .then((response) => response.json())
+        .then((shipmentList) => {
+            
+            const pageRows = shipmentList.slice(startRow, endRow);
             let shipmentData = "";
-            // Construct HTML table rows for each shipment
-            if (sessionStorage.getItem("Role") === "admin") {
-      
-             shipment_list.forEach(item => {
-                shipmentData += "<tr><td>" + item.Username + "</td><td>" + item.Shipment_Number + "</td><td>" + item.Container_Number + "</td><td>" +
-                    item.Route_Details + "</td><td>" + item.Goods_Type + "</td><td>" + item.Device + "</td><td>" + item.Expected_Delivery_Date + "</td><td>" +
-                    item.PO_Number + "</td><td>" + item.Delivery_Number + "</td><td>" + item.NDC_Number + "</td><td>" + item.Batch_id + "</td><td>" +
-                    item.Serial_no_Goods + "</td><td>" + item.Comment + "</td></tr>";
-            });
-            // Update the HTML content of the element with ID "new_data" with the constructed shipment data
-            }
-            else{
-                
-                shipment_list.forEach(item => {
-                    shipmentData += "</td><td>" + item.Shipment_Number + "</td><td>" + item.Container_Number + "</td><td>" +
-                        item.Route_Details + "</td><td>" + item.Goods_Type + "</td><td>" + item.Device + "</td><td>" + item.Expected_Delivery_Date + "</td><td>" +
-                        item.PO_Number + "</td><td>" + item.Delivery_Number + "</td><td>" + item.NDC_Number + "</td><td>" + item.Batch_id + "</td><td>" +
-                        item.Serial_no_Goods + "</td><td>" + item.Comment + "</td></tr>";
-                });
-            } 
-            $("#new_data").html(shipmentData);
-
+                        // Construct HTML table rows for each shipment
+                        if (sessionStorage.getItem("Role") === "admin") {
+                            pageRows.forEach(item => {
+                            shipmentData += "<tr><td>" + item.Username + "</td><td>" + item.Shipment_Number + "</td><td>" + item.Container_Number + "</td><td>" +
+                                item.Route_Details + "</td><td>" + item.Goods_Type + "</td><td>" + item.Device + "</td><td>" + item.Expected_Delivery_Date + "</td><td>" +
+                                item.PO_Number + "</td><td>" + item.Delivery_Number + "</td><td>" + item.NDC_Number + "</td><td>" + item.Batch_id + "</td><td>" +
+                                item.Serial_no_Goods + "</td><td>" + item.Comment + "</td></tr>";
+                        });
+                        // Update the HTML content of the element with ID "new_data" with the constructed shipment data
+                        }
+                        else{
+                            
+                            pageRows.forEach(item => {
+                                shipmentData += "</td><td>" + item.Shipment_Number + "</td><td>" + item.Container_Number + "</td><td>" +
+                                    item.Route_Details + "</td><td>" + item.Goods_Type + "</td><td>" + item.Device + "</td><td>" + item.Expected_Delivery_Date + "</td><td>" +
+                                    item.PO_Number + "</td><td>" + item.Delivery_Number + "</td><td>" + item.NDC_Number + "</td><td>" + item.Batch_id + "</td><td>" +
+                                    item.Serial_no_Goods + "</td><td>" + item.Comment + "</td></tr>";
+                            });
+                        } 
+                        $("#new_data").html(shipmentData);
+                       
         })
-        // Display the table if it was initially hidden
-        .catch(error => {
-            $("#error").text(error.message);
-            setTimeout(() => {
-                $("#error").text("");
-            }, 2000);
-        });
-};
+            // Display the table if it was initially hidden
+            .catch(error => {
+                $("#error").text(error.message);
+                setTimeout(() => {
+                    $("#error").text("");
+                }, 2000);
+            });
+        
+        };
 
 
 //logout 
@@ -195,3 +242,145 @@ $(document).ready(() => {
         window.location.href = "/"
     })
 })
+
+
+
+
+
+
+
+
+
+
+
+
+// $(document).ready(() => {
+
+//     // Fetch shipment data when the page is loaded
+//     fetchShipmentData();
+
+//     // Attach a click event handler to the element with ID "search"
+//     $("#search").on("click", () => {
+//         // Retrieve the value entered into the input field with ID "username_input"
+//         const username = $("#user_input").val().trim();
+//         if (username !== "") {
+
+
+//             // Check if the username is not empty
+
+//             // Fetch shipment data filtered by username
+//             fetch("/shipment_table", {
+//                 method: "POST",
+//                 headers: {
+//                     "Authorization": localStorage.getItem("Access_token"),
+//                 }
+//             })
+//                 .then(response => {
+//                     if (response.ok) {
+//                         return response.json();
+//                     } else {
+//                         return response.json().then(data => {
+//                             throw new Error(data.message);
+//                         });
+//                     }
+//                 })
+//                 .then(shipment_list => {
+//                     // Filter shipment list by username // Array.prototype.filter() and creates a new array with elements to the provided function
+//                     const user_find = shipment_list.filter(item => item.Username === username || item.Shipment_Number === parseInt(username));
+//                     if (user_find !== "") {
+//                         // Check if any users are found with the entered username
+//                         if (user_find.length > 0) {
+//                             // Construct HTML table rows for each found user
+//                             let userdata = "";
+
+//                             // it iterate over an elements and callback function for each element 
+//                             user_find.forEach(item => {
+//                                 userdata += "<tr><td>" + item.Username + "</td><td>" + item.Shipment_Number + "</td><td>" + item.Container_Number + "</td><td>" +
+//                                     item.Route_Details + "</td><td>" + item.Goods_Type + "</td><td>" + item.Device + "</td><td>" + item.Expected_Delivery_Date + "</td><td>" +
+//                                     item.PO_Number + "</td><td>" + item.Delivery_Number + "</td><td>" + item.NDC_Number + "</td><td>" + item.Batch_id + "</td><td>" +
+//                                     item.Serial_no_Goods + "</td><td>" + item.Comment + "</td></tr>";
+//                             });
+//                             // Update the HTML content of the element with ID "new_data" with the constructed user data
+//                             $("#new_data").html(userdata);
+//                         } else {
+//                             // If no users are found, display a message or perform appropriate action
+//                             $("#error").text("No users found with the entered username.");
+//                             setTimeout(() => {
+//                                 $("#error").text("")
+//                             }, 2000);
+//                         }
+//                     } else {
+//                         $("#error").text("Token Expired, Relogin...")
+//                     }
+                
+//                 })
+//                 .catch(error => {
+//                     $("#error").text(error);
+                    
+//                     setTimeout(() => {
+//                         $("#error").text("");
+//                     }, 2000);
+//                 });
+
+//         } else {
+//             // If the username is empty, display a message or perform appropriate action
+//             $("#error").text("Please enter a username.");
+//             setTimeout(() => {
+//                 $("#error").text("");
+//             }, 2000);
+//         };
+//     });
+// });
+
+
+// // Function to fetch shipment data
+// function fetchShipmentData() {
+
+//     fetch("/shipment_table", {
+//         method: "POST",
+//         headers: {
+//             "Authorization": localStorage.getItem("Access_token"),
+//         }
+//     })
+//         .then(response => {
+//             if (response.ok) {
+//                 return response.json();
+//             } else {
+//                 return response.json().then(data => {
+//                     throw new Error(data.detail);
+//                 });
+//             }
+//         })
+//         .then(shipment_list => {
+//             let shipmentData = "";
+//             // Construct HTML table rows for each shipment
+//             if (sessionStorage.getItem("Role") === "admin") {
+      
+//              shipment_list.forEach(item => {
+//                 shipmentData += "<tr><td>" + item.Username + "</td><td>" + item.Shipment_Number + "</td><td>" + item.Container_Number + "</td><td>" +
+//                     item.Route_Details + "</td><td>" + item.Goods_Type + "</td><td>" + item.Device + "</td><td>" + item.Expected_Delivery_Date + "</td><td>" +
+//                     item.PO_Number + "</td><td>" + item.Delivery_Number + "</td><td>" + item.NDC_Number + "</td><td>" + item.Batch_id + "</td><td>" +
+//                     item.Serial_no_Goods + "</td><td>" + item.Comment + "</td></tr>";
+//             });
+//             // Update the HTML content of the element with ID "new_data" with the constructed shipment data
+//             }
+//             else{
+                
+//                 shipment_list.forEach(item => {
+//                     shipmentData += "</td><td>" + item.Shipment_Number + "</td><td>" + item.Container_Number + "</td><td>" +
+//                         item.Route_Details + "</td><td>" + item.Goods_Type + "</td><td>" + item.Device + "</td><td>" + item.Expected_Delivery_Date + "</td><td>" +
+//                         item.PO_Number + "</td><td>" + item.Delivery_Number + "</td><td>" + item.NDC_Number + "</td><td>" + item.Batch_id + "</td><td>" +
+//                         item.Serial_no_Goods + "</td><td>" + item.Comment + "</td></tr>";
+//                 });
+//             } 
+//             $("#new_data").html(shipmentData);
+
+//         })
+//         // Display the table if it was initially hidden
+//         .catch(error => {
+//             $("#error").text(error.message);
+//             setTimeout(() => {
+//                 $("#error").text("");
+//             }, 2000);
+//         });
+// };

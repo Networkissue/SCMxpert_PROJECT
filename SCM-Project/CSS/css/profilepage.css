@@ -1,7 +1,7 @@
 body {
     font-family: Arial, sans-serif;
-    background: linear-gradient(#04619F, #000000);
-    /* background-image: url("/CSS/bgm-pics/wp9448982.jpg"); */
+    /* background: linear-gradient(#04619F, #000000); */
+    background-image: url("/CSS/bgm-pics/d2.jpg");
     background-repeat: no-repeat;
     margin: 0;
     display: flex;
@@ -15,8 +15,8 @@ body {
   .container {
     text-align: center;
     background: linear-gradient(#2C3E50, #000000);
-    padding: 40px;
-    width: 650px;
+    padding: 100px;
+    width: 950px;
     border-radius: 15px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
     opacity: 0;

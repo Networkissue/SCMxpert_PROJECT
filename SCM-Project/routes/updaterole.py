@@ -38,7 +38,7 @@ def update(request : Request, user: str=Form(None), token:str = Depends(get_user
                 
                  # Check if the user already has the admin role
                 if result["Role"] == "admin":
-                     raise HTTPException(status_code=401, detail="User is already a admin")
+                     raise HTTPException(status_code=401, detail="User is already an admin")
 
                  # Update user role to admin
                 result1 = user_data.update_one({"Username" : user}, {"$set": {"Role" : "admin"}})

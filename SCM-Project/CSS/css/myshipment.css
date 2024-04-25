@@ -39,7 +39,7 @@ body {
     margin:60px auto; 
     margin-top: 2.5%;
     margin-left: 0;
-    border-radius: 3px;
+    border-radius: 1px;
     box-shadow:0 4px 10px 4px grey;
     display: flex;
     flex-direction: column;
@@ -50,6 +50,53 @@ body {
     text-align: center;
 }
 
+/* pagination */
+
+.pagination-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    margin-left: -6%;
+}
+
+.pagination-controls button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    background-color: #c20f0f;
+    color: white;
+    cursor: pointer;
+    margin: 0 10px;
+}
+
+.pagination-controls button:hover {
+    background-color: #a00c0c;
+}
+
+.pagination-controls ul {
+    display: flex;
+    gap: 5px;
+    position: relative;
+    left: -1%;
+}
+
+.pagination-controls li {
+    list-style: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #e0e0e0;
+}
+
+.pagination-controls li:hover {
+    background-color: #c0c0c0;
+}
+
+.pagination-controls li.active {
+    color: white;
+    background-color: #a00c0c;
+}
 
 .heading {
     display: flex;
@@ -338,7 +385,7 @@ label {
     top: 30%;
     left: 8%;
     font-size: x-large;
-    width: 80%;
+    width: 82%;
     text-align: center;
     background-color: rgba(128, 128, 128, 0);
     padding-left: 10%;
@@ -350,8 +397,8 @@ label {
 }
 
 .container .table-container {
-    width: 100%; /* Ensure the table container takes full width */
-    height: 730px; /* Set a maximum height for vertical scrolling */
+    width: 95%; /* Ensure the table container takes full width */
+    height: 580px; /* Set a maximum height for vertical scrolling */
     overflow-x: auto; /* Enable horizontal scrolling for the table */
     overflow-y: auto; /* Enable vertical scrolling for the table */
 }
@@ -360,6 +407,7 @@ label {
 .container .table-container table {
     width: AUTO; /* Ensure the table takes full width */
     table-layout: fixed; /* Fix the table layout to prevent cell content from affecting column width */
+    border-collapse: collapse;
 }
 
 .table-container tr th {
@@ -371,18 +419,33 @@ label {
  }
 
 .container .table-container table thead {
-    /* width: 300px; */
+    width: 95%;
     height: 60px;
-    padding: 20px ;
-    color: white;
-    background-color: red;
+    padding: 30px 20px;
+    color: black;
+    font-weight: 600;
+    font-size: 27px;
+    background-color:grey;
+    
 
 }
 
 .container .table-container table tbody {
-    color: white;
-    background-color: rgba(128, 128, 128, 0.842);
+    color: black;
+    background-color:#f9f9f9;
+    font-size: 26px;
+    font-weight: 600;
+    padding: 30px;
    
+}
+
+tbody tr:nth-child(odd) {
+    color: black;
+    background-color: #f9f9f9; /* Alternating light gray for odd rows */
+  }
+
+tbody tr:hover {
+background-color: #c7c5c5; /* Highlight row on hover */
 }
 
 
@@ -418,7 +481,7 @@ label {
   }
 
   .container .table-container table {
-    width: 147%; /* Ensure the table takes full width */
+    width: 165%; /* Ensure the table takes full width */
     table-layout: fixed; /* Fix the table layout to prevent cell content from affecting column width */
 }
 
@@ -437,3 +500,5 @@ label {
     font-size: 30px;
     color: #c20f0f;
 }
+
+

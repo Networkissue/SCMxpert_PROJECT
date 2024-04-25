@@ -23,10 +23,16 @@ document.addEventListener("DOMContentLoaded", () => {
                 .then(response => {
 
                     $("#error").text(response.message);
+                    setTimeout(() =>{
+                        $("#error").text(" ");
+                    }, 2000);
                 })
 
                 .catch(error => {
                     $("#error").text(error);
+                    setTimeout(() =>{
+                        $("#error").text(" ");
+                    }, 2000);
                 });
 
 

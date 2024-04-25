@@ -28,7 +28,7 @@
         <header >
             <p class="dark_change" id="dark_change"></p>
           </header>
-        <label style="background-color: rgb(255, 51, 0);">MY SHIPMENTS</label>
+        <label style="background-color: rgb(48, 71, 80);">MY SHIPMENTS</label>
 
         <div class="input" >
             <input type="text" placeholder="Search Here" id="user_input" name="user_input">
@@ -63,7 +63,7 @@
                         <a href="/shipment_table" id="shipmentid">
                             <i class='bx bxs-package' ></i>
                             <p>MY SHIPMENTS</p>
-                            <!-- <span>></span> -->
+                        
                         </a>
                         <a href="/devicedata" class="top_sub_link" id="Devicedata" style="display: flex; padding-left: 7px;">
                             <i class='bx bxs-devices' ></i>
@@ -113,7 +113,7 @@
 
             <div class="table-container">
 
-                <table border="1">
+                <table>
                     <thead>
                         <td id="table_username"> Username</td>
                         <td> Shipment Number</td>
@@ -136,7 +136,15 @@
                 </table>
 
             </div>
+
+            <div class="pagination-controls">
+                <button id="prevPage">Previous</button>
+                <ul id="pageNumbers">
+                    <!-- Page numbers will be dynamically generated here -->
+                </ul>
+                <button id="nextPage">Next</button>
+            </div>
         </div>
 
     </body>
-</html>
+</html
