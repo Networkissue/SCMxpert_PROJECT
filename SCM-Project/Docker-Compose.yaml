@@ -2,7 +2,7 @@ version: '3'
 
 services:
     scmxpert:
-     image: scmxpert:latest1
+     image: dnetworkhub/scmxpert:latest 
      ports:
        - "8001:8001"
 
@@ -27,14 +27,14 @@ services:
        - KAFKA_HEAP_OPTS=-Xmx1G
 
     server:
-     image: scmxpertserver:latest
+     image: dnetworkhub/server:latest 
      ports:
        - "8005:8005"
      depends_on:
        - kafka
 
     producer:
-     image: scmxpertproducer:latest
+     image: dnetworkhub/producer:latest
      environment:
        - bootstrap_servers=kafka:9092
        - host=server
@@ -42,7 +42,7 @@ services:
        - server
 
     consumer:
-     image: scmxpertconsumer:latest
+     image: dnetworkhub/consumer:latest
      environment:
        - bootstrap_servers=kafka:9092
      depends_on:
