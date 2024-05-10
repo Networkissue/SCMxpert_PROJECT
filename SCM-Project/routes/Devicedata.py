@@ -25,4 +25,4 @@ def device(request : Request, device_id:int, token:str = Depends(get_user_by)):
     except HTTPException as z :
         return JSONResponse(content={"message": z.detail}, status_code=z.status_code)
     except Exception as X :
-        return JSONResponse(content={"message": X }, status_code=401)
+        return JSONResponse(content={"message": X }, status_code=500)

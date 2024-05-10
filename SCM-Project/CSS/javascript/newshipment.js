@@ -15,6 +15,8 @@ $(document).ready(function () {
     const icon1 = document.querySelector(".icon1")
     var bHeading = document.getElementById('b_heading');
     var settingDiv = document.getElementById('setting');
+    var shipment_no = document.getElementById("Shipment_Number")
+    var note = document.getElementById("arrow_left")
 
     menuIcon.addEventListener('click', () => {
         sidebar.classList.toggle("menuclose");
@@ -38,6 +40,12 @@ $(document).ready(function () {
             e.preventDefault();
         })
     });
+    shipment_no.addEventListener("mouseover", ()=> {
+            note.style.display = "block" 
+    })
+    shipment_no.addEventListener("mouseout", ()=>{
+        note.style.display = "none"
+    })
 
 });
 

@@ -512,3 +512,30 @@ label {
      font-size: 20px;
      filter: grayscale(100%) brightness(0%);
   }
+
+  #arrow_left {
+    width: 350px;
+    height: 25px;
+    background-color: black;
+    color: #fff;
+    /* padding: 3px; */
+    padding: 3px 0 0 30px;
+    position: absolute;
+    top: 17.5%;
+    left: 14.5%;
+    opacity: 70%;
+    border-radius: 6px;
+    /* float: left; */
+  }
+  
+  #arrow_left::after {
+  content: " ";
+  position: absolute;
+  right: 210px;
+  top: -15px;
+  opacity: 70%;
+  border-top: none;
+  border-right: 15px solid transparent;
+  border-left: 15px solid transparent;
+  border-bottom: 15px solid black;
+}

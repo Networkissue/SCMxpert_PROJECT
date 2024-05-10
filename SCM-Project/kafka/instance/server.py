@@ -19,6 +19,8 @@ print("New Instance Created")
 
 # Bind the socket to the host and port
 Instance.bind(("", server_port))
+
+#clients purpose for communication
 Instance.listen(2)
 print(f"Server is listening on {server_host}:{server_port}")
 
@@ -34,8 +36,8 @@ while True :
             "Device_Id" : random.randint(2365478910, 2365478912),
             "Battery_level" : round(random.uniform(1.75, 5.00), 3),
             "First_Sensor_Temperature" : round(random.uniform(10.00, 47.50), 2),
-            "Route_From" : random.choice(['Sydney, Australia', 'Abu Dhabi, Dubai', 'London, Uk', 'Canada', 'Vizag, India', 'Bengalore, India']),
-            "Route_To" : random.choice(['Sydney, Australia', 'Abu Dhabi, Dubai', 'London, Uk', 'Canada', 'Vizag, India', 'Bengalore, India']),
+            "Route_From" : random.choice(['Sydney, Australia', 'Delhi, India', 'London, Uk', 'Canada, North America', 'Vizag, India', 'Los Angeles, CA']),
+            "Route_To" : random.choice(['Houston, USA', 'Dubai, UAE', 'Abu Dhabi, UAE', 'Chile, South America', 'Delhi, India', 'New York City, NY']),
             "Time_Stamp" : str(datetime.now()) # type: ignore
         }
         

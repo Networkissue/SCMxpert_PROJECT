@@ -2,7 +2,7 @@ from fastapi import APIRouter, HTTPException, Request
 from routes.jwt_token import  Depends, get_user_by, datetime
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import JSONResponse
-from models.models import *
+from models.models import Shipment_input
 from database.database import shipment_data
 from fastapi.templating import Jinja2Templates 
 
@@ -22,7 +22,7 @@ def new_data(request : Request, shipment : Shipment_input, current_user:str = De
     try :
         #checking if the length of shipment number is equal to 7
         if not len(str(shipment.Shipment_Number)) == 7 :
-            raise HTTPException(status_code=405, detail="Shipment_Number must be 7 Characters")
+            raise HTTPException(status_code=400, detail="Shipment_Number must be 7 Characters")
         
         #checking all values are filled or not?
         if any(value == "" for value in shipment.dict().values()):

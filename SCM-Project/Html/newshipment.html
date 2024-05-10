@@ -109,18 +109,18 @@
                 <div class="detail-1">
 
                     Shipment Number<i style="color: red;">*</i> <br><input
-                        type="number" id="Shipment_Number" required maxlength="7"><br><br>
+                        type="number" id="Shipment_Number" maxlength="7"><br><br>
 
                     Route Details<i style="color: red;">*</i> <br><select
                         name="dropdown" id="Route_Details" required>
                         <b><option value="" disabled selected>Select
                                 Route</option></b>
-                        <option value="Sydney, Australia">Sydney to Australia</option>
-                        <option value="Abu Dhabi, Dubai">Abu Dhabi to Dubai</option>
-                        <opiton value="London, Uk">London to Uk</opiton>
-                        <option value="Canada">Canada to Chile</option>
-                        <option value="Vizag, India">Vizag to Delhi</option>
-                        <option value="Bengalore, India">Bengalore to India</option>
+                        <option value="Sydney, Australia to Houston, USA">Sydney, Australia to Houston, USA</option>
+                        <option value="Delhi, India to Dubai, UAE">Delhi, India to Dubai, UAE</option>
+                        <option value="London, UK to Abu Dhabi, UAE ">London, UK to Abu Dhabi, UAE </opiton>
+                        <option value="Canada, North America to Chile, South America">Canada, North America to Chile, South America</option>
+                        <option value="Vizag, India to Delhi, India">Vizag, India to Delhi, India</option>
+                        <option value="Los Angeles, CA to New York City, NY">Los Angeles, CA to New York City, NY</option>
                     </select><br><br>
 
                     Device_Id<i style="color: red;">*</i> <br><select name="Device"
@@ -177,6 +177,10 @@
 
                 <div class="button2" id="button2">
                     <button type="reset">CLEAR DETAILS</button>
+                </div>
+
+                <div id="arrow_left" style="display: none;">
+                    Please Enter Seven Numerical Characters
                 </div>
 
             </form>
