@@ -12,7 +12,7 @@ route.mount("/CSS", StaticFiles(directory="CSS"), name="CSS")
 @route.get("/devicedata")
 def device(request : Request):
     return html.TemplateResponse("devicedata.html", {"request" : request})
-
+ 
 @route.get("/devicedata1")
 def device(request : Request, device_id:int, token:str = Depends(get_user_by)):
     try :

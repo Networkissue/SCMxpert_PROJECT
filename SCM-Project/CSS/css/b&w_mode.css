@@ -60,6 +60,10 @@
   color: #fff;
 }
 
+.DB.night #username {
+
+  color: rgb(17, 89, 116);
+}
 
 .DB.night #mainlogo2{
   font-size: 20px;
@@ -74,19 +78,6 @@
 .DB.night .menuclose span {
   display: none;
 }
-/* 
-.DB.night #shipmentid {
-
-  border: 2px solid;
-  border-radius: 10px;
-}
- */
-
-/* .DB.night #shipmentid p{
-
-  color: black;
-} */
-/* ///forlogout// */
 
 .DB.night #logout p, #logout i{
 

@@ -41,13 +41,13 @@ while True :
             "Time_Stamp" : str(datetime.now()) # type: ignore
         }
         
-        # Convert route data to JSON string and encode it(str -> bytes)
+        
         # encode; sockets will transmits in bytes, not strings && py -> json f
+        # Convert route data to JSON string and encode it(str -> bytes)
         Data = (json.dumps(route_data, indent = 1)).encode('utf-8')
 
         # Send data to the client
         client_socket.send(Data)
-        print(Data)
 
         # Generate new route data for every 8s
         time.sleep(8)
@@ -57,5 +57,5 @@ while True :
         if x.errno == errno.EPIPE: 
             pass
 
-   
+       
 

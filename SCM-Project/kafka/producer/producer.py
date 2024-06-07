@@ -28,7 +28,6 @@ try :
             break
 
         Decoded_data = Received_Data.decode('utf-8')
-        print(Decoded_data)
 
         # produce the received data to kafka server
         producer_kafka.produce("scmdata", value = Decoded_data)

@@ -37,15 +37,12 @@ try :
          #Getting all messages from kafka-broker server in 2s
         message = consumer.poll(2.0)
     
-        if message is None :
-            print("Waiting for the data...")
-        elif message.error():
+        if message.error():
             error_message = message.error()
             print("Error:", error_message)
         else :
             Data = message.value().decode("utf-8")
-            print("Received data:", Data)
-
+            
              # Insert the JSON-formatted data into MongoDB in dict format. && json -> py f
             collection.insert_one(json.loads(Data))
 

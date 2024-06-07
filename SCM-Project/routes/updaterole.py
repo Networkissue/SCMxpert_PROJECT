@@ -24,7 +24,7 @@ def update(request : Request, user: str=Form(None), token:str = Depends(get_user
                 
                   # Check authorization
                 if token["Role"] == "user":
-                     raise HTTPException(status_code=404, detail="You have no access")
+                     raise HTTPException(status_code=401, detail="You have no access")
                 
 
                  # Ensure user data is provided and valid  

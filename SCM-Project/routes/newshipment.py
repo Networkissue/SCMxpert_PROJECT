@@ -38,9 +38,6 @@ def new_data(request : Request, shipment : Shipment_input, current_user:str = De
         if not Expected_delivery_date_str:
             raise HTTPException(status_code=400, detail="Expected delivery date is required")
         
-        if Expected_delivery_date_str < str(datetime.utcnow().timestamp()) :
-            raise HTTPException(status_code=400, detail="Date should be greater than or equal to current UTC time")
-        
         if current_user :
             Shipment = {
                 "Username":current_user["Username"],

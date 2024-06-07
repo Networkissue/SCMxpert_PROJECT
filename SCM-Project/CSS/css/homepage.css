@@ -374,13 +374,23 @@ body {
 
 .name{
     position: absolute;
-    top: -1.5%;
-    left: 4%;
-    width: 40%;
-    font-size: 40px;
+    top: 12%;
+    left: 42%;
+    width: 80%;
+    font-size: 70px;
     z-index: 1;
 }
 .name p{
-    font-size: 40px;
+    font-size: 50px;
     font-weight: 600;
+    color: rgb(17, 89, 116);
+}
+
+#title1 {
+
+    position:absolute;
+    top: 21%;
+    left: 37%;
+    font-size: 53px;
+
 }
