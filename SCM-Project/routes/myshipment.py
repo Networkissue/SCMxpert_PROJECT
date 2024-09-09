@@ -6,16 +6,16 @@ from routes.jwt_token import get_user_by
 from database.database import shipment_data
 
 
-# Create a router instance
-router = APIRouter()
+# Create a route instance
+route = APIRouter()
 
 # Initialize Jinja2Templates to locate HTML templates
 templates = Jinja2Templates(directory="Html")
 
 # Mount static files directory for CSS
-router.mount("/CSS", StaticFiles(directory="CSS"), name="CSS")
+route.mount("/CSS", StaticFiles(directory="CSS"), name="CSS")
 
-@router.get("/shipment_table")
+@route.get("/shipment_table")
 def get_shipment_table(request: Request):
     """
     Renders the shipment table HTML page.
@@ -27,7 +27,7 @@ def get_shipment_table(request: Request):
     """
     return templates.TemplateResponse("myshipment.html", {"request": request})
 
-@router.post("/shipment_table")
+@route.post("/shipment_table")
 def fetch_shipment_data(
     request: Request,
     token: dict = Depends(get_user_by)

@@ -6,17 +6,17 @@ from passlib.context import CryptContext
 from models.models import Signup
 
 
-# Initialize router
-router = APIRouter()
+# Initialize route
+route = APIRouter()
 
 # Template directory and static file mounting
 html = Jinja2Templates(directory="Html")
-router.mount("/CSS", StaticFiles(directory="CSS"), name="CSS")
+route.mount("/CSS", StaticFiles(directory="CSS"), name="CSS")
 
 # Initialize password hashing context
 pwd_hash = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
-@router.get("/signup")
+@route.get("/signup")
 def signup_page(request: Request):
     """
     Renders the signup page template.
@@ -28,7 +28,7 @@ def signup_page(request: Request):
     """
     return html.TemplateResponse("signupage.html", {"request": request})
 
-@router.post("/signup")
+@route.post("/signup")
 def perform_signup(
     request: Request,
     Uname: str = Form(...),

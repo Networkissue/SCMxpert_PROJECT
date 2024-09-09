@@ -7,11 +7,13 @@ from database.database import shipment_data
 from fastapi.templating import Jinja2Templates 
 
 
-# Create a router instance
-router = APIRouter()
-templates = Jinja2Templates(directory="templates")  # Directory where HTML templates are stored
+# Create a route instance
+route = APIRouter()
+templates = Jinja2Templates(directory="Html")  # Directory where HTML templates are stored
 
-@router.get("/Newshipment")
+route.mount("/CSS", StaticFiles(directory="CSS"), name="CSS") # Mount static files directory for CSS
+
+@route.get("/Newshipment")
 def shipment(request: Request):
     """
     Renders the new shipment form.
@@ -23,7 +25,7 @@ def shipment(request: Request):
     """
     return templates.TemplateResponse("newshipment.html", {"request": request})
 
-@router.post("/Newshipment")
+@route.post("/Newshipment")
 def new_data(
     request: Request,
     shipment: Shipment_input,
@@ -57,12 +59,6 @@ def new_data(
         expected_delivery_date_str = shipment.Expected_Delivery_Date
         if not expected_delivery_date_str:
             raise HTTPException(status_code=400, detail="Expected delivery date is required")
-        
-        # Ensure date is in correct format (optional, if needed)
-        try:
-            expected_delivery_date = datetime.strptime(expected_delivery_date_str, "%Y-%m-%d")
-        except ValueError:
-            raise HTTPException(status_code=400, detail="Expected delivery date format should be YYYY-MM-DD")
 
         # Prepare shipment data for insertion
         shipment_data_dict = {

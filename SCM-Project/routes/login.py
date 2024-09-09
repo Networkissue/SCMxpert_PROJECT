@@ -8,18 +8,18 @@ from routes.jwt_token import create_access_token
 
 
 # Create a router instance
-router = APIRouter()
+route = APIRouter()
 
 # Initialize Jinja2Templates to locate HTML templates
 templates = Jinja2Templates(directory="Html")
 
 # Mount static files directory for CSS
-router.mount("/CSS", StaticFiles(directory="CSS"), name="CSS")
+route.mount("/CSS", StaticFiles(directory="CSS"), name="CSS")
 
 # Initialize password hashing context
 pwd_hash = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
-@router.get("/login")
+@route.get("/login")
 def get_login_page(request: Request):
     """
     Renders the login HTML page.
@@ -31,7 +31,7 @@ def get_login_page(request: Request):
     """
     return templates.TemplateResponse("login.html", {"request": request})
 
-@router.post("/login")
+@route.post("/login")
 def perform_login(
     request: Request,
     email: str = Form(...),  # Form fields are required by default
